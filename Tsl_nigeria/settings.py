@@ -32,14 +32,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure--9y&!evci#3_c9u1i3ea%4#@zr=#8x_*j3(5fnqxu^9y_dz9=='
 
-# CSRF_TRUSTED_ORIGINS = ["https://jeffiyonawan.com"]
-# ALLOWED_HOSTS = ["jeffiyonawan.com"]
+CSRF_TRUSTED_ORIGINS = ["https://tslnigeriatv-production.up.railway.app"]
+ALLOWED_HOSTS = ["tslnigeriatv-production.up.railway.app"]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 # DEBUG_PROPAGATE_EXCEPTIONS = True
 
-ALLOWED_HOSTS = ["*"]
-# 127.0.0.1", "localhost
+# ALLOWED_HOSTS = ["*"]
+# # 127.0.0.1", "localhost
+
 
 # #Application definition
 # AUTH_USER_MODEL = 'accounts.Account'
