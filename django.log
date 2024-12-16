@@ -1856,3 +1856,19 @@ Not Found: /media/img/post-slide-4.jpg
 "GET /media/slider_images/post-slide-2.webp HTTP/1.1" 304 0
 "GET /media/slider_images/post-slide-3.webp HTTP/1.1" 304 0
 "GET /media/slider_images/post-slide-4.webp HTTP/1.1" 304 0
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 41111
+"GET /media/highlights/post-landscape-6_r1pA1YM.webp HTTP/1.1" 304 0
+"GET /media/highlights/post-landscape-6.webp HTTP/1.1" 304 0
+"GET /media/slider_images/post-slide-1.webp HTTP/1.1" 304 0
+"GET /media/slider_images/post-slide-2.webp HTTP/1.1" 304 0
+"GET /media/blog/post-landscape-8.webp HTTP/1.1" 304 0
+"GET /media/highlights/post-landscape-1.webp HTTP/1.1" 304 0
+"GET /media/blog/post-landscape-3.webp HTTP/1.1" 304 0
+"GET /media/slider_images/post-slide-4.webp HTTP/1.1" 304 0
+"GET /media/highlights/post-landscape-2.webp HTTP/1.1" 304 0
+"GET /media/slider_images/post-slide-3.webp HTTP/1.1" 304 0
+"GET /media/blog/post-landscape-7.webp HTTP/1.1" 304 0
+"GET /media/blog/post-landscape-5.webp HTTP/1.1" 304 0
+"GET / HTTP/1.1" 200 41111
+"GET / HTTP/1.1" 200 41111
