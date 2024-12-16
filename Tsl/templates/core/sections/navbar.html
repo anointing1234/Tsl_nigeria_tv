@@ -1,0 +1,59 @@
+{% load static %}
+
+<header style="background-color: #0F0A0D;" id="header" class="header d-flex align-items-center sticky-top">
+  <div class="container position-relative d-flex align-items-center justify-content-between">
+
+    <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+      <h1 class="sitename">
+        <img src="{% static 'img/tv.png' %}" alt="Site Logo" class="navbar-logo">
+      </h1>
+    </a>
+
+    <nav id="navmenu" class="navmenu">
+      <ul class="">
+        <li>
+          <a href="{% url 'home' %}" class="text-light">Home</a>
+        </li>
+        <li>
+          <a href="{% url 'live_tv' %}" class="text-light" style="display: flex; align-items: center;">
+            Live Tv
+            <span style="margin-left: 8px; width: 10px; height: 10px; background-color: red; border-radius: 50%;"></span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'ondemand' %}" class="text-light">On demand</a>
+        </li>
+        <li>
+          <a href="{% url 'contact' %}" class="text-light">Contact</a>
+        </li>
+        <li>
+          <a href="{% url 'About' %}" class="text-light">About us</a>
+        </li>
+        {% if user.is_authenticated %}
+        <li>
+          <a href="{% url 'Logout' %}" class="text-light">Logout</a>
+        </li>
+        {% endif %}
+      </ul>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    </nav>
+
+    <div class="header-social-links py-2">
+      {% if user.is_authenticated %}
+      <div 
+      class="rounded-circle text-center d-flex align-items-center justify-content-center"
+      style="width: 40px; height: 40px; background-color: #f1f1f1; color: #333; font-weight: bold;">
+      {{ user.username|default:"U"|slice:":1"|upper }}{{ user.username|default:"N"|slice:"-1:"|upper }}
+    </div>
+    
+  
+{% else %}
+  <a href="{% url 'login' %}">
+    <button class="btn btn-light w-100 d-block">Login</button>
+  </a>
+{% endif %}
+
+    </div>
+
+  </div>
+</header>

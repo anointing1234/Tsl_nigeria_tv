@@ -1,0 +1,444 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Tsl Nigeria tv</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <link href="{% static 'img/favicon.ico' %}" rel="icon">
+  <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css'%}" rel="stylesheet">
+  <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{% static 'css/main.css' %}" rel="stylesheet">
+
+ <style>
+  .swiper-slide {
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    border-radius: 30px; /* Adjust height based on design */
+  }
+
+  h2{
+    color:white;
+  }
+  .spinner-border {
+    width: 2rem;
+    height: 2rem;
+    border-width: .25em;
+  }
+  
+  
+ 
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust background color */
+    width: 30px; /* Adjust width */
+    height: 30px; /* Adjust height */
+    border-radius: 50%; /* Make circular */
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: auto; /* Adjust clickable area size */
+  }
+
+  @media (max-width: 768px) {
+    #featuredProgramsCarousel .carousel-inner .carousel-item {
+      flex-direction: column;
+    }
+    .carousel-item img {
+      max-width: 100%;
+    }
+  }
+  
+
+
+/* Hover effect for the video cards */
+
+
+@media (max-width: 768px) {
+  /* Ensure all links in the navmenu are black by default */
+  #navmenu ul li a,
+  #navmenu ul li ul li a {
+    color: black !important;
+  }
+
+  /* Specifically target dropdown section for white text */
+  #navmenu .dropdown > a,
+  #navmenu .dropdown > a span,
+  #navmenu .dropdown ul li a {
+    color: #fff !important; /* Force white text for dropdown links */
+  }
+
+  /* Ensure dropdown menu background is dark */
+  #navmenu .dropdown ul {
+    background-color: #333 !important; /* Ensure dark background */
+  }
+  #navmenu .dropdown a span {
+    color: black !important; /* Ensure dark background */
+  }
+
+  /* Optional: Add hover effects for better UX */
+  #navmenu .dropdown ul li a:hover {
+    color: #ddd !important; /* Slightly lighter color on hover */
+  }
+}
+
+
+
+
+@media (min-width: 768px) {
+  .swiper-wrapper {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 30px;
+    border-radius: 30px;
+  }
+  .swiper-slide {
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    border-radius: 30px;
+    display:flex;
+    justify-content: center; /* Adjust height based on design */
+  }
+  .content {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 20px; /* Optional dark overlay on content */
+    padding: 20px;
+    position: absolute;
+    bottom: 20px;
+    color: #fff;
+  }
+  .content h2 a {
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
+  .content p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+/* For Mobile Screens (below 768px) */
+@media (max-width: 767px) {
+  
+
+/* Optional: Hide large screen swiper on mobile */
+.d-md-block {
+  display: block;
+}
+
+/* Optional: Hide mobile swiper on large screens */
+.d-md-none {
+  display: none;
+}
+}
+
+.navbar-logo {
+  max-width: 120px;
+  height: auto;
+}
+
+
+ </style>
+
+</head>
+
+<body  class="index-page">
+  <main class="main">
+   
+   <!-- Page Title -->
+
+   
+    <!-- Starter Section Section -->
+    <section style="background-color: #0F0A0D;color:white;" id="starter-section" class="starter-section section">
+<div class="container-fluid d-flex justify-content-center mb-4">
+  <h1 class="nav-brand m-0">
+    <img src="{% static 'img/tv.png' %}" alt="Site Logo" class="navbar-logo" style="max-width: 120px; height: auto;">
+  </h1>
+</div>
+  <div class="container  h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-6 col-xl-4">
+        
+        <div  class="card text-white py-3 " style="background-color:transparent; border:none;">
+          <div class="card-body">
+            <p class="text-center h3 fw-bold mb-4">Sign up</p>
+          
+            <form >
+              <div class="d-flex flex-row align-items-center mb-3">
+                <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                <div class="form-outline flex-fill mb-0">
+                  <input type="text" id="form3Example1c" class="form-control form-control-sm" />
+                  <label class="form-label" for="form3Example1c">Username</label>
+                </div>
+              </div>
+
+              <div class="d-flex flex-row align-items-center mb-3">
+                <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                <div class="form-outline flex-fill mb-0">
+                  <input type="email" id="form3Example3c" class="form-control form-control-sm" />
+                  <label class="form-label" for="form3Example3c">Your Email</label>
+                </div>
+              </div>
+
+              <div class="d-flex flex-row align-items-center mb-3">
+                <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                <div class="form-outline flex-fill mb-0">
+                  <input type="password" id="form3Example4c" class="form-control form-control-sm" />
+                  <label class="form-label" for="form3Example4c">Password</label>
+                </div>
+              </div>
+
+              <div class="d-flex flex-row align-items-center mb-3">
+                <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                <div class="form-outline flex-fill mb-0">
+                  <input type="password" id="form3Example4cd" class="form-control form-control-sm" />
+                  <label class="form-label" for="form3Example4cd">Repeat your password</label>
+                </div>
+              </div>
+
+              <div class="mb-3 text-center">
+                <a class="text-white" href="{% url 'login' %}">Already have an account? Login</a>
+              </div>
+              
+
+              <div class="form-check d-flex justify-content-center align-items-center mb-4">
+                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
+                <label class="form-check-label" for="form2Example3">
+                  I agree all statements in <a class="text-white" href="#!">Terms of service</a>
+                </label>
+              </div>
+              <div class="d-flex justify-content-center">
+                <button style="background-color: #17C648; color:white;" type="submit" class="btn  btn-sm w-100">Register</button>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><!-- /Starter Section Section -->
+
+    
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">      <img src="{% static 'img/tv.png' %}" alt="Site Logo" class="navbar-logo">
+            </span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+            <p><strong>Email:</strong> <span>info@Tsl_nigera.com</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Featured Shows</a></li>
+            <li><a href="#">Live tv</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="#">Trending Shows</a></li>
+            <li><a href="#">On-demand</a></li>
+            <li><a href="#">Showcase</a></li>
+            <li><a href="#">Media</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 footer-links">
+          <h4>Location</h4>
+          <p>
+            <h5>TSLNIGERIA-TV</h5>
+            Comfort Shopping Plaza 1, 3 Etete Road, Gra., Benin City, Edo</p>
+        </div>
+      
+
+    
+
+</div>
+</div>
+
+<div class="container copyright text-center mt-4">
+<p>© <span>Copyright 2024</span>  <strong class="px-1 sitename">Tslnigeria-tv</strong> <span>All Rights Reserved</span></p>
+</div>
+
+</footer>
+</div>  
+
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  {% comment %} <!-- Preloader -->
+  <div id="preloader"></div> {% endcomment %}
+  <!-- Vendor JS Files -->
+<!-- SweetAlert2 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.10/dist/sweetalert2.min.css" rel="stylesheet">
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- SweetAlert2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.10/dist/sweetalert2.min.js"></script>
+
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'vendor/aos/aos.js' %}"></script>
+<script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+<!-- Main JS File -->
+
+
+<script>
+  $(document).ready(function() {
+    // When the form is submitted
+    $("form").on("submit", function(event) {
+      event.preventDefault(); // Prevent the default form submission
+      
+      // Get the form data
+      var formData = {
+        'name': $('#form3Example1c').val(),
+        'email': $('#form3Example3c').val(),
+        'password': $('#form3Example4c').val(),
+        'repeat_password': $('#form3Example4cd').val(),
+        'csrfmiddlewaretoken': '{{ csrf_token }}'  // CSRF token added here
+      };
+
+      // Disable the submit button and change it to a spinning circle
+      var submitButton = $('button[type="submit"]');
+      submitButton.prop('disabled', true);  // Disable the button
+      submitButton.html('<div class="spinner-border text-white" role="status"><span class="visually-hidden">Loading...</span></div>'); // Add the spinner
+
+      // Send the data via AJAX to the view
+      $.ajax({
+        type: 'POST',
+        url: '{% url "register_view" %}',  // Replace with your Django view URL
+        data: formData,
+        headers: {
+          'X-CSRFToken': '{{ csrf_token }}'  // Add CSRF token to headers
+        },
+        success: function(response) {
+          // Reset button
+          submitButton.prop('disabled', false);
+          submitButton.html('Register'); // Restore button text
+
+          // Check if the response was successful
+          if (response.status === 'success') {
+            Swal.fire({
+              icon: 'success',
+              title: 'Registration Successful!',
+              html: `<p style="color: white;">You have successfully registered</p>`,
+              background: '#0F0A0D',
+              confirmButtonColor: '#17C648',
+              // Custom class to change text color to white
+              customClass: {
+                popup: 'swal-popup-text-white'
+              }
+            }).then((result) => {
+              if (result.isConfirmed) {
+                // Redirect to the home URL
+                window.location.href = '/';  // Redirect to the home URL
+              }
+            });
+          } else {
+            Swal.fire({
+              icon: 'error',
+              title: 'Registration Failed!',
+              html: `<p style="color: white;">${response.message || 'Something went wrong. Please try again.'}</p>`,
+              background: '#0F0A0D',
+              confirmButtonColor: '#17C648',
+              customClass: {
+                popup: 'swal-popup-text-white'
+              }
+            });
+          }
+        },
+        error: function(xhr, status, error) {
+          // Reset button and show error if AJAX request fails
+          submitButton.prop('disabled', false);
+          submitButton.html('Register'); // Restore button text
+
+          Swal.fire({
+            icon: 'error',
+            title: 'Error!',
+            html: `<p style="color: white;">Something went wrong. Please try again.</p>`,
+            background: '#0F0A0D',
+            confirmButtonColor: '#17C648',
+            customClass: {
+              popup: 'swal-popup-text-white'
+            }
+          });
+        }
+      });
+    });
+  });
+
+  // Ensure the element exists before accessing classList
+  function toggleScrolled() {
+    var navbar = document.querySelector('.navbar');  // Replace with your actual element selector
+    if (navbar) {  // Check if the element exists
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    }
+  }
+
+  window.addEventListener('scroll', toggleScrolled);
+</script>
+
+<!-- Add this CSS to style the text color -->
+<style>
+  .swal-popup-text-white .swal2-title,
+  .swal-popup-text-white .swal2-text {
+    color: white !important;
+  }
+</style>
+
+
+
+  
+</body>
+</html> 

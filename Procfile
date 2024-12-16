@@ -1,0 +1,1 @@
+web: gunicorn Tsl_nigeria.wsgi --log-file -

@@ -1,0 +1,1858 @@
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 43929
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET /Tsl/live_tv/ HTTP/1.1" 200 22904
+"GET /Tsl/home/ HTTP/1.1" 200 43929
+"GET /Tsl/live_tv/ HTTP/1.1" 200 22904
+"GET /Tsl/home/ HTTP/1.1" 200 43929
+Not Found: /Tsl/home/single-post.html
+"GET /Tsl/home/single-post.html HTTP/1.1" 404 6665
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4630
+"GET /Tsl/live_tv/ HTTP/1.1" 200 22941
+"GET /Tsl/live_tv/ HTTP/1.1" 200 19029
+"GET /static/img/favicon.ico HTTP/1.1" 304 0
+"GET /Tsl/live_tv/ HTTP/1.1" 200 20903
+"GET /static/img/youtube-symbol.png HTTP/1.1" 404 1926
+"GET /Tsl/live_tv/ HTTP/1.1" 200 22939
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /Tsl/live_tv/ HTTP/1.1" 200 21265
+Internal Server Error: /Tsl/live_tv/
+Traceback (most recent call last):
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py", line 87, in live_tv
+    return render(request, 'live_tv.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 847, in do_for
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'for' statements should use the format 'for x in y': for i in videos|length to 3
+"GET /Tsl/live_tv/ HTTP/1.1" 500 226874
+Internal Server Error: /Tsl/live_tv/
+Traceback (most recent call last):
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py", line 87, in live_tv
+    return render(request, 'live_tv.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 847, in do_for
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'for' statements should use the format 'for x in y': for _ in videos|length to 2
+"GET /Tsl/live_tv/ HTTP/1.1" 500 249390
+Internal Server Error: /Tsl/live_tv/
+Traceback (most recent call last):
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py", line 87, in live_tv
+    return render(request, 'live_tv.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 847, in do_for
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'for' statements should use the format 'for x in y': for _ in videos|length to 2
+"GET /Tsl/live_tv/ HTTP/1.1" 500 249390
+Internal Server Error: /Tsl/live_tv/
+Traceback (most recent call last):
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py", line 87, in live_tv
+    return render(request, 'live_tv.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 847, in do_for
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'for' statements should use the format 'for x in y': for _ in range(0, 3 - videos|length)
+"GET /Tsl/live_tv/ HTTP/1.1" 500 248974
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\templates\templatetags\custom_filters.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /Tsl/live_tv/
+Traceback (most recent call last):
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py", line 87, in live_tv
+    return render(request, 'live_tv.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 860, in do_for
+    sequence = parser.compile_filter(bits[in_index + 1])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 597, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 693, in __init__
+    filter_func = parser.find_filter(filter_name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 603, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'length_minus'
+"GET /Tsl/live_tv/ HTTP/1.1" 500 218826
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /Tsl/live_tv/
+Traceback (most recent call last):
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py", line 89, in live_tv
+    return render(request, 'live_tv.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 860, in do_for
+    sequence = parser.compile_filter(bits[in_index + 1])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 597, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 698, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '(remaining_cards)' from 'range(remaining_cards)'
+"GET /Tsl/live_tv/ HTTP/1.1" 500 212820
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /Tsl/live_tv/ HTTP/1.1" 200 19487
+Internal Server Error: /Tsl/live_tv/
+Traceback (most recent call last):
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py", line 92, in live_tv
+    return render(request, 'live_tv.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 847, in do_for
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'for' statements should use the format 'for x in y': for _ in range(0, 3 - videos|length)
+"GET /Tsl/live_tv/ HTTP/1.1" 500 249300
+"GET /Tsl/live_tv/ HTTP/1.1" 200 21265
+"GET /Tsl/live_tv/ HTTP/1.1" 200 22939
+"GET /Tsl/ondemand/ HTTP/1.1" 200 40110
+Internal Server Error: /Tsl/home/
+Traceback (most recent call last):
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 1034, in find_library
+    return parser.libraries[name]
+           ~~~~~~~~~~~~~~~~^^^^^^
+KeyError: 'custom_filters'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py", line 13, in home
+    return render(request, 'index.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 1096, in load
+    lib = find_library(parser, name)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 1036, in find_library
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'custom_filters' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_urls
+cache
+i18n
+jazzmin
+l10n
+log
+static
+tz
+"GET /Tsl/home/ HTTP/1.1" 500 242691
+"GET /Tsl/home/ HTTP/1.1" 200 43930
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Accounts\models.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET /Tsl/home/ HTTP/1.1" 200 43857
+"GET /admin/ HTTP/1.1" 200 20195
+"GET /admin/Accounts/blog/ HTTP/1.1" 200 13173
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/Accounts/slider/ HTTP/1.1" 200 13187
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+Watching for file changes with StatReloader
+"GET /admin/Accounts/slider/ HTTP/1.1" 200 13187
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/Accounts/slider/ HTTP/1.1" 200 13187
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+Watching for file changes with StatReloader
+"GET /admin/Accounts/slider/ HTTP/1.1" 200 17143
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+Watching for file changes with StatReloader
+"GET /admin/Accounts/slider/ HTTP/1.1" 200 17143
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/Accounts/blog/ HTTP/1.1" 200 17045
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/Accounts/blog/add/ HTTP/1.1" 200 20139
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/ HTTP/1.1" 200 20195
+"GET /admin/Accounts/blog/ HTTP/1.1" 200 17045
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/Accounts/slider/ HTTP/1.1" 200 17143
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 43630
+"GET /static/vendor/swiper/swiper-bundle.min.css HTTP/1.1" 200 18432
+"GET /static/vendor/aos/aos.css HTTP/1.1" 200 28765
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 80721
+"GET /static/vendor/bootstrap-icons/bootstrap-icons.css HTTP/1.1" 200 98255
+"GET /static/vendor/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 232803
+"GET /static/css/main.css HTTP/1.1" 200 44064
+"GET /static/img/post-landscape-3.jpg HTTP/1.1" 200 216542
+"GET /static/img/post-landscape-2.jpg HTTP/1.1" 200 60301
+"GET /static/img/post-landscape-5.jpg HTTP/1.1" 200 39838
+"GET /static/img/post-landscape-1.jpg HTTP/1.1" 200 68691
+"GET /static/img/tv.png HTTP/1.1" 200 22484
+"GET /static/img/post-landscape-6.jpg HTTP/1.1" 200 68683
+"GET /static/js/main.js HTTP/1.1" 200 3362
+"GET /static/img/post-landscape-7.jpg HTTP/1.1" 200 36795
+"GET /static/vendor/aos/aos.js HTTP/1.1" 200 13800
+"GET /static/img/post-landscape-8.jpg HTTP/1.1" 200 66456
+"GET /static/img/post-landscape-4.jpg HTTP/1.1" 200 23611
+"GET /static/vendor/swiper/swiper-bundle.min.js HTTP/1.1" 200 151102
+"GET /static/img/post-slide-1.jpg HTTP/1.1" 200 625596
+"GET /static/img/post-slide-2.jpg HTTP/1.1" 200 65014
+"GET /static/img/post-slide-3.jpg HTTP/1.1" 200 100681
+"GET /static/vendor/bootstrap-icons/fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6 HTTP/1.1" 200 130396
+"GET /static/img/post-slide-4.jpg HTTP/1.1" 200 144576
+"GET /Tsl/login/ HTTP/1.1" 200 13530
+"POST /Accounts/login_view/ HTTP/1.1" 200 17
+"GET / HTTP/1.1" 200 43870
+"GET /admin HTTP/1.1" 301 0
+"GET /admin/ HTTP/1.1" 200 18432
+"GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 200 103009
+"GET /static/jazzmin/css/main.css HTTP/1.1" 200 16969
+"GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 200 1382975
+"GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 200 2637
+"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+"GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 60635
+"GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 200 44244
+"GET /static/jazzmin/js/main.js HTTP/1.1" 200 2391
+"GET /static/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 156400
+"GET /static/vendor/fontawesome-free/webfonts/fa-regular-400.woff2 HTTP/1.1" 200 25392
+"GET /admin/Accounts/slider/ HTTP/1.1" 200 13187
+"GET /static/vendor/select2/css/select2.min.css HTTP/1.1" 200 16264
+"GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+"GET /static/admin/js/actions.js HTTP/1.1" 200 8067
+"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9042
+"GET /static/admin/js/core.js HTTP/1.1" 200 6208
+"GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+"GET /static/jazzmin/js/change_list.js HTTP/1.1" 200 2252
+"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+"GET /static/vendor/select2/js/select2.min.js HTTP/1.1" 200 73170
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+Watching for file changes with StatReloader
+"GET /admin/Accounts/slider/ HTTP/1.1" 200 17143
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/Accounts/slider/ HTTP/1.1" 200 17143
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py", line 14, in home
+    sliders = Slider.objects.filter(is_active).order_by('order')
+                                    ^^^^^^^^^
+NameError: name 'is_active' is not defined
+"GET / HTTP/1.1" 500 68215
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4630
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 42603
+"GET /static/img/favicon.ico HTTP/1.1" 200 15406
+"GET / HTTP/1.1" 200 42603
+"GET /admin/Accounts/slider/1/change/ HTTP/1.1" 200 20457
+"GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+"GET /static/jazzmin/js/change_form.js HTTP/1.1" 200 6052
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/Accounts/slider/1/change/ HTTP/1.1" 200 20740
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/Accounts/slider/1/change/ HTTP/1.1" 302 0
+"GET /admin/Accounts/slider/ HTTP/1.1" 200 17757
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET / HTTP/1.1" 200 42603
+"GET /admin/Accounts/slider/1/change/ HTTP/1.1" 200 20568
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Accounts\models.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/Accounts/slider/1/change/ HTTP/1.1" 200 20568
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/Accounts/slider/1/change/ HTTP/1.1" 302 0
+"GET /admin/Accounts/slider/ HTTP/1.1" 200 17757
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET / HTTP/1.1" 200 42603
+"GET /static/vendor/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 200 589892
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl_nigeria\urls.py changed, reloading.
+Watching for file changes with StatReloader
+- Broken pipe from ('127.0.0.1', 52683)
+- Broken pipe from ('127.0.0.1', 52684)
+- Broken pipe from ('127.0.0.1', 52687)
+- Broken pipe from ('127.0.0.1', 52686)
+- Broken pipe from ('127.0.0.1', 52689)
+- Broken pipe from ('127.0.0.1', 52692)
+- Broken pipe from ('127.0.0.1', 52691)
+- Broken pipe from ('127.0.0.1', 52694)
+- Broken pipe from ('127.0.0.1', 52695)
+- Broken pipe from ('127.0.0.1', 52697)
+- Broken pipe from ('127.0.0.1', 52696)
+Watching for file changes with StatReloader
+- Broken pipe from ('127.0.0.1', 52719)
+- Broken pipe from ('127.0.0.1', 52718)
+- Broken pipe from ('127.0.0.1', 52722)
+- Broken pipe from ('127.0.0.1', 52721)
+- Broken pipe from ('127.0.0.1', 52724)
+- Broken pipe from ('127.0.0.1', 52726)
+- Broken pipe from ('127.0.0.1', 52725)
+- Broken pipe from ('127.0.0.1', 52728)
+- Broken pipe from ('127.0.0.1', 52730)
+- Broken pipe from ('127.0.0.1', 52729)
+- Broken pipe from ('127.0.0.1', 52733)
+- Broken pipe from ('127.0.0.1', 52732)
+- Broken pipe from ('127.0.0.1', 52735)
+- Broken pipe from ('127.0.0.1', 52736)
+- Broken pipe from ('127.0.0.1', 52737)
+- Broken pipe from ('127.0.0.1', 52740)
+- Broken pipe from ('127.0.0.1', 52741)
+- Broken pipe from ('127.0.0.1', 52742)
+- Broken pipe from ('127.0.0.1', 52744)
+- Broken pipe from ('127.0.0.1', 52745)
+- Broken pipe from ('127.0.0.1', 52746)
+Watching for file changes with StatReloader
+- Broken pipe from ('127.0.0.1', 52760)
+- Broken pipe from ('127.0.0.1', 52758)
+- Broken pipe from ('127.0.0.1', 52759)
+- Broken pipe from ('127.0.0.1', 52762)
+- Broken pipe from ('127.0.0.1', 52763)
+- Broken pipe from ('127.0.0.1', 52764)
+- Broken pipe from ('127.0.0.1', 52766)
+- Broken pipe from ('127.0.0.1', 52767)
+- Broken pipe from ('127.0.0.1', 52768)
+"GET / HTTP/1.1" 200 42594
+"GET / HTTP/1.1" 200 42594
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 43934
+"GET /media/slider_images/post-slide-1.webp HTTP/1.1" 200 823450
+Not Found: /media/img/post-slide-4.jpg
+Not Found: /media/img/post-slide-2.jpg
+"GET /media/img/post-slide-2.jpg HTTP/1.1" 404 4258
+"GET /media/img/post-slide-4.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-slide-3.jpg
+"GET /media/img/post-slide-3.jpg HTTP/1.1" 404 4258
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 38122
+"GET /media/slider_images/post-slide-1.webp HTTP/1.1" 304 0
+Not Found: /media/img/post-slide-4.jpg
+"GET /media/img/post-slide-4.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-slide-3.jpg
+"GET /media/img/post-slide-3.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-slide-2.jpg
+"GET /media/img/post-slide-2.jpg HTTP/1.1" 404 4258
+"GET / HTTP/1.1" 200 43934
+Not Found: /media/img/post-slide-2.jpg
+"GET /media/img/post-slide-2.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-slide-3.jpg
+Not Found: /media/img/post-slide-4.jpg
+"GET /media/img/post-slide-3.jpg HTTP/1.1" 404 4258
+"GET /media/img/post-slide-4.jpg HTTP/1.1" 404 4258
+"GET /admin/Accounts/slider/ HTTP/1.1" 200 17143
+"GET /admin/Accounts/highlight/ HTTP/1.1" 200 13208
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+Watching for file changes with StatReloader
+"GET /admin/Accounts/highlight/ HTTP/1.1" 200 17126
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET / HTTP/1.1" 200 41701
+"GET /media/slider_images/post-slide-1.webp HTTP/1.1" 304 0
+Not Found: /media/img/post-slide-4.jpg
+Not Found: /media/img/post-slide-3.jpg
+"GET /media/img/post-slide-4.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-slide-2.jpg
+"GET /media/img/post-slide-3.jpg HTTP/1.1" 404 4258
+"GET /media/img/post-slide-2.jpg HTTP/1.1" 404 4258
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py", line 16, in home
+    return render(request, 'index.html',{
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\urls\resolvers.py", line 851, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'highlights_list' not found. 'highlights_list' is not a valid view function or pattern name.
+"GET / HTTP/1.1" 500 179964
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py", line 16, in home
+    return render(request, 'index.html',{
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\urls\resolvers.py", line 851, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'highlights' not found. 'highlights' is not a valid view function or pattern name.
+"GET / HTTP/1.1" 500 178817
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py", line 16, in home
+    return render(request, 'index.html',{
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 242, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\urls\resolvers.py", line 851, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'highlight_detail' not found. 'highlight_detail' is not a valid view function or pattern name.
+"GET / HTTP/1.1" 500 208109
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'ImageFieldFile' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py", line 16, in home
+    return render(request, 'index.html',{
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 242, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1059, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 710, in resolve
+    obj = self.var.resolve(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 842, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\fields\files.py", line 66, in url
+    self._require_file()
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\fields\files.py", line 41, in _require_file
+    raise ValueError(
+ValueError: The 'image' attribute has no file associated with it.
+"GET / HTTP/1.1" 500 223407
+"GET /admin/Accounts/highlight/4/change/ HTTP/1.1" 200 18795
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/Accounts/highlight/4/change/ HTTP/1.1" 302 0
+"GET /admin/Accounts/highlight/ HTTP/1.1" 200 17742
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/Accounts/highlight/3/change/ HTTP/1.1" 200 18803
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/Accounts/highlight/3/change/ HTTP/1.1" 302 0
+"GET /admin/Accounts/highlight/ HTTP/1.1" 200 17746
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/Accounts/highlight/2/change/ HTTP/1.1" 200 18847
+- Broken pipe from ('127.0.0.1', 65509)
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/Accounts/highlight/2/change/ HTTP/1.1" 302 0
+"GET /admin/Accounts/highlight/ HTTP/1.1" 200 17768
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/Accounts/highlight/1/change/ HTTP/1.1" 200 18771
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/Accounts/highlight/1/change/ HTTP/1.1" 302 0
+"GET /admin/Accounts/highlight/ HTTP/1.1" 200 17730
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py", line 16, in home
+    return render(request, 'index.html',{
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 242, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\urls\resolvers.py", line 851, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'highlight_detail' not found. 'highlight_detail' is not a valid view function or pattern name.
+"GET / HTTP/1.1" 500 207529
+"GET / HTTP/1.1" 200 41723
+"GET /media/slider_images/post-slide-1.webp HTTP/1.1" 304 0
+Not Found: /media/img/post-slide-2.jpg
+"GET /media/img/post-slide-2.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-slide-3.jpg
+"GET /media/img/post-slide-3.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-slide-4.jpg
+"GET /media/img/post-slide-4.jpg HTTP/1.1" 404 4258
+"GET /media/highlights/post-landscape-6.webp HTTP/1.1" 200 39470
+"GET /media/highlights/post-landscape-2.webp HTTP/1.1" 200 34840
+"GET /media/highlights/post-landscape-1.webp HTTP/1.1" 200 39734
+"GET /admin/Accounts/highlight/4/change/ HTTP/1.1" 200 19080
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/Accounts/highlight/ HTTP/1.1" 200 17126
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/Accounts/highlight/1/change/ HTTP/1.1" 200 19056
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/Accounts/highlight/1/change/ HTTP/1.1" 302 0
+"GET /admin/Accounts/highlight/ HTTP/1.1" 200 17730
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET / HTTP/1.1" 200 41723
+Not Found: /media/img/post-slide-2.jpg
+"GET /media/highlights/post-landscape-6.webp HTTP/1.1" 304 0
+"GET /media/img/post-slide-2.jpg HTTP/1.1" 404 4258
+"GET /media/highlights/post-landscape-2.webp HTTP/1.1" 304 0
+"GET /media/highlights/post-landscape-1.webp HTTP/1.1" 304 0
+Not Found: /media/img/post-slide-4.jpg
+"GET /media/img/post-slide-4.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-slide-3.jpg
+"GET /media/img/post-slide-3.jpg HTTP/1.1" 404 4258
+"GET / HTTP/1.1" 200 42283
+"GET /media/highlights/post-landscape-6.webp HTTP/1.1" 304 0
+"GET /media/highlights/post-landscape-1.webp HTTP/1.1" 304 0
+"GET /media/highlights/post-landscape-4.webp HTTP/1.1" 200 9996
+"GET /media/highlights/post-landscape-2.webp HTTP/1.1" 304 0
+Not Found: /media/img/post-slide-2.jpg
+Not Found: /media/img/post-slide-3.jpg
+Not Found: /media/img/post-slide-4.jpg
+"GET /media/img/post-slide-2.jpg HTTP/1.1" 404 4258
+"GET /media/slider_images/post-slide-1.webp HTTP/1.1" 304 0
+"GET /media/img/post-slide-3.jpg HTTP/1.1" 404 4258
+"GET /media/img/post-slide-4.jpg HTTP/1.1" 404 4258
+"GET / HTTP/1.1" 200 42410
+Not Found: /media/img/post-slide-4.jpg
+"GET /media/img/post-slide-4.jpg HTTP/1.1" 404 4258
+"GET /media/highlights/post-landscape-4.webp HTTP/1.1" 304 0
+Not Found: /media/img/post-slide-3.jpg
+"GET /media/img/post-slide-3.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-slide-2.jpg
+"GET /media/img/post-slide-2.jpg HTTP/1.1" 404 4258
+"GET /media/highlights/post-landscape-2.webp HTTP/1.1" 304 0
+"GET /media/highlights/post-landscape-1.webp HTTP/1.1" 304 0
+"GET /media/highlights/post-landscape-6.webp HTTP/1.1" 304 0
+"GET / HTTP/1.1" 200 42260
+Not Found: /media/img/post-slide-2.jpg
+"GET /media/img/post-slide-2.jpg HTTP/1.1" 404 4258
+"GET /media/slider_images/post-slide-1.webp HTTP/1.1" 304 0
+"GET /media/highlights/post-landscape-6.webp HTTP/1.1" 304 0
+"GET /media/highlights/post-landscape-1.webp HTTP/1.1" 304 0
+"GET /media/highlights/post-landscape-2.webp HTTP/1.1" 304 0
+"GET /media/highlights/post-landscape-4.webp HTTP/1.1" 304 0
+Not Found: /media/img/post-slide-4.jpg
+"GET /media/img/post-slide-4.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-slide-3.jpg
+"GET /media/img/post-slide-3.jpg HTTP/1.1" 404 4258
+"GET /admin/Accounts/highlight/ HTTP/1.1" 200 17126
+"GET / HTTP/1.1" 200 42598
+"GET /media/highlights/post-landscape-6.webp HTTP/1.1" 304 0
+"GET /media/highlights/post-landscape-1.webp HTTP/1.1" 304 0
+"GET /media/highlights/post-landscape-2.webp HTTP/1.1" 304 0
+"GET /media/highlights/post-landscape-4.webp HTTP/1.1" 304 0
+Not Found: /media/img/post-slide-2.jpg
+"GET /media/img/post-slide-2.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-slide-4.jpg
+Not Found: /media/img/post-slide-3.jpg
+"GET /media/img/post-slide-3.jpg HTTP/1.1" 404 4258
+"GET /media/img/post-slide-4.jpg HTTP/1.1" 404 4258
+"GET / HTTP/1.1" 200 42595
+"GET /media/highlights/post-landscape-4.webp HTTP/1.1" 304 0
+Not Found: /media/img/post-slide-2.jpg
+"GET /media/img/post-slide-2.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-slide-3.jpg
+"GET /media/img/post-slide-3.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-slide-4.jpg
+"GET /media/img/post-slide-4.jpg HTTP/1.1" 404 4258
+"GET / HTTP/1.1" 200 42852
+"GET /media/highlights/post-landscape-6.webp HTTP/1.1" 304 0
+"GET /media/highlights/post-landscape-1.webp HTTP/1.1" 304 0
+"GET /media/slider_images/post-slide-1.webp HTTP/1.1" 304 0
+Not Found: /media/img/post-slide-2.jpg
+"GET /media/img/post-slide-2.jpg HTTP/1.1" 404 4258
+"GET /media/highlights/post-landscape-2.webp HTTP/1.1" 304 0
+"GET /media/highlights/post-landscape-4.webp HTTP/1.1" 304 0
+Not Found: /media/img/post-slide-4.jpg
+"GET /media/img/post-slide-4.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-slide-3.jpg
+"GET /media/img/post-slide-3.jpg HTTP/1.1" 404 4258
+"GET / HTTP/1.1" 200 42871
+Not Found: /media/img/post-slide-2.jpg
+"GET /media/img/post-slide-2.jpg HTTP/1.1" 404 4258
+"GET /media/highlights/post-landscape-4.webp HTTP/1.1" 304 0
+Not Found: /media/img/post-slide-4.jpg
+"GET /media/img/post-slide-4.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-slide-3.jpg
+"GET /media/img/post-slide-3.jpg HTTP/1.1" 404 4258
+"GET / HTTP/1.1" 200 42871
+Not Found: /media/img/post-slide-2.jpg
+"GET /media/img/post-slide-2.jpg HTTP/1.1" 404 4258
+"GET /media/highlights/post-landscape-6.webp HTTP/1.1" 304 0
+"GET /media/highlights/post-landscape-1.webp HTTP/1.1" 304 0
+"GET /media/highlights/post-landscape-2.webp HTTP/1.1" 304 0
+Not Found: /media/img/post-slide-3.jpg
+"GET /media/img/post-slide-3.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-slide-4.jpg
+"GET /media/img/post-slide-4.jpg HTTP/1.1" 404 4258
+"POST /admin/Accounts/highlight/ HTTP/1.1" 200 13166
+"GET /static/admin/js/cancel.js HTTP/1.1" 200 564
+"POST /admin/Accounts/highlight/ HTTP/1.1" 302 0
+"GET /admin/Accounts/highlight/ HTTP/1.1" 200 17189
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET / HTTP/1.1" 200 41747
+Not Found: /media/img/post-slide-4.jpg
+Not Found: /media/img/post-slide-3.jpg
+"GET /media/img/post-slide-3.jpg HTTP/1.1" 404 4258
+"GET /media/img/post-slide-4.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-slide-2.jpg
+"GET /media/img/post-slide-2.jpg HTTP/1.1" 404 4258
+"GET /admin/Accounts/highlight/add/ HTTP/1.1" 200 17867
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+Watching for file changes with StatReloader
+"GET /admin/Accounts/highlight/ HTTP/1.1" 200 17126
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/Accounts/highlight/5/change/ HTTP/1.1" 200 18771
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/Accounts/highlight/5/change/ HTTP/1.1" 302 0
+"GET /admin/Accounts/highlight/ HTTP/1.1" 200 17730
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET / HTTP/1.1" 200 42879
+"GET /media/highlights/post-landscape-6.webp HTTP/1.1" 304 0
+"GET /media/highlights/post-landscape-6_r1pA1YM.webp HTTP/1.1" 200 39470
+"GET /media/highlights/post-landscape-1.webp HTTP/1.1" 304 0
+"GET /media/highlights/post-landscape-2.webp HTTP/1.1" 304 0
+"GET /media/slider_images/post-slide-1.webp HTTP/1.1" 304 0
+Not Found: /media/img/post-slide-3.jpg
+Not Found: /media/img/post-slide-2.jpg
+Not Found: /media/img/post-slide-4.jpg
+"GET /media/img/post-slide-3.jpg HTTP/1.1" 404 4258
+"GET /media/img/post-slide-2.jpg HTTP/1.1" 404 4258
+"GET /media/img/post-slide-4.jpg HTTP/1.1" 404 4258
+"GET / HTTP/1.1" 200 44016
+"GET /media/highlights/post-landscape-6_r1pA1YM.webp HTTP/1.1" 304 0
+Not Found: /media/img/post-slide-2.jpg
+"GET /media/img/post-slide-2.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-slide-3.jpg
+"GET /media/img/post-slide-3.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-slide-4.jpg
+"GET /media/img/post-slide-4.jpg HTTP/1.1" 404 4258
+"GET / HTTP/1.1" 200 42879
+"GET /media/highlights/post-landscape-6_r1pA1YM.webp HTTP/1.1" 304 0
+Not Found: /media/img/post-slide-2.jpg
+"GET /media/img/post-slide-2.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-slide-4.jpg
+"GET /media/img/post-slide-4.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-slide-3.jpg
+"GET /media/img/post-slide-3.jpg HTTP/1.1" 404 4258
+"GET / HTTP/1.1" 200 42887
+Not Found: /media/img/post-slide-3.jpg
+"GET /media/img/post-slide-3.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-slide-4.jpg
+"GET /media/highlights/post-landscape-6_r1pA1YM.webp HTTP/1.1" 304 0
+Not Found: /media/img/post-slide-2.jpg
+"GET /media/img/post-slide-4.jpg HTTP/1.1" 404 4258
+"GET /media/img/post-slide-2.jpg HTTP/1.1" 404 4258
+"GET / HTTP/1.1" 200 44424
+Not Found: /media/img/post-slide-2.jpg
+"GET /media/img/post-slide-2.jpg HTTP/1.1" 404 4258
+"GET /media/highlights/post-landscape-2.webp HTTP/1.1" 304 0
+"GET /media/highlights/post-landscape-6.webp HTTP/1.1" 304 0
+"GET /media/highlights/post-landscape-6_r1pA1YM.webp HTTP/1.1" 304 0
+"GET /media/highlights/post-landscape-1.webp HTTP/1.1" 304 0
+Not Found: /media/img/post-slide-3.jpg
+"GET /media/img/post-slide-3.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-slide-4.jpg
+"GET /media/img/post-slide-4.jpg HTTP/1.1" 404 4258
+"GET / HTTP/1.1" 200 43348
+"GET /media/highlights/post-landscape-6_r1pA1YM.webp HTTP/1.1" 304 0
+Not Found: /media/img/post-slide-3.jpg
+"GET /media/img/post-slide-3.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-slide-4.jpg
+"GET /media/img/post-slide-4.jpg HTTP/1.1" 404 4258
+"GET /media/slider_images/post-slide-1.webp HTTP/1.1" 304 0
+Not Found: /media/img/post-slide-2.jpg
+"GET /media/img/post-slide-2.jpg HTTP/1.1" 404 4258
+"GET / HTTP/1.1" 200 43340
+"GET /media/highlights/post-landscape-6_r1pA1YM.webp HTTP/1.1" 304 0
+Not Found: /media/img/post-slide-2.jpg
+"GET /media/img/post-slide-2.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-slide-3.jpg
+"GET /media/img/post-slide-3.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-slide-4.jpg
+"GET /media/img/post-slide-4.jpg HTTP/1.1" 404 4258
+"GET / HTTP/1.1" 200 43340
+Not Found: /media/img/post-slide-2.jpg
+"GET /media/img/post-slide-2.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-slide-3.jpg
+"GET /media/img/post-slide-3.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-slide-4.jpg
+"GET /media/img/post-slide-4.jpg HTTP/1.1" 404 4258
+"GET / HTTP/1.1" 200 41595
+"GET /media/highlights/post-landscape-6_r1pA1YM.webp HTTP/1.1" 304 0
+"GET /media/highlights/post-landscape-6.webp HTTP/1.1" 304 0
+Not Found: /media/img/post-slide-3.jpg
+"GET /media/highlights/post-landscape-1.webp HTTP/1.1" 304 0
+"GET /media/highlights/post-landscape-2.webp HTTP/1.1" 304 0
+"GET /media/img/post-slide-3.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-slide-2.jpg
+"GET /media/img/post-slide-2.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-slide-4.jpg
+"GET /media/img/post-slide-4.jpg HTTP/1.1" 404 4258
+"GET / HTTP/1.1" 200 41606
+Not Found: /media/img/post-slide-2.jpg
+"GET /media/img/post-slide-2.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-slide-3.jpg
+"GET /media/img/post-slide-3.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-slide-4.jpg
+"GET /media/img/post-slide-4.jpg HTTP/1.1" 404 4258
+"GET / HTTP/1.1" 200 42284
+"GET /media/highlights/post-landscape-6_r1pA1YM.webp HTTP/1.1" 304 0
+Not Found: /media/img/post-slide-3.jpg
+Not Found: /media/img/post-slide-2.jpg
+"GET /media/img/post-slide-3.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-slide-4.jpg
+"GET /media/img/post-slide-2.jpg HTTP/1.1" 404 4258
+"GET /media/img/post-slide-4.jpg HTTP/1.1" 404 4258
+Not Found: /categories.html
+"GET /categories.html HTTP/1.1" 404 4768
+"GET / HTTP/1.1" 200 42195
+Not Found: /media/img/post-slide-3.jpg
+"GET /media/img/post-slide-3.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-slide-2.jpg
+Not Found: /media/img/post-slide-4.jpg
+"GET /media/img/post-slide-4.jpg HTTP/1.1" 404 4258
+"GET /media/img/post-slide-2.jpg HTTP/1.1" 404 4258
+"GET /admin/Accounts/blog/ HTTP/1.1" 200 13173
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 42191
+"GET /media/highlights/post-landscape-6_r1pA1YM.webp HTTP/1.1" 304 0
+"GET /media/highlights/post-landscape-6.webp HTTP/1.1" 304 0
+"GET /media/highlights/post-landscape-1.webp HTTP/1.1" 304 0
+"GET /media/highlights/post-landscape-2.webp HTTP/1.1" 304 0
+"GET /media/slider_images/post-slide-1.webp HTTP/1.1" 304 0
+Not Found: /media/img/post-slide-4.jpg
+"GET /media/img/post-slide-4.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-slide-2.jpg
+Not Found: /media/img/post-slide-3.jpg
+"GET /media/img/post-slide-2.jpg HTTP/1.1" 404 4258
+"GET /media/img/post-slide-3.jpg HTTP/1.1" 404 4258
+"GET / HTTP/1.1" 200 42191
+Not Found: /media/img/post-slide-2.jpg
+"GET /media/img/post-slide-2.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-slide-3.jpg
+"GET /media/img/post-slide-3.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-slide-4.jpg
+"GET /media/img/post-slide-4.jpg HTTP/1.1" 404 4258
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py", line 17, in home
+    return render(request, 'index.html',{
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 242, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\urls\resolvers.py", line 851, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'blog-details' not found. 'blog-details' is not a valid view function or pattern name.
+"GET / HTTP/1.1" 500 195576
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py", line 17, in home
+    return render(request, 'index.html',{
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 242, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\urls\resolvers.py", line 851, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'blog-details' not found. 'blog-details' is not a valid view function or pattern name.
+"GET / HTTP/1.1" 500 195448
+"GET / HTTP/1.1" 200 44941
+"GET /media/highlights/post-landscape-6_r1pA1YM.webp HTTP/1.1" 304 0
+Not Found: /media/img/post-slide-2.jpg
+"GET /media/img/post-slide-2.jpg HTTP/1.1" 404 4258
+"GET /media/highlights/post-landscape-6.webp HTTP/1.1" 304 0
+Not Found: /media/img/post-landscape-7.jpg
+"GET /media/img/post-landscape-7.jpg HTTP/1.1" 404 4274
+"GET /media/highlights/post-landscape-2.webp HTTP/1.1" 304 0
+"GET /media/highlights/post-landscape-1.webp HTTP/1.1" 304 0
+Not Found: /media/img/post-landscape-3.jpg
+"GET /media/img/post-landscape-3.jpg HTTP/1.1" 404 4274
+Not Found: /media/img/post-landscape-9.jpg
+Not Found: /media/img/post-slide-3.jpg
+"GET /media/img/post-landscape-9.jpg HTTP/1.1" 404 4274
+Not Found: /media/img/post-landscape-5.jpg
+Not Found: /media/img/post-slide-4.jpg
+"GET /media/img/post-landscape-5.jpg HTTP/1.1" 404 4274
+"GET /media/img/post-slide-3.jpg HTTP/1.1" 404 4258
+"GET /media/img/post-slide-4.jpg HTTP/1.1" 404 4258
+"GET / HTTP/1.1" 200 41049
+Not Found: /media/img/post-slide-3.jpg
+Not Found: /media/img/post-landscape-9.jpg
+"GET /media/img/post-landscape-9.jpg HTTP/1.1" 404 4274
+"GET /media/img/post-slide-3.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-landscape-7.jpg
+Not Found: /media/img/post-slide-2.jpg
+"GET /media/img/post-slide-2.jpg HTTP/1.1" 404 4258
+"GET /media/img/post-landscape-7.jpg HTTP/1.1" 404 4274
+Not Found: /media/img/post-landscape-5.jpg
+"GET /media/img/post-landscape-5.jpg HTTP/1.1" 404 4274
+Not Found: /media/img/post-landscape-3.jpg
+"GET /media/img/post-landscape-3.jpg HTTP/1.1" 404 4274
+Not Found: /media/img/post-slide-4.jpg
+"GET /media/img/post-slide-4.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-landscape-5.jpg
+Not Found: /media/img/post-landscape-7.jpg
+"GET /media/img/post-landscape-7.jpg HTTP/1.1" 404 4274
+"GET /media/img/post-landscape-5.jpg HTTP/1.1" 404 4274
+Not Found: /media/img/post-landscape-3.jpg
+Not Found: /media/img/post-slide-4.jpg
+Not Found: /media/img/post-slide-2.jpg
+"GET /media/img/post-slide-4.jpg HTTP/1.1" 404 4258
+"GET /media/img/post-slide-2.jpg HTTP/1.1" 404 4258
+"GET /media/img/post-landscape-3.jpg HTTP/1.1" 404 4274
+"GET /admin/ HTTP/1.1" 200 27028
+"GET /admin/Accounts/blog/ HTTP/1.1" 200 17045
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/Accounts/blog/4/change/ HTTP/1.1" 200 21440
+"GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+"GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/Accounts/blog/4/change/ HTTP/1.1" 302 0
+"GET /admin/Accounts/blog/ HTTP/1.1" 200 17639
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/Accounts/blog/3/change/ HTTP/1.1" 200 21482
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/Accounts/blog/3/change/ HTTP/1.1" 302 0
+"GET /admin/Accounts/blog/ HTTP/1.1" 200 17660
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET / HTTP/1.1" 200 41053
+"GET /media/highlights/post-landscape-6_r1pA1YM.webp HTTP/1.1" 304 0
+"GET /media/blog/post-landscape-8.webp HTTP/1.1" 200 39430
+Not Found: /media/img/post-landscape-3.jpg
+"GET /media/img/post-landscape-3.jpg HTTP/1.1" 404 4274
+Not Found: /media/img/post-landscape-5.jpg
+"GET /media/img/post-landscape-5.jpg HTTP/1.1" 404 4274
+"GET /media/slider_images/post-slide-1.webp HTTP/1.1" 304 0
+"GET /media/blog/post-landscape-7.webp HTTP/1.1" 200 19636
+Not Found: /media/img/post-slide-2.jpg
+"GET /media/img/post-slide-2.jpg HTTP/1.1" 404 4258
+Not Found: /media/img/post-slide-3.jpg
+Not Found: /media/img/post-slide-4.jpg
+"GET /media/img/post-slide-3.jpg HTTP/1.1" 404 4258
+"GET /media/img/post-slide-4.jpg HTTP/1.1" 404 4258
+"GET /admin/Accounts/blog/2/change/ HTTP/1.1" 200 21453
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/Accounts/blog/2/change/ HTTP/1.1" 302 0
+"GET /admin/Accounts/blog/ HTTP/1.1" 200 17646
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET / HTTP/1.1" 200 41055
+"GET /media/blog/post-landscape-5.webp HTTP/1.1" 200 17922
+"GET /media/blog/post-landscape-8.webp HTTP/1.1" 304 0
+"GET /media/blog/post-landscape-7.webp HTTP/1.1" 304 0
+Not Found: /media/img/post-landscape-3.jpg
+Not Found: /media/img/post-slide-4.jpg
+Not Found: /media/img/post-slide-2.jpg
+Not Found: /media/img/post-slide-3.jpg
+"GET /media/img/post-slide-4.jpg HTTP/1.1" 404 4258
+"GET /media/img/post-slide-2.jpg HTTP/1.1" 404 4258
+"GET /media/img/post-landscape-3.jpg HTTP/1.1" 404 4274
+"GET /media/img/post-slide-3.jpg HTTP/1.1" 404 4258
+"GET /admin/Accounts/blog/1/change/ HTTP/1.1" 200 21601
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/Accounts/blog/1/change/ HTTP/1.1" 302 0
+"GET /admin/Accounts/blog/ HTTP/1.1" 200 17669
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET / HTTP/1.1" 200 41057
+"GET /media/highlights/post-landscape-6.webp HTTP/1.1" 304 0
+Not Found: /media/img/post-slide-2.jpg
+"GET /media/img/post-slide-2.jpg HTTP/1.1" 404 4258
+"GET /media/blog/post-landscape-3.webp HTTP/1.1" 200 195386
+"GET /media/highlights/post-landscape-1.webp HTTP/1.1" 304 0
+Not Found: /media/img/post-slide-3.jpg
+"GET /media/highlights/post-landscape-2.webp HTTP/1.1" 304 0
+"GET /media/img/post-slide-3.jpg HTTP/1.1" 404 4258
+"GET /media/blog/post-landscape-8.webp HTTP/1.1" 304 0
+"GET /media/blog/post-landscape-7.webp HTTP/1.1" 304 0
+Not Found: /media/img/post-slide-4.jpg
+"GET /media/blog/post-landscape-5.webp HTTP/1.1" 304 0
+"GET /media/img/post-slide-4.jpg HTTP/1.1" 404 4258
+"GET /admin/Accounts/slider/ HTTP/1.1" 200 17143
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/Accounts/slider/2/change/ HTTP/1.1" 200 20501
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/Accounts/slider/2/change/ HTTP/1.1" 302 0
+"GET /admin/Accounts/slider/ HTTP/1.1" 200 17779
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/Accounts/slider/3/change/ HTTP/1.1" 200 20475
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/Accounts/slider/3/change/ HTTP/1.1" 302 0
+"GET /admin/Accounts/slider/ HTTP/1.1" 200 17766
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/Accounts/slider/4/change/ HTTP/1.1" 200 20455
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/Accounts/slider/4/change/ HTTP/1.1" 302 0
+"GET /admin/Accounts/slider/ HTTP/1.1" 200 17756
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET / HTTP/1.1" 200 41111
+"GET /media/slider_images/post-slide-3.webp HTTP/1.1" 200 85658
+"GET /media/slider_images/post-slide-2.webp HTTP/1.1" 200 45850
+"GET /media/highlights/post-landscape-6_r1pA1YM.webp HTTP/1.1" 304 0
+"GET /media/blog/post-landscape-8.webp HTTP/1.1" 304 0
+"GET /media/blog/post-landscape-7.webp HTTP/1.1" 304 0
+"GET /media/blog/post-landscape-5.webp HTTP/1.1" 304 0
+"GET /media/blog/post-landscape-3.webp HTTP/1.1" 304 0
+"GET /media/slider_images/post-slide-4.webp HTTP/1.1" 200 146064
+"GET /Tsl/live_tv/ HTTP/1.1" 200 22939
+"GET /Tsl/home/ HTTP/1.1" 200 41111
+"GET /media/blog/post-landscape-8.webp HTTP/1.1" 304 0
+"GET /media/blog/post-landscape-7.webp HTTP/1.1" 304 0
+"GET /media/blog/post-landscape-5.webp HTTP/1.1" 304 0
+"GET /media/blog/post-landscape-3.webp HTTP/1.1" 304 0
+"GET /media/slider_images/post-slide-2.webp HTTP/1.1" 304 0
+"GET /media/slider_images/post-slide-3.webp HTTP/1.1" 304 0
+"GET /media/slider_images/post-slide-4.webp HTTP/1.1" 304 0

@@ -1,0 +1,378 @@
+{% extends 'core/base/base.html' %}
+{% load static %}
+{% block contents %}
+
+<style>
+
+  .trend{
+    width: 250px;
+  }
+ 
+    h2{
+        color: white !important ;
+    }
+    span{
+        color:white !important;
+    }
+    a{
+        color:white !important;
+    }
+    .card{
+        background-color: transparent !important;
+        border-radius: 10px;
+        
+    }
+    .card-body{
+        border-radius: 10px;
+        background-color: transparent !important;
+    }
+
+    @media (min-width: 768px) {
+        .video_mode{
+            height:70vh  !important;
+            border-radius: 20px;
+        }
+     
+    }
+    @media (max-width: 768px) {
+      .video_mode{
+          height:40vh  !important;
+          border-radius: 20px;
+      }
+   
+  }
+
+
+
+    
+</style>
+ 
+  <main class="main w-100 p-0">
+    <section style="background-color: #0F0A0D;" id="slider" class="slider section dark-background p-0 py-3 w-100">
+      <div class="container">
+        <div class="container-fluid video_mode w-100 d-flex justify-content-center align-items-center p-0">
+          <div class="position-relative w-100 h-100">
+            <!-- Placeholder for YouTube Logo -->
+           
+            {% if live_video_id %}
+            <div id="latestVideo" class="embed-responsive-item w-100 h-100"></div>
+        {% else %}
+            <p>No live or past live video available.</p>
+        {% endif %}
+        
+        
+        
+
+          </div>
+        </div>
+      </div>
+    </section>
+    
+   
+    
+    
+    
+   
+       
+      
+    
+
+        <!-- Lifestyle Category Section -->
+<section style="background-color: #0F0A0D;" id="lifestyle-category" class="lifestyle-category section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <div class="section-title-container d-flex align-items-center justify-content-between">
+      <h4 class="text-white">Upcoming Shows</h4>
+    </div>
+  </div><!-- End Section Title -->
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <!-- Carousel for Featured Programs -->
+    <div id="featuredProgramsCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <!-- Carousel Item 1 -->
+        <div class="carousel-item active">
+          <div class="row justify-content-center">
+            <div class=" col-md-6 col-lg-3 trend col-sm-1">
+              <div class="post-list">
+                <a href="blog-details.html">
+                  <div class="card" style="height: 300px; overflow: hidden; border-radius: 10px;">
+                    <div class="card-body p-0">
+                      <img src="{% static 'img/post-landscape-8.jpg' %}" 
+                           class="img-fluid w-100 h-100" 
+                           style="object-fit: cover;">
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class=" col-md-6 col-lg-3 trend col-sm-1">
+              <div class="post-list">
+                <a href="blog-details.html">
+                  <div class="card" style="height: 300px; overflow: hidden; border-radius: 10px;">
+                    <div class="card-body p-0">
+                      <img src="{% static 'img/post-landscape-6.jpg' %}" 
+                           class="img-fluid w-100 h-100" 
+                           style="object-fit: cover;">
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class=" col-md-6 col-lg-3 trend col-sm-1">
+              <div class="post-list">
+                <a href="blog-details.html">
+                  <div class="card" style="height: 300px; overflow: hidden; border-radius: 10px;">
+                    <div class="card-body p-0">
+                      <img src="{% static 'img/post-landscape-5.jpg' %}" 
+                           class="img-fluid w-100 h-100" 
+                           style="object-fit: cover;">
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carousel Item 2 -->
+        <div class="carousel-item">
+          <div class="row justify-content-center">
+            <div class=" col-md-6 col-lg-3 trend col-sm-1">
+              <div class="post-list">
+                <a href="blog-details.html">
+                  <div class="card" style="height: 300px; overflow: hidden; border-radius: 10px;">
+                    <div class="card-body p-0">
+                      <img src="{% static 'img/post-landscape-4.jpg' %}" 
+                           class="img-fluid w-100 h-100" 
+                           style="object-fit: cover;">
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class=" col-md-6 col-lg-3 trend col-sm-1">
+              <div class="post-list">
+                <a href="blog-details.html">
+                  <div class="card" style="height: 300px; overflow: hidden; border-radius: 10px;">
+                    <div class="card-body p-0">
+                      <img src="{% static 'img/post-landscape-2.jpg' %}" 
+                           class="img-fluid w-100 h-100" 
+                           style="object-fit: cover;">
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class=" col-md-6 col-lg-3 trend col-sm-1">
+              <div class="post-list">
+                <a href="blog-details.html">
+                  <div class="card" style="height: 300px; overflow: hidden; border-radius: 10px;">
+                    <div class="card-body p-0">
+                      <img src="{% static 'img/post-landscape-1.jpg' %}" 
+                           class="img-fluid w-100 h-100" 
+                           style="object-fit: cover;">
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add more carousel items as needed -->
+      </div>
+
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#featuredProgramsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#featuredProgramsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Recent Shows -->
+<section style="background-color: #0F0A0D;" id="trending-category" class="trending-category section">
+  <div class="container d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+    <div class="row g-3"> <!-- Use Bootstrap gap utility for spacing -->
+      <div class="col-12">
+        <h4>
+          <a style="font-weight: 300; margin-bottom: 30px; border-bottom: 2px solid green; display: inline-block;" href="">
+            Recent Shows
+          </a>
+        </h4>
+
+        <!-- Carousel for Large Screens -->
+        <div class="">
+          <div id="trendingCarouselLarge" class="carousel slide" data-bs-ride="carousel">
+            <!-- Carousel Inner -->
+            <div class="carousel-inner">
+              <!-- Slide 1 -->
+              <div class="carousel-item active">
+                <div class="row justify-content-center">
+                  <!-- Video Card 1 -->
+                  <div class="col-md-6 col-lg-3 trend trend mb-5">
+                    <div class="card shadow-lg">
+                      <a href="video-details.html">
+                        <img src="{% static 'img/post-landscape-1.jpg' %}" alt="Video 1" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
+                      </a>
+                    </div>
+                  </div>
+                  <!-- Video Card 2 -->
+                  <div class="col-md-6 col-lg-3 trend trend mb-5">
+                    <div class="card shadow-lg">
+                      <a href="video-details.html">
+                        <img src="{% static 'img/post-landscape-2.jpg' %}" alt="Video 2" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
+                      </a>
+                    </div>
+                  </div>
+                  <!-- Video Card 3 -->
+                  <div class="col-md-6 col-lg-3 trend trend mb-5">
+                    <div class="card shadow-lg">
+                      <a href="video-details.html">
+                        <img src="{% static 'img/post-landscape-3.jpg' %}" alt="Video 3" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
+                      </a>
+                    </div>
+                  </div>
+                  <!-- Video Card 4 -->
+                  <div class="col-md-6 col-lg-3 trend trend mb-5">
+                    <div class="card shadow-lg">
+                      <a href="video-details.html">
+                        <img src="{% static 'img/post-landscape-5.jpg' %}" alt="Video 4" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="carousel-item">
+                <div class="row justify-content-center">
+                  <!-- Video Card 5 -->
+                  <div class="col-md-6 col-lg-3 trend trend mb-5">
+                    <div class="card shadow-lg">
+                      <a href="video-details.html">
+                        <img src="{% static 'img/post-landscape-6.jpg' %}" alt="Video 5" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
+                      </a>
+                    </div>
+                  </div>
+                  <!-- Video Card 6 -->
+                  <div class="col-md-6 col-lg-3 trend trend mb-5">
+                    <div class="card shadow-lg">
+                      <a href="video-details.html">
+                        <img src="{% static 'img/post-landscape-7.jpg' %}" alt="Video 6" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
+                      </a>
+                    </div>
+                  </div>
+                  <!-- Video Card 7 -->
+                  <div class="col-md-6 col-lg-3 trend trend mb-5">
+                    <div class="card shadow-lg">
+                      <a href="video-details.html">
+                        <img src="{% static 'img/post-landscape-8.jpg' %}" alt="Video 7" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
+                      </a>
+                    </div>
+                  </div>
+                  <!-- Video Card 8 -->
+                  <div class="col-md-6 col-lg-3 trend trend mb-5">
+                    <div class="card shadow-lg">
+                      <a href="video-details.html">
+                        <img src="{% static 'img/post-landscape-3.jpg' %}" alt="Video 8" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#trendingCarouselLarge" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#trendingCarouselLarge" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+          
+
+
+
+</main>
+
+
+
+<script>
+  // Load the IFrame Player API code asynchronously
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/iframe_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  // Create a YouTube player
+  var player;
+  function onYouTubeIframeAPIReady() {
+      player = new YT.Player('latestVideo', {
+          height: '100%',
+          width: '100%',
+          videoId: '{{ live_video_id }}', // Replace with your video ID
+          playerVars: {
+              'autoplay': 1,
+              'mute': 0,
+              'modestbranding': 1,
+              'rel': 0,
+              'showinfo': 0,
+              'autohide': 1,
+              'vq': 'hd720' // Request 720p quality
+          },
+          events: {
+              'onReady': onPlayerReady
+          }
+      });
+  }
+
+  // Set playback quality to 720p when the player is ready
+  function onPlayerReady(event) {
+      // Delay setting the quality to allow the player to load properly
+      setTimeout(function() {
+          // Check available quality levels
+          var availableQualities = event.target.getAvailableQualityLevels();
+          console.log('Available Quality Levels:', availableQualities);
+
+          // Attempt to set the playback quality to 720p if available
+          if (availableQualities.includes('hd720')) {
+              event.target.setPlaybackQuality('hd720');
+              document.getElementById('latestVideo').style.display = 'block'; // Show the video
+              console.log('Playback quality set to 720p');
+          } else {
+              console.warn('720p not available, hiding video.');
+              document.getElementById('qualityMessage').style.display = 'block'; // Show message
+              // Optionally, you can hide the video container
+              document.getElementById('latestVideo').style.display = 'none';
+          }
+      }, 2000); // 2-second delay
+  }
+</script>
+         
+ 
+ 
+ {% endblock %}
+

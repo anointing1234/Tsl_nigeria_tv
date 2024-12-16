@@ -1,0 +1,110 @@
+{% extends 'core/base/base.html' %}
+{% load static %}
+{% block contents %}
+
+<style>
+.navbar-logo {
+  max-width: 300px;
+  height: auto;
+}
+
+.carousel-item img {
+  object-fit: cover;
+  width: 100%;
+  height: 400px;
+}
+</style>
+
+<main class="main">
+
+  <!-- Page Title -->
+  <div style="background-color: #0F0A0D;" class="page-title">
+    <div class="container d-lg-flex justify-content-between align-items-center">
+      <h1 class="mb-2 mb-lg-0 text-white">About</h1>
+      <nav class="breadcrumbs">
+        <ol>
+          <li><a class="text-white" href="index.html">Home</a></li>
+          <a class="text-white" href="">/</a>
+          <li class="current text-white">About</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <!-- End Page Title -->
+
+  <!-- About Section -->
+  <section style="background-color: #0F0A0D; color: white;" id="about" class="about section">
+    <div class="container">
+      <div class="text-center">
+        <img src="{% static 'img/tv.png' %}" alt="Site Logo" class="navbar-logo mb-4">
+      </div>
+      <h2 class="text-center">About TSL Nigeria TV</h2>
+      <p>
+        TSLNIGERIA TV is Africa's fastest-growing lifestyle content production WebTV, setting the standard for producing
+        top-quality Nigerian entertainment, reality, and political content. Our mission is to inform, inspire, and
+        entertain audiences with engaging, authentic, and impactful stories that resonate with everyday Africans and
+        beyond.
+      </p>
+      <p>
+        With a commitment to excellence, TSLNIGERIA TV bridges the gap between traditional and digital media. We pride
+        ourselves on innovative storytelling, state-of-the-art production, and a platform that celebrates the vibrancy,
+        diversity, and resilience of Nigerian culture. From entertainment to politics, we cover it all with style,
+        creativity, and credibility.
+      </p>
+    </div>
+  </section>
+  <!-- End About Section -->
+
+  <!-- Team Section -->
+  <section style="background-color: #0F0A0D; color: white;" id="team" class="team section">
+    <div class="container">
+      <h2 class="text-center mb-4">Meet Our Team</h2>
+      <div id="teamCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="d-flex align-items-center justify-content-center">
+              <div class="text-center">
+                <img src="{% static 'img/team/team-1.jpg' %}" class=" mb-3" style="width: 200px; height: 200px;" alt="Walter White" >
+                <h4>Walter White</h4>
+                <p>Chief Executive Officer</p>
+                <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi.</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="d-flex align-items-center justify-content-center">
+              <div class="text-center">
+                <img src="{% static 'img/team/team-2.jpg' %}" class=" mb-3" style="width: 200px; height: 200px;" alt="Sarah Jhonson" >
+                <h4>Sarah Jhonson</h4>
+                <p>Product Manager</p>
+                <p>Aut maiores voluptates amet et quis praesentium qui senda para.</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="d-flex align-items-center justify-content-center">
+              <div class="text-center">
+                <img src="{% static 'img/team/team-3.jpg' %}" class=" mb-3" style="width: 200px; height: 200px;" alt="William Anderson" >
+                <h4>William Anderson</h4>
+                <p>CTO</p>
+                <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#teamCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#teamCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </section>
+  <!-- End Team Section -->
+
+</main>
+
+{% endblock %}

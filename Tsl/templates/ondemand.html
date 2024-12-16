@@ -1,0 +1,709 @@
+{% extends 'core/base/base.html' %}
+{% load static %}
+{% block contents %}
+
+<style>
+  
+  .trend{
+    width: 250px;
+  }
+    h2{
+        color: white !important ;
+    }
+    span{
+        color:white !important;
+    }
+    a{
+        color:white !important;
+    }
+    .card{
+        background-color: transparent !important;
+        border-radius: 10px;
+    }
+    .card-body{
+        border-radius: 10px;
+        background-color: transparent !important;
+    }
+
+    @media (min-width: 768px) {
+        .video_mode{
+            height:70vh  !important;
+        }
+     
+    }
+
+   
+   
+    @media (max-width: 768px) {
+      .swiper-slide {
+        position: relative; /* Make sure the slide is positioned relative for child positioning */
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: flex-end; /* Align items at the bottom */
+        justify-content: center; /* Center items horizontally */
+        height: 200px; /* Reduce the height for smaller screens */
+      }
+      
+      .swiper-slide .content {
+        position: absolute;
+        bottom: 20px; /* Adjust to control distance from bottom */
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background */
+        color: white; /* Ensure text is readable */
+        padding: 10px 20px;
+        border-radius: 8px; /* Optional: Rounded corners for the text container */
+        max-width: 80%; /* Prevent text from stretching too wide */
+        z-index: 10; /* Ensure content stays above the background */
+      }
+    
+      h2 a {
+        color: white !important;
+        text-decoration: none; /* Optional: Remove underline for links */
+      }
+    
+      h2 a:hover {
+        text-decoration: underline; /* Optional: Add underline on hover for accessibility */
+      }
+    }
+    
+
+
+ 
+    
+
+    
+</style>
+ 
+  <main class="main w-100 p-0">
+    <!-- Slider Section -->
+    <section style="background-color: #0F0A0D;" id="slider" class="slider section dark-background p-0 w-100 h-100">
+
+      <div class="container-fluid w-100" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="container-fluid swiper init-swiper w-100 p-0">
+
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "centeredSlides": true,
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "navigation": {
+                "nextEl": ".swiper-button-next",
+                "prevEl": ".swiper-button-prev"
+              }
+            }
+          </script>
+
+          <div class="container-fluid swiper-wrapper  w-100 p-0  ">
+
+            <div class="swiper-slide w-100 p-0   img-fluid" style="background-image: url({% static 'img/post-slide-1.jpg' %})">
+              <div class="content">
+                <h2><a href="single-post.html">The Best Homemade Masks for Face (keep the Pimples Away)</a></h2>
+             </div>
+            </div>
+            
+            <div class="swiper-slide w-100 p-0   img-fluid" style="background-image: url({% static 'img/post-slide-2.jpg' %})">
+              <div class="content">
+                <h2><a href="single-post.html">17 Pictures of Medium Length Hair in Layers That Will Inspire Your New Haircut</a></h2>
+           </div>
+            </div>
+            
+            <div class="swiper-slide w-100 p-0   img-fluid" style="background-image: url({% static 'img/post-slide-3.jpg' %})">
+              <div class="content">
+                <h2><a href="single-post.html">13 Amazing Poems from Shel Silverstein with Valuable Life Lessons</a></h2>
+           </div>
+            </div>
+            
+            <div class="swiper-slide w-100 p-0   img-fluid" style="background-image: url({% static 'img/post-slide-4.jpg' %})">
+              <div class="content">
+                <h2><a href="single-post.html">9 Half-up/half-down Hairstyles for Long and Medium Hair</a></h2>
+            </div>
+            </div>
+            
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+
+            <div class="swiper-pagination"></div>
+        </div>
+
+        
+      </div>
+
+       </section><!-- /Slider Section -->
+
+
+      
+     
+      
+      
+      
+    
+
+       <section style="background-color: #0F0A0D;" id="lifestyle-category" class="lifestyle-category section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <div class="section-title-container d-flex align-items-center justify-content-between">
+            <h2 class="text-white">Latest Events</h2>
+          </div>
+        </div><!-- End Section Title -->
+      
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <!-- Carousel for Featured Programs -->
+          <div id="featuredProgramsCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <!-- Carousel Item 1 -->
+              <div class="carousel-item active">
+                <div class="row justify-content-center">
+                  <div class="col-lg-3 col-md-6 trend">
+                    <div class="post-list">
+                      <a href="blog-details.html">
+                        <div class="card" style="height: 300px; overflow: hidden;">
+                          <img src="{% static 'img/post-landscape-8.jpg' %}" class="img-fluid w-100" style="object-fit: cover; height: 200px;">
+                          <div class="card-body">
+                            <h5 class="card-title text-white text-white">Event Title 1</h5>
+                            <p class="card-text text-white text-white">A brief description of the event or post goes here. Make it engaging!</p>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6 trend">
+                    <div class="post-list">
+                      <a href="blog-details.html">
+                        <div class="card" style="height: 300px; overflow: hidden;">
+                          <img src="{% static 'img/post-landscape-6.jpg' %}" class="img-fluid w-100" style="object-fit: cover; height: 200px;">
+                          <div class="card-body">
+                            <h5 class="card-title text-white text-white">Event Title 2</h5>
+                            <p class="card-text text-white text-white">Another engaging description for this event.</p>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6 trend">
+                    <div class="post-list">
+                      <a href="blog-details.html">
+                        <div class="card" style="height: 300px; overflow: hidden;">
+                          <img src="{% static 'img/post-landscape-5.jpg' %}" class="img-fluid w-100" style="object-fit: cover; height: 200px;">
+                          <div class="card-body">
+                            <h5 class="card-title text-white text-white">Event Title 3</h5>
+                            <p class="card-text text-white text-white">Highlight more details to attract viewers.</p>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+              <!-- Carousel Item 2 -->
+              <div class="carousel-item">
+                <div class="row justify-content-center">
+                  <div class="col-lg-3 col-md-6 trend">
+                    <div class="post-list">
+                      <a href="blog-details.html">
+                        <div class="card" style="height: 300px; overflow: hidden;">
+                          <img src="{% static 'img/post-landscape-4.jpg' %}" class="img-fluid w-100" style="object-fit: cover; height: 200px;">
+                          <div class="card-body">
+                            <h5 class="card-title text-white text-white">Event Title 4</h5>
+                            <p class="card-text text-white text-white">Provide an appealing description for this event.</p>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6 trend">
+                    <div class="post-list">
+                      <a href="blog-details.html">
+                        <div class="card" style="height: 300px; overflow: hidden;">
+                          <img src="{% static 'img/post-landscape-2.jpg' %}" class="img-fluid w-100" style="object-fit: cover; height: 200px;">
+                          <div class="card-body">
+                            <h5 class="card-title text-white text-white">Event Title 5</h5>
+                            <p class="card-text text-white text-white">Catchy details for maximum engagement.</p>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6 trend">
+                    <div class="post-list">
+                      <a href="blog-details.html">
+                        <div class="card" style="height: 300px; overflow: hidden;">
+                          <img src="{% static 'img/post-landscape-1.jpg' %}" class="img-fluid w-100" style="object-fit: cover; height: 200px;">
+                          <div class="card-body">
+                            <h5 class="card-title text-white text-white">Event Title 6</h5>
+                            <p class="card-text text-white text-white">Another quick overview of this post.</p>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+              <!-- Add more carousel items as needed -->
+            </div>
+      
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#featuredProgramsCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#featuredProgramsCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </section>
+      
+
+<!-- Recent Shows -->
+<section style="background-color: #0F0A0D;" id="trending-category" class="trending-category section">
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row" style="gap: 3rem;">
+      <div class="col-12">
+        <h2><a style="font-weight: 300; margin-bottom:30px; border-bottom:2px solid green; display:inline-block;" href="">Latest Event Highlight</a></h2>
+
+        <!-- Carousel for Large Screens -->
+        <div class="d-none d-lg-block">
+          <div id="trendingCarouselLarge" class="carousel slide" data-bs-ride="carousel">
+            <!-- Carousel Inner -->
+            <div class="carousel-inner">
+              <!-- Slide 1 -->
+              <div class="carousel-item active">
+                <div class="row justify-content-center">
+                  <!-- Video Card 1 -->
+                  <div class="col-md-3 mb-5">
+                    <div class="card shadow-lg">
+                      <a href="video-details.html">
+                        <img src="{% static 'img/post-landscape-1.jpg' %}" alt="Video 1" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
+                      </a>
+                      <div class="card-body">
+                        <h5 class="card-title text-white">Video 1</h5>
+                        <p class="card-text text-white">Brief description of Video 1.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Video Card 2 -->
+                  <div class="col-md-3 mb-5">
+                    <div class="card shadow-lg">
+                      <a href="video-details.html">
+                        <img src="{% static 'img/post-landscape-2.jpg' %}" alt="Video 2" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
+                      </a>
+                      <div class="card-body">
+                        <h5 class="card-title text-white">Video 2</h5>
+                        <p class="card-text text-white">Brief description of Video 2.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Video Card 3 -->
+                  <div class="col-md-3 mb-5">
+                    <div class="card shadow-lg">
+                      <a href="video-details.html">
+                        <img src="{% static 'img/post-landscape-3.jpg' %}" alt="Video 3" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
+                      </a>
+                      <div class="card-body">
+                        <h5 class="card-title text-white">Video 3</h5>
+                        <p class="card-text text-white">Brief description of Video 3.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Video Card 4 -->
+                  <div class="col-md-3 mb-5">
+                    <div class="card shadow-lg">
+                      <a href="video-details.html">
+                        <img src="{% static 'img/post-landscape-5.jpg' %}" alt="Video 4" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
+                      </a>
+                      <div class="card-body">
+                        <h5 class="card-title text-white">Video 4</h5>
+                        <p class="card-text text-white">Brief description of Video 4.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="carousel-item">
+                <div class="row justify-content-center">
+                  <!-- Video Card 5 -->
+                  <div class="col-md-3 mb-5">
+                    <div class="card shadow-lg">
+                      <a href="video-details.html">
+                        <img src="{% static 'img/post-landscape-6.jpg' %}" alt="Video 5" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
+                      </a>
+                      <div class="card-body">
+                        <h5 class="card-title text-white">Video 5</h5>
+                        <p class="card-text text-white">Brief description of Video 5.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Video Card 6 -->
+                  <div class="col-md-3 mb-5">
+                    <div class="card shadow-lg">
+                      <a href="video-details.html">
+                        <img src="{% static 'img/post-landscape-7.jpg' %}" alt="Video 6" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
+                      </a>
+                      <div class="card-body">
+                        <h5 class="card-title text-white">Video 6</h5>
+                        <p class="card-text text-white">Brief description of Video 6.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Video Card 7 -->
+                  <div class="col-md-3 mb-5">
+                    <div class="card shadow-lg">
+                      <a href="video-details.html">
+                        <img src="{% static 'img/post-landscape-8.jpg' %}" alt="Video 7" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
+                      </a>
+                      <div class="card-body">
+                        <h5 class="card-title text-white">Video 7</h5>
+                        <p class="card-text text-white">Brief description of Video 7.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Video Card 8 -->
+                  <div class="col-md-3 mb-5">
+                    <div class="card shadow-lg">
+                      <a href="video-details.html">
+                        <img src="{% static 'img/post-landscape-3.jpg' %}" alt="Video 8" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
+                      </a>
+                      <div class="card-body">
+                        <h5 class="card-title text-white">Video 8</h5>
+                        <p class="card-text text-white">Brief description of Video 8.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#trendingCarouselLarge" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#trendingCarouselLarge" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Carousel for Small Screens -->
+        <div class="d-block d-lg-none">
+          <div id="trendingCarouselSmall" class="carousel slide" data-bs-ride="carousel">
+            <!-- Carousel Inner -->
+            <div class="carousel-inner">
+              <!-- Video Cards -->
+              <div class="carousel-item active">
+                <div class="card shadow-lg mx-auto" style="max-width: 350px;">
+                  <a href="video-details.html">
+                    <img src="{% static 'img/post-landscape-1.jpg' %}" alt="Video 1" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
+                  </a>
+                  <div class="card-body">
+                    <h5 class="card-title text-white">Video 1</h5>
+                    <p class="card-text text-white">Brief description of Video 1.</p>
+                  </div>
+                </div>
+              </div>
+              <!-- Additional Cards -->
+              <div class="carousel-item">
+                <div class="card shadow-lg mx-auto" style="max-width: 350px;">
+                  <a href="video-details.html">
+                    <img src="{% static 'img/post-landscape-2.jpg' %}" alt="Video 2" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
+                  </a>
+                  <div class="card-body">
+                    <h5 class="card-title text-white">Video 2</h5>
+                    <p class="card-text text-white">Brief description of Video 2.</p>
+                  </div>
+                </div>
+              </div>
+              <!-- Repeat similar structure for other cards -->
+            </div>
+
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#trendingCarouselSmall" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#trendingCarouselSmall" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+           
+               <!-- Lifestyle Category Section -->
+<section id="Showcase" style="background-color: #0F0A0D;" id="lifestyle-category" class="lifestyle-category section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <div class="section-title-container d-flex align-items-center justify-content-between">
+      <h2 class="text-white"><span class="text-success">Show</span>case</h2>
+    </div>
+  </div><!-- End Section Title -->
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <!-- Carousel for Featured Programs -->
+    <div id="featuredProgramsCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <!-- Carousel Item 1 -->
+        <div class="carousel-item active">
+          <div class="row justify-content-center">
+            <div class="col-lg-3 col-md-6  trend">
+              <div class="post-list">
+                <a href="blog-details.html">
+                  <div class="card" style="height: 300px; overflow: hidden;">
+                    <div class="card-body">
+                      <img src="{% static 'img/post-landscape-8.jpg' %}" class="img-fluid w-100 " style="object-fit: cover; height: 300px;">
+                    </div>
+                    </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6  trend">
+              <div class="post-list">
+                <a href="blog-details.html">
+                  <div class="card" style="height: 300px; overflow: hidden;">
+                   <div class="card-body">
+                     <img src="{% static 'img/post-landscape-6.jpg' %}" class="img-fluid w-100 " style="object-fit: cover; height: 300px;">
+                   </div>
+                   </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6  trend">
+              <div class="post-list">
+                <a href="blog-details.html">
+                  <div class="card" style="height: 300px; overflow: hidden;">
+                    <div class="card-body">
+                      <img src="{% static 'img/post-landscape-5.jpg' %}" class="img-fluid w-100 " style="object-fit: cover; height: 300px;">
+                    </div>
+                    </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carousel Item 2 -->
+        <div class="carousel-item">
+          <div class="row justify-content-center">
+            <div class="col-lg-3 col-md-6  trend">
+              <div class="post-list">
+                <a href="blog-details.html">
+                  <div class="card" style="height: 300px; overflow: hidden;">
+                   <div class="card-body">
+                     <img src="{% static 'img/post-landscape-4.jpg' %}" class="img-fluid w-100 " style="object-fit: cover; height: 300px;">
+                   </div>
+                   </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6  trend">
+              <div class="post-list">
+                <a href="blog-details.html">
+                  <div class="card" style="height: 300px; overflow: hidden;">
+                    <div class="card-body">
+                      <img src="{% static 'img/post-landscape-2.jpg' %}" class="img-fluid w-100 " style="object-fit: cover; height: 300px;">
+                    </div>
+                    </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6  trend">
+              <div class="post-list">
+                <a href="blog-details.html">
+                  <div class="card" style="height: 300px; overflow: hidden;">
+                    <div class="card-body">
+                      <img src="{% static 'img/post-landscape-1.jpg' %}" class="img-fluid w-100 " style="object-fit: cover; height: 300px;">
+                    </div>
+                    </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add more carousel items as needed -->
+      </div>
+
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#featuredProgramsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#featuredProgramsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+
+<!-- Lifestyle Category Section -->
+<section id="Media" style="background-color: #0F0A0D;" id="lifestyle-category" class="lifestyle-category section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <div class="section-title-container d-flex align-items-center justify-content-between">
+      <h2 class="text-white">Media</h2>
+    </div>
+  </div><!-- End Section Title -->
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <!-- Carousel for Featured Programs -->
+    <div id="featuredProgramsCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <!-- Carousel Item 1 -->
+        <div class="carousel-item active">
+          <div class="row justify-content-center">
+            <div class="col-lg-3 col-md-6  trend">
+              <div class="post-list">
+                <a href="blog-details.html">
+                  <div class="card" style="height: 300px; overflow: hidden;">
+                    <img src="{% static 'img/post-landscape-8.jpg' %}" class="img-fluid w-100 " style="object-fit: cover; height: 300px;">
+                    <div class="card-body">
+                      <h2 class="text-white">Card Title 1</h2>
+                      <p class="text-white">This is a brief description for card 1.</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6  trend">
+              <div class="post-list">
+                <a href="blog-details.html">
+                  <div class="card" style="height: 300px; overflow: hidden;">
+                    <img src="{% static 'img/post-landscape-6.jpg' %}" class="img-fluid w-100 " style="object-fit: cover; height: 300px;">
+                    <div class="card-body">
+                      <h2 class="text-white">Card Title 2</h2>
+                      <p class="text-white">This is a brief description for card 2.</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6  trend">
+              <div class="post-list">
+                <a href="blog-details.html">
+                  <div class="card" style="height: 300px; overflow: hidden;">
+                    <img src="{% static 'img/post-landscape-5.jpg' %}" class="img-fluid w-100 " style="object-fit: cover; height: 300px;">
+                    <div class="card-body">
+                      <h2 class="text-white">Card Title 3</h2>
+                      <p class="text-white">This is a brief description for card 3.</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carousel Item 2 -->
+        <div class="carousel-item">
+          <div class="row justify-content-center">
+            <div class="col-lg-3 col-md-6  trend">
+              <div class="post-list">
+                <a href="blog-details.html">
+                  <div class="card" style="height: 300px; overflow: hidden;">
+                    <img src="{% static 'img/post-landscape-4.jpg' %}" class="img-fluid w-100 " style="object-fit: cover; height: 300px;">
+                    <div class="card-body">
+                      <h2 class="text-white">Card Title 4</h2>
+                      <p class="text-white">This is a brief description for card 4.</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6  trend">
+              <div class="post-list">
+                <a href="blog-details.html">
+                  <div class="card" style="height: 300px; overflow: hidden;">
+                    <img src="{% static 'img/post-landscape-2.jpg' %}" class="img-fluid w-100 " style="object-fit: cover; height: 300px;">
+                    <div class="card-body">
+                      <h2 class="text-white">Card Title 5</h2>
+                      <p class="text-white">This is a brief description for card 5.</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6  trend">
+              <div class="post-list">
+                <a href="blog-details.html">
+                  <div class="card" style="height: 300px; overflow: hidden;">
+                    <img src="{% static 'img/post-landscape-1.jpg' %}" class="img-fluid w-100 " style="object-fit: cover; height: 300px;">
+                    <div class="card-body">
+                      <h2 class="text-white">Card Title 6</h2>
+                      <p class="text-white">This is a brief description for card 6.</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add more carousel items as needed -->
+      </div>
+
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#featuredProgramsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#featuredProgramsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+
+
+</main>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const iframe = document.querySelector(".embed-responsive-item");
+      const placeholder = document.querySelector(".youtube-placeholder");
+  
+      // Check if the iframe has a valid YouTube video source
+      if (!iframe.src || iframe.src.trim() === "") {
+        placeholder.style.display = "flex"; // Show the placeholder
+      } else {
+        placeholder.style.display = "none"; // Hide the placeholder if a video exists
+      }
+    });
+  </script>
+         
+ 
+ 
+ {% endblock %}
+
