@@ -740,7 +740,7 @@ section,
   position: relative;
   display: flex;
   background-repeat: no-repeat;
-  background-size:contain;
+  background-size: cover;
 }
 
 .slider .swiper-slide::before {
