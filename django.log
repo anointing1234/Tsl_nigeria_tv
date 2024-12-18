@@ -210,3 +210,408 @@ Watching for file changes with StatReloader
 "GET /Tsl/live_tv/ HTTP/1.1" 200 22636
 "GET /Tsl/ondemand/ HTTP/1.1" 200 23770
 C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl_nigeria\settings.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 40317
+"GET /media/highlights/post-landscape-6_r1pA1YM.webp HTTP/1.1" 304 0
+"GET /media/highlights/post-landscape-2.webp HTTP/1.1" 304 0
+"GET /media/highlights/post-landscape-6.webp HTTP/1.1" 304 0
+"GET /media/highlights/post-landscape-1.webp HTTP/1.1" 304 0
+"GET /media/blog/post-landscape-3.webp HTTP/1.1" 304 0
+"GET /media/blog/post-landscape-8.webp HTTP/1.1" 304 0
+"GET /media/blog/post-landscape-7.webp HTTP/1.1" 304 0
+"GET /media/blog/post-landscape-5.webp HTTP/1.1" 304 0
+Not Found: /media/slider_images/tsltv_banner1.webp
+"GET /media/slider_images/tsltv_banner1.webp HTTP/1.1" 404 179
+Not Found: /media/slider_images/tsltv_banner.webp
+"GET /media/slider_images/tsltv_banner.webp HTTP/1.1" 404 179
+Not Found: /media/slider_images/tsl_tv_banner2.webp
+"GET /media/slider_images/tsl_tv_banner2.webp HTTP/1.1" 404 179
+Not Found: /media/slider_images/tsltv_banner1_j5Iyy3B.webp
+"GET /media/slider_images/tsltv_banner1_j5Iyy3B.webp HTTP/1.1" 404 179
+"GET / HTTP/1.1" 200 40317
+Not Found: /media/slider_images/tsltv_banner1.webp
+Not Found: /media/slider_images/tsltv_banner.webp
+"GET /media/slider_images/tsltv_banner1.webp HTTP/1.1" 404 179
+"GET /media/slider_images/tsltv_banner.webp HTTP/1.1" 404 179
+Not Found: /media/slider_images/tsl_tv_banner2.webp
+"GET /media/slider_images/tsl_tv_banner2.webp HTTP/1.1" 404 179
+Not Found: /media/slider_images/tsltv_banner1_j5Iyy3B.webp
+"GET /media/slider_images/tsltv_banner1_j5Iyy3B.webp HTTP/1.1" 404 179
+"GET / HTTP/1.1" 200 40325
+Not Found: /media/slider_images/tsltv_banner1_JisjGC5.webp
+"GET /media/slider_images/tsltv_banner1_JisjGC5.webp HTTP/1.1" 404 179
+Not Found: /media/slider_images/tsl_tv_banner2.webp
+"GET /media/slider_images/tsl_tv_banner2.webp HTTP/1.1" 404 179
+Not Found: /media/slider_images/tsltv_banner.webp
+"GET /media/slider_images/tsltv_banner.webp HTTP/1.1" 404 179
+Not Found: /media/slider_images/tsltv_banner1_j5Iyy3B.webp
+"GET /media/slider_images/tsltv_banner1_j5Iyy3B.webp HTTP/1.1" 404 179
+"GET /Tsl/ondemand/ HTTP/1.1" 200 23790
+Not Found: /media/slider_images/tsltv_banner.webp
+Not Found: /media/slider_images/tsltv_banner1_JisjGC5.webp
+"GET /media/slider_images/tsltv_banner1_JisjGC5.webp HTTP/1.1" 404 179
+Not Found: /media/slider_images/tsl_tv_banner2.webp
+"GET /media/slider_images/tsl_tv_banner2.webp HTTP/1.1" 404 179
+"GET /media/slider_images/tsltv_banner.webp HTTP/1.1" 404 179
+Not Found: /media/slider_images/tsltv_banner1_j5Iyy3B.webp
+"GET /media/media_section/media_section/post-slide-4.webp HTTP/1.1" 304 0
+"GET /media/slider_images/tsltv_banner1_j5Iyy3B.webp HTTP/1.1" 404 179
+"GET /media/showcase_images/showcase_images/post-slide-2.webp HTTP/1.1" 304 0
+"GET /media/highlight_images/post-slide-4.webp HTTP/1.1" 304 0
+"GET /media/event_images/event_images/post-slide-3.webp HTTP/1.1" 304 0
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl_nigeria\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET /Tsl/ondemand/ HTTP/1.1" 200 19732
+Not Found: /media/slider_images/post-slide-1.jpg
+Not Found: /media/slider_images/post-slide-2.jpg
+Not Found: /media/slider_images/post-slide-3.jpg
+"GET /media/slider_images/post-slide-1.jpg HTTP/1.1" 404 179
+"GET /media/slider_images/post-slide-3.jpg HTTP/1.1" 404 179
+"GET /media/slider_images/post-slide-2.jpg HTTP/1.1" 404 179
+Not Found: /media/slider_images/post-slide-4.jpg
+"GET /media/slider_images/post-slide-4.jpg HTTP/1.1" 404 179
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'ImageFieldFile' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py", line 17, in home
+    return render(request, 'index.html',{
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 242, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1059, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 710, in resolve
+    obj = self.var.resolve(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 842, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\fields\files.py", line 66, in url
+    self._require_file()
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\fields\files.py", line 41, in _require_file
+    raise ValueError(
+ValueError: The 'image' attribute has no file associated with it.
+"GET / HTTP/1.1" 500 145
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 179
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl_nigeria\settings.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 40325
+Not Found: /media/slider_images/tsltv_banner1_JisjGC5.webp
+"GET /media/slider_images/tsltv_banner1_JisjGC5.webp HTTP/1.1" 404 179
+Not Found: /media/slider_images/tsltv_banner.webp
+"GET /media/slider_images/tsltv_banner.webp HTTP/1.1" 404 179
+Not Found: /media/slider_images/tsl_tv_banner2.webp
+Not Found: /media/slider_images/tsltv_banner1_j5Iyy3B.webp
+"GET /media/slider_images/tsltv_banner1_j5Iyy3B.webp HTTP/1.1" 404 179
+"GET /media/slider_images/tsl_tv_banner2.webp HTTP/1.1" 404 179
+"GET /admin/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/ HTTP/1.1" 200 3065
+"GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 304 0
+"GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 304 0
+"GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 304 0
+"GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+"GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 304 0
+"GET /static/jazzmin/css/main.css HTTP/1.1" 304 0
+"GET /static/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 304 0
+Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\admin\sites.py", line 440, in login
+    return LoginView.as_view(**defaults)(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\debug.py", line 143, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\views.py", line 88, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\generic\edit.py", line 151, in post
+    return self.form_valid(form)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\views.py", line 107, in form_valid
+    auth_login(self.request, form.get_user())
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\__init__.py", line 126, in login
+    request.session.cycle_key()
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\sessions\backends\base.py", line 304, in cycle_key
+    self.create()
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\sessions\backends\db.py", line 50, in create
+    self._session_key = self._get_new_session_key()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\sessions\backends\base.py", line 150, in _get_new_session_key
+    if not self.exists(session_key):
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\sessions\backends\db.py", line 46, in exists
+    return self.model.objects.filter(session_key=session_key).exists()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 1288, in exists
+    return self.query.has_results(using=self.db)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\query.py", line 659, in has_results
+    return compiler.has_results()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\compiler.py", line 1530, in has_results
+    return bool(self.execute_sql(SINGLE))
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+"POST /admin/login/?next=/admin/ HTTP/1.1" 500 145
+"POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+"GET /Tsl/login/ HTTP/1.1" 200 13530
+"GET /admin/ HTTP/1.1" 200 34188
+"POST /Accounts/login_view/ HTTP/1.1" 200 17
+"GET / HTTP/1.1" 200 40565
+Not Found: /media/slider_images/tsltv_banner.webp
+"GET /media/slider_images/tsltv_banner.webp HTTP/1.1" 404 179
+Not Found: /media/slider_images/tsltv_banner1_JisjGC5.webp
+"GET /media/slider_images/tsltv_banner1_JisjGC5.webp HTTP/1.1" 404 179
+Not Found: /media/slider_images/tsl_tv_banner2.webp
+Not Found: /media/slider_images/tsltv_banner1_j5Iyy3B.webp
+"GET /media/slider_images/tsl_tv_banner2.webp HTTP/1.1" 404 179
+"GET /media/slider_images/tsltv_banner1_j5Iyy3B.webp HTTP/1.1" 404 179
+"GET /admin/ HTTP/1.1" 200 34176
+"GET /static/jazzmin/js/main.js HTTP/1.1" 304 0
+"GET /static/vendor/fontawesome-free/webfonts/fa-regular-400.woff2 HTTP/1.1" 304 0
+"GET /admin/Accounts/slider/ HTTP/1.1" 200 19096
+"GET /static/vendor/select2/css/select2.min.css HTTP/1.1" 304 0
+"GET /static/admin/js/actions.js HTTP/1.1" 304 0
+"GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+"GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+"GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 304 0
+"GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 304 0
+"GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+"GET /static/admin/js/core.js HTTP/1.1" 304 0
+"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+"GET /static/vendor/select2/js/select2.min.js HTTP/1.1" 304 0
+"GET /static/jazzmin/js/change_list.js HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/Accounts/slider/1/change/ HTTP/1.1" 200 22561
+"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+"GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+"GET /static/jazzmin/js/change_form.js HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/Accounts/slider/1/change/ HTTP/1.1" 302 0
+"GET /admin/Accounts/slider/ HTTP/1.1" 200 19710
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/Accounts/slider/2/change/ HTTP/1.1" 200 22587
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/Accounts/slider/2/change/ HTTP/1.1" 302 0
+"GET /admin/Accounts/slider/ HTTP/1.1" 200 19732
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/Accounts/slider/3/change/ HTTP/1.1" 200 22565
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/Accounts/slider/3/change/ HTTP/1.1" 302 0
+"GET /admin/Accounts/slider/ HTTP/1.1" 200 19719
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/Accounts/slider/4/change/ HTTP/1.1" 200 22559
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/Accounts/slider/4/change/ HTTP/1.1" 302 0
+"GET /admin/Accounts/slider/ HTTP/1.1" 200 19709
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET / HTTP/1.1" 200 40557
+"GET /media/slider_images/tsltv_banner.webp HTTP/1.1" 200 149536
+"GET /media/slider_images/tsltv_banner1.webp HTTP/1.1" 200 170696
+"GET /media/slider_images/tsltv_banner1_jvO4eHE.webp HTTP/1.1" 200 170696
+"GET /media/slider_images/tsl_tv_banner2.webp HTTP/1.1" 200 459304
+"GET / HTTP/1.1" 200 40557
+"GET /media/slider_images/tsltv_banner1.webp HTTP/1.1" 304 0
+"GET /media/slider_images/tsltv_banner.webp HTTP/1.1" 304 0
+"GET /media/slider_images/tsl_tv_banner2.webp HTTP/1.1" 304 0
+"GET /media/slider_images/tsltv_banner1_jvO4eHE.webp HTTP/1.1" 304 0
+"GET / HTTP/1.1" 200 40463
+"GET /media/slider_images/tsltv_banner1.webp HTTP/1.1" 304 0
+"GET /media/slider_images/tsltv_banner.webp HTTP/1.1" 304 0
+"GET /media/slider_images/tsltv_banner1_jvO4eHE.webp HTTP/1.1" 304 0
+"GET /media/slider_images/tsl_tv_banner2.webp HTTP/1.1" 304 0
+"GET / HTTP/1.1" 200 40463
+"GET /media/slider_images/tsltv_banner1.webp HTTP/1.1" 304 0
+"GET /media/slider_images/tsltv_banner.webp HTTP/1.1" 304 0
+"GET /media/slider_images/tsl_tv_banner2.webp HTTP/1.1" 304 0
+"GET /media/slider_images/tsltv_banner1_jvO4eHE.webp HTTP/1.1" 304 0
+- Broken pipe from ('127.0.0.1', 65183)
+- Broken pipe from ('127.0.0.1', 65303)
+- Broken pipe from ('127.0.0.1', 65304)
+- Broken pipe from ('127.0.0.1', 65305)
+- Broken pipe from ('127.0.0.1', 65308)
+- Broken pipe from ('127.0.0.1', 65311)
+- Broken pipe from ('127.0.0.1', 65312)
+Watching for file changes with StatReloader
+- Broken pipe from ('127.0.0.1', 65419)
+- Broken pipe from ('127.0.0.1', 65420)
+- Broken pipe from ('127.0.0.1', 65421)
+- Broken pipe from ('127.0.0.1', 65424)
+- Broken pipe from ('127.0.0.1', 65425)
+- Broken pipe from ('127.0.0.1', 65426)
+- Broken pipe from ('127.0.0.1', 65432)
+- Broken pipe from ('127.0.0.1', 65433)
+- Broken pipe from ('127.0.0.1', 65434)
+"GET / HTTP/1.1" 200 40463
+"GET /media/slider_images/tsltv_banner1.webp HTTP/1.1" 304 0
+"GET /media/slider_images/tsl_tv_banner2.webp HTTP/1.1" 304 0
+"GET /media/slider_images/tsltv_banner.webp HTTP/1.1" 304 0
+"GET /media/slider_images/tsltv_banner1_jvO4eHE.webp HTTP/1.1" 304 0
+"GET /Tsl/home/ HTTP/1.1" 200 40495
+"GET /media/slider_images/tsltv_banner.webp HTTP/1.1" 304 0
+"GET /media/slider_images/tsltv_banner1.webp HTTP/1.1" 304 0
+"GET /media/slider_images/tsltv_banner1_jvO4eHE.webp HTTP/1.1" 304 0
+"GET /media/slider_images/tsl_tv_banner2.webp HTTP/1.1" 304 0
+"GET /Tsl/home/ HTTP/1.1" 200 40495
+"GET /media/slider_images/tsltv_banner1_jvO4eHE.webp HTTP/1.1" 304 0
+"GET /Tsl/home/ HTTP/1.1" 200 40408
+"GET /media/slider_images/tsltv_banner1.webp HTTP/1.1" 304 0
+"GET /media/slider_images/tsltv_banner.webp HTTP/1.1" 304 0
+"GET /media/slider_images/tsl_tv_banner2.webp HTTP/1.1" 304 0
+"GET /Tsl/home/ HTTP/1.1" 200 40443
+"GET /Tsl/home/ HTTP/1.1" 200 40443
+"GET /media/slider_images/tsltv_banner1_jvO4eHE.webp HTTP/1.1" 304 0
+"GET /Tsl/home/ HTTP/1.1" 200 40494
+"GET /media/slider_images/tsltv_banner.webp HTTP/1.1" 304 0
+"GET /media/slider_images/tsl_tv_banner2.webp HTTP/1.1" 304 0
+"GET /Tsl/home/ HTTP/1.1" 200 40494
+"GET /media/slider_images/tsltv_banner1.webp HTTP/1.1" 304 0
+"GET /Tsl/home/ HTTP/1.1" 200 40691
+"GET /Tsl/home/ HTTP/1.1" 200 40691
+"GET /media/slider_images/tsl_tv_banner2.webp HTTP/1.1" 304 0
+"GET /media/slider_images/tsltv_banner1_jvO4eHE.webp HTTP/1.1" 304 0
+"GET /Tsl/home/ HTTP/1.1" 200 40691
+"GET /media/slider_images/tsltv_banner1.webp HTTP/1.1" 304 0
+"GET /media/slider_images/tsltv_banner.webp HTTP/1.1" 304 0
+"GET /media/slider_images/tsl_tv_banner2.webp HTTP/1.1" 304 0
+"GET /media/slider_images/tsltv_banner1_jvO4eHE.webp HTTP/1.1" 304 0
+"GET /Tsl/home/ HTTP/1.1" 200 40691
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl_nigeria\settings.py changed, reloading.
+Watching for file changes with StatReloader

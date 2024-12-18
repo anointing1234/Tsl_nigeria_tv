@@ -31,7 +31,6 @@
       position: absolute;
       bottom: 20px; /* Adjust to control distance from bottom */
       text-align: center;
-      background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background */
       color: white; /* Ensure text is readable */
       padding: 10px 20px;
       border-radius: 8px; /* Optional: Rounded corners for the text container */
@@ -85,13 +84,12 @@
       <div class="container-fluid swiper-wrapper w-100 p-0">
         {% for slide in sliders %}
         <!-- Slide 1 -->
-        <div class="swiper-slide w-100 p-0 img-fluid" style="background-image: url('{{ slide.image.url }}')">
+        <div class="swiper-slide bg-none w-100 p-0 img-fluid" style="background-image: url('{{ slide.image.url }}')">
           <div class="content">
             <h2><a >{{ slide.title }}</a></h2>
           </div>
         </div>
         {% endfor %}
-
 
         <!-- Slider Navigation and Pagination -->
         <div class="swiper-button-next"></div>
