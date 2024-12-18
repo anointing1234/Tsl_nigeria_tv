@@ -19,6 +19,49 @@
 
 
 
+ /* Spinning animation for button */
+ @keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spinning {
+  position: relative;
+  pointer-events: none;  /* Prevent interaction during submission */
+}
+
+.spinning::after {
+  content: '';
+  position: absolute;
+  top: 40%;
+  left: 43%;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #fff;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  transform: translate(-50%, -50%);
+}
+
+.spinning span {
+  visibility: hidden;  /* Hide the text during the spinning animation */
+}
+
+/* SweetAlert custom styles */
+.swal2-popup {
+  background-color: #333 !important;
+  color: white !important;
+  font-family: 'Arial', sans-serif !important;
+}
+.swal2-title, .swal2-text {
+  color: white !important;
+}
+.swal2-icon {
+  color: white !important;
+}
+
+
 </style>
   <main class="main">
 
@@ -63,7 +106,7 @@
               <i class="bi bi-geo-alt flex-shrink-0"></i>
               <div>
                 <h3>Address</h3>
-                <p>Comfort Shopping Plaza 1, 3 Etete Road, Gra., Benin City, Edo
+                <p>Comfort Shopping Plaza 1,Etete Road, GRA, Benin City, Edo State.
                 </p>
               </div>
             </div><!-- End Info Item -->
@@ -87,35 +130,32 @@
           </div>
 
           <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" class="php-email-form b text-dark" data-aos="fade-up" data-aos-delay="200">
+            <form id="contact_form" class="php-email-form b text-dark" data-aos="fade-up" data-aos-delay="200">
+              {% csrf_token %}
               <div class="row gy-4 py-3">
-
-                <div class="col-md-6">
-                  <input type="text" name="name" class="form-control bg-white text-dark" placeholder="Your Name" required="">
-                </div>
-
-                <div class="col-md-6 ">
-                  <input type="email" class="form-control  bg-white text-dark" name="email" placeholder="Your Email" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <input type="text" class="form-control  bg-white text-dark" name="subject" placeholder="Subject" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <textarea class="form-control  bg-white text-dark" name="message" rows="6" placeholder="Message" required=""></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
-                </div>
-
+          
+                  <div class="col-md-6">
+                      <input type="text" name="name" class="form-control bg-white text-dark" placeholder="Your Name" required="">
+                  </div>
+          
+                  <div class="col-md-6">
+                      <input type="email" class="form-control bg-white text-dark" name="email" placeholder="Your Email" required="">
+                  </div>
+          
+                  <div class="col-md-12">
+                      <input type="text" class="form-control bg-white text-dark" name="subject" placeholder="Subject" required="">
+                  </div>
+          
+                  <div class="col-md-12">
+                      <textarea class="form-control bg-white text-dark" name="message" rows="6" placeholder="Message" required=""></textarea>
+                  </div>
+          
+                  <div class="col-md-12 text-center">
+                    <button type="submit" id="submit_btn"><span>Send Message</span></button>
+                  </div>
+          
               </div>
-            </form>
+          </form>
           </div><!-- End Contact Form -->
 
         </div>
@@ -125,5 +165,74 @@
     </section><!-- /Contact Section -->
 
   </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  document.getElementById("contact_form").addEventListener("submit", function(e) {
+    e.preventDefault(); // Prevent default form submission
+    
+    // Get the submit button element
+    const submitButton = document.getElementById("submit_btn");
+    
+    // Add the spinning class to the button
+    submitButton.classList.add("spinning");
+    submitButton.disabled = true; // Disable the button to prevent double clicks
+
+    const formData = {
+      name: document.getElementsByName("name")[0].value,
+      email: document.getElementsByName("email")[0].value,
+      subject: document.getElementsByName("subject")[0].value,
+      message: document.getElementsByName("message")[0].value,
+    };
+
+    fetch("{% url 'contact_view' %}", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-CSRFToken": "{{ csrf_token }}"
+      },
+      body: JSON.stringify(formData),
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        Swal.fire({
+          icon: 'success',
+          title: 'Message Sent!',
+          text: data.message,
+          width: '400px',  // Custom SweetAlert size
+          padding: '10px',
+          heightAuto: false
+        });
+        document.getElementById("contact_form").reset();
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error!',
+          text: data.message,
+          width: '400px',
+          padding: '10px',
+          heightAuto: false
+        });
+      }
+      // After submission, reset the button
+      submitButton.classList.remove("spinning");
+      submitButton.disabled = false;
+    })
+    .catch(error => {
+      Swal.fire({
+        icon: 'error',
+        title: 'Something went wrong!',
+        text: 'Please try again later.',
+        width: '400px',
+        padding: '10px',
+        heightAuto: false
+      });
+      // Reset the button in case of error
+      submitButton.classList.remove("spinning");
+      submitButton.disabled = false;
+    });
+  });
+</script>
  
   {% endblock %}

@@ -132,5 +132,159 @@ class PasswordResetCode(models.Model):
         return timezone.now() > self.expires_at
 
     def __str__(self):
-        return f"Reset code for {self.email}"        
+        return f"Reset code for {self.email}"       
+    
+    
+
+
+
+
+class LatestEvent(models.Model):
+    title = models.CharField(max_length=200, help_text="The title of the event")
+    description = models.TextField(help_text="A brief description of the event")
+    image = models.ImageField(upload_to='event_images/', help_text="Event image")
+    link = models.URLField(default="#", help_text="Link to event details")
+    created_at = models.DateTimeField(auto_now_add=True, help_text="When the event was created")
+
+    class Meta:
+        verbose_name = "LatestEvents"
+        verbose_name_plural = "LatestEvents"
+        ordering = ["-created_at"]
+
+    def __str__(self):
+        return self.title
+
+    def save(self, *args, **kwargs):
+        # Save the instance first to access the image
+        super().save(*args, **kwargs)
+        
+        if self.image:
+            img = Image.open(self.image)
+            if img.format != 'WEBP':  # Avoid redundant conversion
+                img = img.convert("RGB")  # Ensure compatibility for WebP
+                output_io = BytesIO()
+                img.save(output_io, format='WEBP', quality=85)  # High quality WebP (adjust quality as needed)
+                self.image.save(f"{self.image.name.split('.')[0]}.webp", ContentFile(output_io.getvalue()), save=False)
+                output_io.close()
+                super().save(*args, **kwargs)     
+    
+    
+    
+
+class LatestEventHighlight(models.Model):
+    title = models.CharField(max_length=200, help_text="Title of the event highlight video")
+    description = models.TextField(help_text="Brief description of the video")
+    image = models.ImageField(upload_to='highlight_images/', help_text="Upload video thumbnail image")
+    video_link = models.URLField(help_text="Link to the video details page")
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "LatestHighlight"
+        verbose_name_plural = "LatestHighlights"
+        ordering = ["-created_at"]
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+
+        # Convert uploaded image to high-quality WebP
+        if self.image:
+            img_path = self.image.path
+            filename, ext = os.path.splitext(img_path)
+            webp_path = f"{filename}.webp"
+
+            # Open the image and save as WebP
+            img = Image.open(img_path)
+            img.save(webp_path, "WEBP", quality=85)
+
+            # Replace the old image with the new WebP file
+            os.remove(img_path)
+            self.image.name = self.image.name.replace(ext, ".webp")
+            super().save(update_fields=["image"])
+
+    def __str__(self):
+        return self.title    
+    
+    
+    
+    
+
+class Showcase(models.Model):
+    title = models.CharField(max_length=100, help_text="Title for the showcase item.")
+    image = models.ImageField(upload_to='showcase_images/', help_text="Upload the showcase image.")
+    link = models.URLField(max_length=200, help_text="Link to the related blog or page.")
+    display_order = models.PositiveIntegerField(default=0, help_text="Order of appearance in the carousel.")
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['display_order']
+        verbose_name = "Showcase"
+        verbose_name_plural = "Showcase"
+
+    def save(self, *args, **kwargs):
+        # Save the instance first to ensure an image file exists
+        super().save(*args, **kwargs)
+        
+        if self.image:
+            # Open the uploaded image
+            image = Image.open(self.image)
+
+            # Convert image to 'RGB' (necessary for saving in webp format)
+            if image.mode in ("RGBA", "P"):
+                image = image.convert("RGB")
+
+            # Set the new file name and path with .webp extension
+            image_filename = os.path.splitext(self.image.name)[0] + '.webp'
+
+            # Save image to BytesIO in webp format
+            webp_image_io = BytesIO()
+            image.save(webp_image_io, format='WEBP', quality=90)  # Set quality as needed
+
+            # Replace the original image with the webp version
+            self.image.save(image_filename, ContentFile(webp_image_io.getvalue()), save=False)
+
+            # Call the parent save to store the updated image
+            super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.title    
+    
+    
+    
+
+class Media(models.Model):
+    title = models.CharField(max_length=100, help_text="Title for the media item.")
+    description = models.TextField(max_length=300, help_text="Brief description of the media item.")
+    image = models.ImageField(upload_to='media_section/', help_text="Upload the media image.")
+    link = models.URLField(max_length=200, help_text="URL link to related content or blog.")
+    display_order = models.PositiveIntegerField(default=0, help_text="Order of appearance in the carousel.")
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['display_order']
+        verbose_name = "Media"
+        verbose_name_plural = "Media"
+
+    def save(self, *args, **kwargs):
+        """Override save method to convert uploaded images to WebP format."""
+        super().save(*args, **kwargs)  # Save the instance first
+
+        if self.image:
+            image = Image.open(self.image)
+            if image.mode in ("RGBA", "P"):
+                image = image.convert("RGB")
+
+            # Create WebP version of the image
+            image_filename = os.path.splitext(self.image.name)[0] + '.webp'
+            webp_image_io = BytesIO()
+            image.save(webp_image_io, format='WEBP', quality=90)
+
+            # Replace the original image with the WebP version
+            self.image.save(image_filename, ContentFile(webp_image_io.getvalue()), save=False)
+
+            super().save(*args, **kwargs)  # Save the instance again with updated image
+
+    def __str__(self):
+        return self.title   
     

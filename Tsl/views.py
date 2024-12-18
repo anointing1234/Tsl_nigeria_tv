@@ -2,7 +2,7 @@ from django.shortcuts import render
 import requests
 import logging
 from django.contrib.auth import logout
-from Accounts.models import Slider,Highlight,Blog
+from Accounts.models import Slider,Highlight,Blog,LatestEvent,LatestEventHighlight,Media,Showcase
 
 # Replace with your actual Google API key securely
 api_key = 'AIzaSyCSexVrBoINLvu9y1WNeifx6wyjU8mQ7_Y'  # Example Google API key for YouTube Data API v3
@@ -107,7 +107,18 @@ def live_tv(request):
 
 
 def ondemand(request):
-    return render(request, 'ondemand.html')
+    sliders = Slider.objects.filter(is_active=True).order_by('order')
+    events = LatestEvent.objects.all()
+    highlights = LatestEventHighlight.objects.all()
+    showcases = Showcase.objects.all().order_by('display_order')
+    media_items = Media.objects.all().order_by('display_order')
+    return render(request, 'ondemand.html',{
+        'sliders': sliders,
+        'events': events,
+        'highlights': highlights,
+        'showcases': showcases,
+        'media_items': media_items,
+        })
 
 
 def contact(request):

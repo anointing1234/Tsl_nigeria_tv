@@ -77,197 +77,109 @@
  
   <main class="main w-100 p-0">
     <!-- Slider Section -->
-    <section style="background-color: #0F0A0D;" id="slider" class="slider section dark-background p-0 w-100 h-100">
+   
+    <!-- Slider Section -->
+<section style="background-color: #0F0A0D;" id="slider" class="slider section dark-background p-0 w-100">
 
-      <div class="container-fluid w-100" data-aos="fade-up" data-aos-delay="100">
+  <div class="container-fluid w-100" data-aos="fade-up" data-aos-delay="100">
+    <div class="container-fluid swiper init-swiper w-100 p-0">
+    
+      <script type="application/json" class="swiper-config">
+        {
+          "loop": true,
+          "speed": 600,
+          "autoplay": {
+            "delay": 5000
+          },
+          "slidesPerView": "auto",
+          "centeredSlides": true,
+          "pagination": {
+            "el": ".swiper-pagination",
+            "type": "bullets",
+            "clickable": true
+          },
+          "navigation": {
+            "nextEl": ".swiper-button-next",
+            "prevEl": ".swiper-button-prev"
+          }
+        }
+      </script>
 
-        <div class="container-fluid swiper init-swiper w-100 p-0">
-
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "centeredSlides": true,
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              },
-              "navigation": {
-                "nextEl": ".swiper-button-next",
-                "prevEl": ".swiper-button-prev"
-              }
-            }
-          </script>
-
-          <div class="container-fluid swiper-wrapper  w-100 p-0  ">
-
-            <div class="swiper-slide w-100 p-0   img-fluid" style="background-image: url({% static 'img/post-slide-1.jpg' %})">
-              <div class="content">
-                <h2><a href="single-post.html">The Best Homemade Masks for Face (keep the Pimples Away)</a></h2>
-             </div>
-            </div>
-            
-            <div class="swiper-slide w-100 p-0   img-fluid" style="background-image: url({% static 'img/post-slide-2.jpg' %})">
-              <div class="content">
-                <h2><a href="single-post.html">17 Pictures of Medium Length Hair in Layers That Will Inspire Your New Haircut</a></h2>
-           </div>
-            </div>
-            
-            <div class="swiper-slide w-100 p-0   img-fluid" style="background-image: url({% static 'img/post-slide-3.jpg' %})">
-              <div class="content">
-                <h2><a href="single-post.html">13 Amazing Poems from Shel Silverstein with Valuable Life Lessons</a></h2>
-           </div>
-            </div>
-            
-            <div class="swiper-slide w-100 p-0   img-fluid" style="background-image: url({% static 'img/post-slide-4.jpg' %})">
-              <div class="content">
-                <h2><a href="single-post.html">9 Half-up/half-down Hairstyles for Long and Medium Hair</a></h2>
-            </div>
-            </div>
-            
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-
-            <div class="swiper-pagination"></div>
+      <div class="container-fluid swiper-wrapper w-100 p-0">
+        {% for slide in sliders %}
+        <!-- Slide 1 -->
+        <div class="swiper-slide w-100 p-0 img-fluid" style="background-image: url('{{ slide.image.url }}')">
+          <div class="content">
+            <h2><a>{{ slide.title }}</a></h2>
+          </div>
         </div>
+        {% endfor %}
 
+
+        <!-- Slider Navigation and Pagination -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /Slider Section -->
+
+
+
+
+<section style="background-color: #0F0A0D;" id="lifestyle-category" class="lifestyle-category section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <div class="section-title-container d-flex align-items-center justify-content-between">
+      <h2 class="text-white">Latest Events</h2>
+    </div>
+  </div><!-- End Section Title -->
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <!-- Carousel for Featured Programs -->
+    <div id="featuredProgramsCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        
+        {% for event in events %}
+        <!-- Carousel Item -->
+        <div class="carousel-item {% if forloop.first %} active {% endif %}">
+          <div class="row justify-content-center">
+            <div class="col-lg-3 col-md-6 trend">
+              <div class="post-list">
+                <a>
+                  <div class="card" style="height: 300px; overflow: hidden;">
+                    <img src="{{ event.image.url }}" class="img-fluid w-100" style="object-fit: cover; height: 200px;">
+                    <div class="card-body">
+                      <h5 class="card-title text-white">{{ event.title }}</h5>
+                      <p class="card-text text-white">{{ event.description }}</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
         
       </div>
 
-       </section><!-- /Slider Section -->
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#featuredProgramsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#featuredProgramsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</section>
 
 
-      
-     
-      
-      
-      
-    
-
-       <section style="background-color: #0F0A0D;" id="lifestyle-category" class="lifestyle-category section">
-
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <div class="section-title-container d-flex align-items-center justify-content-between">
-            <h2 class="text-white">Latest Events</h2>
-          </div>
-        </div><!-- End Section Title -->
-      
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <!-- Carousel for Featured Programs -->
-          <div id="featuredProgramsCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <!-- Carousel Item 1 -->
-              <div class="carousel-item active">
-                <div class="row justify-content-center">
-                  <div class="col-lg-3 col-md-6 trend">
-                    <div class="post-list">
-                      <a href="blog-details.html">
-                        <div class="card" style="height: 300px; overflow: hidden;">
-                          <img src="{% static 'img/post-landscape-8.jpg' %}" class="img-fluid w-100" style="object-fit: cover; height: 200px;">
-                          <div class="card-body">
-                            <h5 class="card-title text-white text-white">Event Title 1</h5>
-                            <p class="card-text text-white text-white">A brief description of the event or post goes here. Make it engaging!</p>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="col-lg-3 col-md-6 trend">
-                    <div class="post-list">
-                      <a href="blog-details.html">
-                        <div class="card" style="height: 300px; overflow: hidden;">
-                          <img src="{% static 'img/post-landscape-6.jpg' %}" class="img-fluid w-100" style="object-fit: cover; height: 200px;">
-                          <div class="card-body">
-                            <h5 class="card-title text-white text-white">Event Title 2</h5>
-                            <p class="card-text text-white text-white">Another engaging description for this event.</p>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="col-lg-3 col-md-6 trend">
-                    <div class="post-list">
-                      <a href="blog-details.html">
-                        <div class="card" style="height: 300px; overflow: hidden;">
-                          <img src="{% static 'img/post-landscape-5.jpg' %}" class="img-fluid w-100" style="object-fit: cover; height: 200px;">
-                          <div class="card-body">
-                            <h5 class="card-title text-white text-white">Event Title 3</h5>
-                            <p class="card-text text-white text-white">Highlight more details to attract viewers.</p>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-      
-              <!-- Carousel Item 2 -->
-              <div class="carousel-item">
-                <div class="row justify-content-center">
-                  <div class="col-lg-3 col-md-6 trend">
-                    <div class="post-list">
-                      <a href="blog-details.html">
-                        <div class="card" style="height: 300px; overflow: hidden;">
-                          <img src="{% static 'img/post-landscape-4.jpg' %}" class="img-fluid w-100" style="object-fit: cover; height: 200px;">
-                          <div class="card-body">
-                            <h5 class="card-title text-white text-white">Event Title 4</h5>
-                            <p class="card-text text-white text-white">Provide an appealing description for this event.</p>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="col-lg-3 col-md-6 trend">
-                    <div class="post-list">
-                      <a href="blog-details.html">
-                        <div class="card" style="height: 300px; overflow: hidden;">
-                          <img src="{% static 'img/post-landscape-2.jpg' %}" class="img-fluid w-100" style="object-fit: cover; height: 200px;">
-                          <div class="card-body">
-                            <h5 class="card-title text-white text-white">Event Title 5</h5>
-                            <p class="card-text text-white text-white">Catchy details for maximum engagement.</p>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="col-lg-3 col-md-6 trend">
-                    <div class="post-list">
-                      <a href="blog-details.html">
-                        <div class="card" style="height: 300px; overflow: hidden;">
-                          <img src="{% static 'img/post-landscape-1.jpg' %}" class="img-fluid w-100" style="object-fit: cover; height: 200px;">
-                          <div class="card-body">
-                            <h5 class="card-title text-white text-white">Event Title 6</h5>
-                            <p class="card-text text-white text-white">Another quick overview of this post.</p>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-      
-              <!-- Add more carousel items as needed -->
-            </div>
-      
-            <!-- Carousel Controls -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#featuredProgramsCarousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#featuredProgramsCarousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-        </div>
-      </section>
-      
 
 <!-- Recent Shows -->
 <section style="background-color: #0F0A0D;" id="trending-category" class="trending-category section">
@@ -281,113 +193,24 @@
           <div id="trendingCarouselLarge" class="carousel slide" data-bs-ride="carousel">
             <!-- Carousel Inner -->
             <div class="carousel-inner">
-              <!-- Slide 1 -->
-              <div class="carousel-item active">
+              {% for highlight in highlights %}
+              <!-- Slide Item -->
+              <div class="carousel-item {% if forloop.first %}active{% endif %}">
                 <div class="row justify-content-center">
-                  <!-- Video Card 1 -->
                   <div class="col-md-3 mb-5">
                     <div class="card shadow-lg">
-                      <a href="video-details.html">
-                        <img src="{% static 'img/post-landscape-1.jpg' %}" alt="Video 1" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
+                      <a href="{{ highlight.video_link }}">
+                        <img src="{{ highlight.image.url }}" alt="{{ highlight.title }}" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
                       </a>
                       <div class="card-body">
-                        <h5 class="card-title text-white">Video 1</h5>
-                        <p class="card-text text-white">Brief description of Video 1.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Video Card 2 -->
-                  <div class="col-md-3 mb-5">
-                    <div class="card shadow-lg">
-                      <a href="video-details.html">
-                        <img src="{% static 'img/post-landscape-2.jpg' %}" alt="Video 2" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
-                      </a>
-                      <div class="card-body">
-                        <h5 class="card-title text-white">Video 2</h5>
-                        <p class="card-text text-white">Brief description of Video 2.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Video Card 3 -->
-                  <div class="col-md-3 mb-5">
-                    <div class="card shadow-lg">
-                      <a href="video-details.html">
-                        <img src="{% static 'img/post-landscape-3.jpg' %}" alt="Video 3" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
-                      </a>
-                      <div class="card-body">
-                        <h5 class="card-title text-white">Video 3</h5>
-                        <p class="card-text text-white">Brief description of Video 3.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Video Card 4 -->
-                  <div class="col-md-3 mb-5">
-                    <div class="card shadow-lg">
-                      <a href="video-details.html">
-                        <img src="{% static 'img/post-landscape-5.jpg' %}" alt="Video 4" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
-                      </a>
-                      <div class="card-body">
-                        <h5 class="card-title text-white">Video 4</h5>
-                        <p class="card-text text-white">Brief description of Video 4.</p>
+                        <h5 class="card-title text-white">{{ highlight.title }}</h5>
+                        <p class="card-text text-white">{{ highlight.description }}</p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-
-              <!-- Slide 2 -->
-              <div class="carousel-item">
-                <div class="row justify-content-center">
-                  <!-- Video Card 5 -->
-                  <div class="col-md-3 mb-5">
-                    <div class="card shadow-lg">
-                      <a href="video-details.html">
-                        <img src="{% static 'img/post-landscape-6.jpg' %}" alt="Video 5" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
-                      </a>
-                      <div class="card-body">
-                        <h5 class="card-title text-white">Video 5</h5>
-                        <p class="card-text text-white">Brief description of Video 5.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Video Card 6 -->
-                  <div class="col-md-3 mb-5">
-                    <div class="card shadow-lg">
-                      <a href="video-details.html">
-                        <img src="{% static 'img/post-landscape-7.jpg' %}" alt="Video 6" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
-                      </a>
-                      <div class="card-body">
-                        <h5 class="card-title text-white">Video 6</h5>
-                        <p class="card-text text-white">Brief description of Video 6.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Video Card 7 -->
-                  <div class="col-md-3 mb-5">
-                    <div class="card shadow-lg">
-                      <a href="video-details.html">
-                        <img src="{% static 'img/post-landscape-8.jpg' %}" alt="Video 7" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
-                      </a>
-                      <div class="card-body">
-                        <h5 class="card-title text-white">Video 7</h5>
-                        <p class="card-text text-white">Brief description of Video 7.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Video Card 8 -->
-                  <div class="col-md-3 mb-5">
-                    <div class="card shadow-lg">
-                      <a href="video-details.html">
-                        <img src="{% static 'img/post-landscape-3.jpg' %}" alt="Video 8" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
-                      </a>
-                      <div class="card-body">
-                        <h5 class="card-title text-white">Video 8</h5>
-                        <p class="card-text text-white">Brief description of Video 8.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {% endfor %}
             </div>
 
             <!-- Carousel Controls -->
@@ -407,31 +230,19 @@
           <div id="trendingCarouselSmall" class="carousel slide" data-bs-ride="carousel">
             <!-- Carousel Inner -->
             <div class="carousel-inner">
-              <!-- Video Cards -->
-              <div class="carousel-item active">
+              {% for highlight in highlights %}
+              <div class="carousel-item {% if forloop.first %}active{% endif %}">
                 <div class="card shadow-lg mx-auto" style="max-width: 350px;">
-                  <a href="video-details.html">
-                    <img src="{% static 'img/post-landscape-1.jpg' %}" alt="Video 1" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
+                  <a href="{{ highlight.video_link }}">
+                    <img src="{{ highlight.image.url }}" alt="{{ highlight.title }}" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
                   </a>
                   <div class="card-body">
-                    <h5 class="card-title text-white">Video 1</h5>
-                    <p class="card-text text-white">Brief description of Video 1.</p>
+                    <h5 class="card-title text-white">{{ highlight.title }}</h5>
+                    <p class="card-text text-white">{{ highlight.description }}</p>
                   </div>
                 </div>
               </div>
-              <!-- Additional Cards -->
-              <div class="carousel-item">
-                <div class="card shadow-lg mx-auto" style="max-width: 350px;">
-                  <a href="video-details.html">
-                    <img src="{% static 'img/post-landscape-2.jpg' %}" alt="Video 2" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
-                  </a>
-                  <div class="card-body">
-                    <h5 class="card-title text-white">Video 2</h5>
-                    <p class="card-text text-white">Brief description of Video 2.</p>
-                  </div>
-                </div>
-              </div>
-              <!-- Repeat similar structure for other cards -->
+              {% endfor %}
             </div>
 
             <!-- Carousel Controls -->
@@ -452,12 +263,7 @@
 
 
 
-
-
-           
-               <!-- Lifestyle Category Section -->
-<section id="Showcase" style="background-color: #0F0A0D;" id="lifestyle-category" class="lifestyle-category section">
-
+<section id="Showcase" style="background-color: #0F0A0D;" class="lifestyle-category section">
   <!-- Section Title -->
   <div class="container section-title" data-aos="fade-up">
     <div class="section-title-container d-flex align-items-center justify-content-between">
@@ -466,88 +272,37 @@
   </div><!-- End Section Title -->
 
   <div class="container" data-aos="fade-up" data-aos-delay="100">
-    <!-- Carousel for Featured Programs -->
+    <!-- Carousel for Showcase -->
     <div id="featuredProgramsCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
-        <!-- Carousel Item 1 -->
-        <div class="carousel-item active">
-          <div class="row justify-content-center">
-            <div class="col-lg-3 col-md-6  trend">
-              <div class="post-list">
-                <a href="blog-details.html">
-                  <div class="card" style="height: 300px; overflow: hidden;">
-                    <div class="card-body">
-                      <img src="{% static 'img/post-landscape-8.jpg' %}" class="img-fluid w-100 " style="object-fit: cover; height: 300px;">
+        {% for showcase in showcases %}
+          <!-- Create a new row every 3 items -->
+          {% if forloop.counter0|divisibleby:3 %}
+          <div class="carousel-item {% if forloop.first %}active{% endif %}">
+            <div class="row justify-content-center">
+          {% endif %}
+
+              <!-- Showcase Item -->
+              <div class="col-lg-3 col-md-6 trend">
+                <div class="post-list">
+                  <a>
+                    <div class="card" style="height: 300px; overflow: hidden;">
+                      <div class="card-body">
+                        <img src="{{ showcase.image.url }}" 
+                             alt="{{ showcase.title }}"
+                             class="img-fluid w-100" 
+                             style="object-fit: cover; height: 300px;">
+                      </div>
                     </div>
-                    </div>
-                </a>
+                  </a>
+                </div>
               </div>
-            </div>
-            <div class="col-lg-3 col-md-6  trend">
-              <div class="post-list">
-                <a href="blog-details.html">
-                  <div class="card" style="height: 300px; overflow: hidden;">
-                   <div class="card-body">
-                     <img src="{% static 'img/post-landscape-6.jpg' %}" class="img-fluid w-100 " style="object-fit: cover; height: 300px;">
-                   </div>
-                   </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6  trend">
-              <div class="post-list">
-                <a href="blog-details.html">
-                  <div class="card" style="height: 300px; overflow: hidden;">
-                    <div class="card-body">
-                      <img src="{% static 'img/post-landscape-5.jpg' %}" class="img-fluid w-100 " style="object-fit: cover; height: 300px;">
-                    </div>
-                    </div>
-                </a>
-              </div>
+
+          {% if forloop.counter|divisibleby:3 or forloop.last %}
             </div>
           </div>
-        </div>
-
-        <!-- Carousel Item 2 -->
-        <div class="carousel-item">
-          <div class="row justify-content-center">
-            <div class="col-lg-3 col-md-6  trend">
-              <div class="post-list">
-                <a href="blog-details.html">
-                  <div class="card" style="height: 300px; overflow: hidden;">
-                   <div class="card-body">
-                     <img src="{% static 'img/post-landscape-4.jpg' %}" class="img-fluid w-100 " style="object-fit: cover; height: 300px;">
-                   </div>
-                   </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6  trend">
-              <div class="post-list">
-                <a href="blog-details.html">
-                  <div class="card" style="height: 300px; overflow: hidden;">
-                    <div class="card-body">
-                      <img src="{% static 'img/post-landscape-2.jpg' %}" class="img-fluid w-100 " style="object-fit: cover; height: 300px;">
-                    </div>
-                    </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6  trend">
-              <div class="post-list">
-                <a href="blog-details.html">
-                  <div class="card" style="height: 300px; overflow: hidden;">
-                    <div class="card-body">
-                      <img src="{% static 'img/post-landscape-1.jpg' %}" class="img-fluid w-100 " style="object-fit: cover; height: 300px;">
-                    </div>
-                    </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Add more carousel items as needed -->
+          {% endif %}
+        {% endfor %}
       </div>
 
       <!-- Carousel Controls -->
@@ -563,112 +318,48 @@
   </div>
 </section>
 
+    
 
 <!-- Lifestyle Category Section -->
-<section id="Media" style="background-color: #0F0A0D;" id="lifestyle-category" class="lifestyle-category section">
-
+<section id="Media" style="background-color: #0F0A0D;" class="lifestyle-category section">
   <!-- Section Title -->
   <div class="container section-title" data-aos="fade-up">
     <div class="section-title-container d-flex align-items-center justify-content-between">
       <h2 class="text-white">Media</h2>
     </div>
-  </div><!-- End Section Title -->
+  </div>
+  <!-- End Section Title -->
 
   <div class="container" data-aos="fade-up" data-aos-delay="100">
     <!-- Carousel for Featured Programs -->
     <div id="featuredProgramsCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
-        <!-- Carousel Item 1 -->
-        <div class="carousel-item active">
-          <div class="row justify-content-center">
-            <div class="col-lg-3 col-md-6  trend">
+        {% for media in media_items %}
+          {% if forloop.counter0|divisibleby:3 %}
+            <!-- Start a new carousel-item every 3 items -->
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+              <div class="row justify-content-center">
+          {% endif %}
+          
+            <div class="col-lg-3 col-md-6 trend">
               <div class="post-list">
-                <a href="blog-details.html">
+                <a>
                   <div class="card" style="height: 300px; overflow: hidden;">
-                    <img src="{% static 'img/post-landscape-8.jpg' %}" class="img-fluid w-100 " style="object-fit: cover; height: 300px;">
+                    <img src="{{ media.image.url }}" class="img-fluid w-100" style="object-fit: cover; height: 300px;" alt="{{ media.title }}">
                     <div class="card-body">
-                      <h2 class="text-white">Card Title 1</h2>
-                      <p class="text-white">This is a brief description for card 1.</p>
+                      <h2 class="text-white">{{ media.title }}</h2>
+                      <p class="text-white">{{ media.description }}</p>
                     </div>
                   </div>
                 </a>
               </div>
             </div>
-            <div class="col-lg-3 col-md-6  trend">
-              <div class="post-list">
-                <a href="blog-details.html">
-                  <div class="card" style="height: 300px; overflow: hidden;">
-                    <img src="{% static 'img/post-landscape-6.jpg' %}" class="img-fluid w-100 " style="object-fit: cover; height: 300px;">
-                    <div class="card-body">
-                      <h2 class="text-white">Card Title 2</h2>
-                      <p class="text-white">This is a brief description for card 2.</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6  trend">
-              <div class="post-list">
-                <a href="blog-details.html">
-                  <div class="card" style="height: 300px; overflow: hidden;">
-                    <img src="{% static 'img/post-landscape-5.jpg' %}" class="img-fluid w-100 " style="object-fit: cover; height: 300px;">
-                    <div class="card-body">
-                      <h2 class="text-white">Card Title 3</h2>
-                      <p class="text-white">This is a brief description for card 3.</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <!-- Carousel Item 2 -->
-        <div class="carousel-item">
-          <div class="row justify-content-center">
-            <div class="col-lg-3 col-md-6  trend">
-              <div class="post-list">
-                <a href="blog-details.html">
-                  <div class="card" style="height: 300px; overflow: hidden;">
-                    <img src="{% static 'img/post-landscape-4.jpg' %}" class="img-fluid w-100 " style="object-fit: cover; height: 300px;">
-                    <div class="card-body">
-                      <h2 class="text-white">Card Title 4</h2>
-                      <p class="text-white">This is a brief description for card 4.</p>
-                    </div>
-                  </div>
-                </a>
+          {% if forloop.counter|divisibleby:3 or forloop.last %}
               </div>
             </div>
-            <div class="col-lg-3 col-md-6  trend">
-              <div class="post-list">
-                <a href="blog-details.html">
-                  <div class="card" style="height: 300px; overflow: hidden;">
-                    <img src="{% static 'img/post-landscape-2.jpg' %}" class="img-fluid w-100 " style="object-fit: cover; height: 300px;">
-                    <div class="card-body">
-                      <h2 class="text-white">Card Title 5</h2>
-                      <p class="text-white">This is a brief description for card 5.</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6  trend">
-              <div class="post-list">
-                <a href="blog-details.html">
-                  <div class="card" style="height: 300px; overflow: hidden;">
-                    <img src="{% static 'img/post-landscape-1.jpg' %}" class="img-fluid w-100 " style="object-fit: cover; height: 300px;">
-                    <div class="card-body">
-                      <h2 class="text-white">Card Title 6</h2>
-                      <p class="text-white">This is a brief description for card 6.</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Add more carousel items as needed -->
+          {% endif %}
+        {% endfor %}
       </div>
 
       <!-- Carousel Controls -->
@@ -683,8 +374,8 @@
     </div>
   </div>
 </section>
-
-
+      
+   
 
 </main>
 

@@ -14,6 +14,9 @@ import logging
 from django.utils.timezone import now
 from .models import PasswordResetCode
 from django.utils.crypto import get_random_string
+from django.views.decorators.csrf import csrf_exempt
+import json
+
 
 
 # Set up a logger instance
@@ -178,3 +181,54 @@ def reset_password(request):
 
     logger.error("Invalid request method.")
     return JsonResponse({'success': False, 'error_message': 'Invalid request method.'})
+
+
+
+
+
+
+def contact_view(request):
+    logger.info(f"Request method: {request.method}")
+
+    if request.method == 'POST':
+        # Get data sent from the form (JSON format)
+        data = json.loads(request.body)
+        name = data.get('name')
+        email = data.get('email')
+        subject = data.get('subject')
+        message = data.get('message')
+
+        logger.info(f"Received contact message from {name} ({email}) with subject: {subject}")
+
+        # Check if required fields are provided
+        if not name or not email or not subject or not message:
+            logger.warning("Missing required fields in the contact form.")
+            return JsonResponse({
+                'success': False,
+                'error_message': 'All fields are required.',
+            })
+
+        # Prepare the email content
+        email_subject = f"New Contact Message: {subject}"
+        email_message = f"Name: {name}\nEmail: {email}\nMessage: {message}"
+        recipient_email = 'yakubudestiny9@gmail.com'  # Replace with your recipient email
+
+        try:
+            # Send email using Django's send_mail function
+            send_mail(
+                email_subject,       # Email subject
+                email_message,       # Email message
+                settings.DEFAULT_FROM_EMAIL,  # Sender email
+                [recipient_email],      # Receiver email
+                fail_silently=False,
+            )
+            logger.info(f"Contact message sent successfully to {recipient_email}.")
+            return JsonResponse({'success': True, 'message': 'Message sent successfully!'})
+
+        except Exception as e:
+            logger.error(f"Failed to send contact message: {e}")
+            return JsonResponse({'success': False, 'message': 'Failed to send message.'})
+
+    # Return error response for invalid request method
+    logger.error("Invalid request method.")
+    return JsonResponse({'success': False, 'message': 'Invalid request.'})
