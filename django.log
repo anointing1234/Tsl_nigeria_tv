@@ -615,3 +615,10 @@ Watching for file changes with StatReloader
 "GET /Tsl/home/ HTTP/1.1" 200 40691
 C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl_nigeria\settings.py changed, reloading.
 Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 40691
+"GET /media/slider_images/tsltv_banner1.webp HTTP/1.1" 304 0
+"GET /media/slider_images/tsltv_banner.webp HTTP/1.1" 304 0
+"GET /media/slider_images/tsl_tv_banner2.webp HTTP/1.1" 304 0
+"GET /media/slider_images/tsltv_banner1_jvO4eHE.webp HTTP/1.1" 304 0
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl_nigeria\settings.py changed, reloading.

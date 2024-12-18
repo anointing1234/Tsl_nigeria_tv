@@ -751,7 +751,7 @@ section,
   position: relative;
   display: flex;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size:contain;
   background-color:transparent;
 }
 
