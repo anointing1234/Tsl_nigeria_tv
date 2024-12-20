@@ -59,141 +59,53 @@
         {% else %}
             <p>No live or past live video available.</p>
         {% endif %}
-        
-        
-        
-
           </div>
         </div>
       </div>
     </section>
     
-   
-    
-    
-    
-   
-       
-      
-    
-
-        <!-- Lifestyle Category Section -->
-<section style="background-color: #0F0A0D;" id="lifestyle-category" class="lifestyle-category section">
-
-  <!-- Section Title -->
+<section style="background-color: #0F0A0D;" id="upcoming-videos" class="upcoming-videos section">
   <div class="container section-title" data-aos="fade-up">
-    <div class="section-title-container d-flex align-items-center justify-content-between">
-      <h4 class="text-white">Upcoming Shows</h4>
-    </div>
+      <div class="section-title-container d-flex align-items-center justify-content-between">
+        <h4 class="text-white">Upcoming Shows</h4>
+      </div>
   </div><!-- End Section Title -->
 
   <div class="container" data-aos="fade-up" data-aos-delay="100">
-    <!-- Carousel for Featured Programs -->
-    <div id="featuredProgramsCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <!-- Carousel Item 1 -->
-        <div class="carousel-item active">
-          <div class="row justify-content-center">
-            <div class=" col-md-6 col-lg-3 trend col-sm-1">
-              <div class="post-list">
-                <a href="blog-details.html">
-                  <div class="card" style="height: 300px; overflow: hidden; border-radius: 10px;">
-                    <div class="card-body p-0">
-                      <img src="{% static 'img/post-landscape-8.jpg' %}" 
-                           class="img-fluid w-100 h-100" 
-                           style="object-fit: cover;">
-                    </div>
+      <div class="row justify-content-center">
+          {% if upcoming_videos %}
+              {% for video in upcoming_videos %}
+                  <div class="col-md-6 col-lg-3 trend">
+                      <div class="post-list">
+                          <a href="https://www.youtube.com/watch?v={{ video.id.videoId }}" target="_blank">
+                              <div class="card" style="height: 300px; overflow: hidden; border-radius: 10px;">
+                                  <div class="card-body p-0">
+                                      <img src="{{ video.snippet.thumbnails.high.url }}" 
+                                           class="img-fluid w-100 h-100" 
+                                           style="object-fit: cover;">
+                                  </div>
+                              </div>
+                          </a>
+                      </div>
                   </div>
-                </a>
-              </div>
-            </div>
-            <div class=" col-md-6 col-lg-3 trend col-sm-1">
-              <div class="post-list">
-                <a href="blog-details.html">
-                  <div class="card" style="height: 300px; overflow: hidden; border-radius: 10px;">
-                    <div class="card-body p-0">
-                      <img src="{% static 'img/post-landscape-6.jpg' %}" 
-                           class="img-fluid w-100 h-100" 
-                           style="object-fit: cover;">
-                    </div>
+              {% endfor %}
+          {% else %}
+              <!-- Show 3 placeholder cards if no upcoming videos -->
+              {% for i in empty_cards %}
+                  <div class="col-md-6 col-lg-3 trend">
+                      <div class="post-list">
+                          <div class="card" style="height: 300px; overflow: hidden; border-radius: 10px;">
+                              <div class="card-body p-0 d-flex justify-content-center align-items-center">
+                                  <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" 
+                                       class="img-fluid" 
+                                       style="width: 100px; height: 100px;">
+                              </div>
+                          </div>
+                      </div>
                   </div>
-                </a>
-              </div>
-            </div>
-            <div class=" col-md-6 col-lg-3 trend col-sm-1">
-              <div class="post-list">
-                <a href="blog-details.html">
-                  <div class="card" style="height: 300px; overflow: hidden; border-radius: 10px;">
-                    <div class="card-body p-0">
-                      <img src="{% static 'img/post-landscape-5.jpg' %}" 
-                           class="img-fluid w-100 h-100" 
-                           style="object-fit: cover;">
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Carousel Item 2 -->
-        <div class="carousel-item">
-          <div class="row justify-content-center">
-            <div class=" col-md-6 col-lg-3 trend col-sm-1">
-              <div class="post-list">
-                <a href="blog-details.html">
-                  <div class="card" style="height: 300px; overflow: hidden; border-radius: 10px;">
-                    <div class="card-body p-0">
-                      <img src="{% static 'img/post-landscape-4.jpg' %}" 
-                           class="img-fluid w-100 h-100" 
-                           style="object-fit: cover;">
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class=" col-md-6 col-lg-3 trend col-sm-1">
-              <div class="post-list">
-                <a href="blog-details.html">
-                  <div class="card" style="height: 300px; overflow: hidden; border-radius: 10px;">
-                    <div class="card-body p-0">
-                      <img src="{% static 'img/post-landscape-2.jpg' %}" 
-                           class="img-fluid w-100 h-100" 
-                           style="object-fit: cover;">
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class=" col-md-6 col-lg-3 trend col-sm-1">
-              <div class="post-list">
-                <a href="blog-details.html">
-                  <div class="card" style="height: 300px; overflow: hidden; border-radius: 10px;">
-                    <div class="card-body p-0">
-                      <img src="{% static 'img/post-landscape-1.jpg' %}" 
-                           class="img-fluid w-100 h-100" 
-                           style="object-fit: cover;">
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Add more carousel items as needed -->
+              {% endfor %}
+          {% endif %}
       </div>
-
-      <!-- Carousel Controls -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#featuredProgramsCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#featuredProgramsCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
   </div>
 </section>
 
@@ -212,102 +124,55 @@
         </h4>
 
         <!-- Carousel for Large Screens -->
-        <div class="">
-          <div id="trendingCarouselLarge" class="carousel slide" data-bs-ride="carousel">
-            <!-- Carousel Inner -->
-            <div class="carousel-inner">
-              <!-- Slide 1 -->
-              <div class="carousel-item active">
-                <div class="row justify-content-center">
-                  <!-- Video Card 1 -->
-                  <div class="col-md-6 col-lg-3 trend trend mb-5">
-                    <div class="card shadow-lg">
-                      <a href="video-details.html">
-                        <img src="{% static 'img/post-landscape-1.jpg' %}" alt="Video 1" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
-                      </a>
-                    </div>
-                  </div>
-                  <!-- Video Card 2 -->
-                  <div class="col-md-6 col-lg-3 trend trend mb-5">
-                    <div class="card shadow-lg">
-                      <a href="video-details.html">
-                        <img src="{% static 'img/post-landscape-2.jpg' %}" alt="Video 2" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
-                      </a>
-                    </div>
-                  </div>
-                  <!-- Video Card 3 -->
-                  <div class="col-md-6 col-lg-3 trend trend mb-5">
-                    <div class="card shadow-lg">
-                      <a href="video-details.html">
-                        <img src="{% static 'img/post-landscape-3.jpg' %}" alt="Video 3" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
-                      </a>
-                    </div>
-                  </div>
-                  <!-- Video Card 4 -->
-                  <div class="col-md-6 col-lg-3 trend trend mb-5">
-                    <div class="card shadow-lg">
-                      <a href="video-details.html">
-                        <img src="{% static 'img/post-landscape-5.jpg' %}" alt="Video 4" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Slide 2 -->
-              <div class="carousel-item">
-                <div class="row justify-content-center">
-                  <!-- Video Card 5 -->
-                  <div class="col-md-6 col-lg-3 trend trend mb-5">
-                    <div class="card shadow-lg">
-                      <a href="video-details.html">
-                        <img src="{% static 'img/post-landscape-6.jpg' %}" alt="Video 5" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
-                      </a>
-                    </div>
-                  </div>
-                  <!-- Video Card 6 -->
-                  <div class="col-md-6 col-lg-3 trend trend mb-5">
-                    <div class="card shadow-lg">
-                      <a href="video-details.html">
-                        <img src="{% static 'img/post-landscape-7.jpg' %}" alt="Video 6" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
-                      </a>
-                    </div>
-                  </div>
-                  <!-- Video Card 7 -->
-                  <div class="col-md-6 col-lg-3 trend trend mb-5">
-                    <div class="card shadow-lg">
-                      <a href="video-details.html">
-                        <img src="{% static 'img/post-landscape-8.jpg' %}" alt="Video 7" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
-                      </a>
-                    </div>
-                  </div>
-                  <!-- Video Card 8 -->
-                  <div class="col-md-6 col-lg-3 trend trend mb-5">
-                    <div class="card shadow-lg">
-                      <a href="video-details.html">
-                        <img src="{% static 'img/post-landscape-3.jpg' %}" alt="Video 8" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
-                      </a>
+        <div class="carousel slide" id="trendingCarouselLarge" data-bs-ride="carousel">
+          <!-- Carousel Inner -->
+          <div class="carousel-inner">
+            <!-- Loop through the videos -->
+            {% for video in recent_videos %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+              <div class="row justify-content-center">
+                <!-- Video Card -->
+                <div class="col-md-6 col-lg-3 trend trend mb-5">
+                  <div class="card shadow-lg video-card" data-video-id="{{ video.id.videoId }}">
+                    <!-- Embed YouTube video with iframe -->
+                    <div class="embed-container">
+                      <iframe width="100%" height="315" 
+                      src="https://www.youtube.com/embed/{{ video.id.videoId }}?autoplay=0" 
+                      frameborder="0" 
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                      allowfullscreen></iframe>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+          {% endfor %}
 
-            <!-- Carousel Controls -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#trendingCarouselLarge" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#trendingCarouselLarge" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+            <!-- Add placeholders for missing videos (if there are less than 4 videos) -->
+            {% for _ in empty_cards %}
+              <div class="carousel-item">
+                <div class="row justify-content-center">
+                  <div class="col-md-6 col-lg-3 trend trend mb-5">
+                    <div class="card shadow-lg">
+                      <a href="#">
+                        <img src="{% static 'img/post-landscape-placeholder.jpg' %}" alt="No Video" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
           </div>
+
+          <!-- Carousel Controls -->
+         
         </div>
       </div>
     </div>
   </div>
 </section>
+
+
 
 
 
@@ -370,6 +235,14 @@
           }
       }, 2000); // 2-second delay
   }
+
+
+
+
+
+
+
+
 </script>
          
  
