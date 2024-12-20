@@ -3,7 +3,6 @@
 {% block contents %}
 
 <style>
-  
   .trend{
     width: 250px;
   }
@@ -47,22 +46,22 @@
       
       .swiper-slide .content {
         position: absolute;
-        bottom: 20px; /* Adjust to control distance from bottom */
+        bottom: 20px; 
         text-align: center;
-        color: white; /* Ensure text is readable */
+        color: white; 
         padding: 10px 20px;
-        border-radius: 8px; /* Optional: Rounded corners for the text container */
-        max-width: 80%; /* Prevent text from stretching too wide */
-        z-index: 10; /* Ensure content stays above the background */
+        border-radius: 8px; 
+        max-width: 80%; 
+        z-index: 10; 
       }
     
       h2 a {
         color: white !important;
-        text-decoration: none; /* Optional: Remove underline for links */
+        text-decoration: none; 
       }
     
       h2 a:hover {
-        text-decoration: underline; /* Optional: Add underline on hover for accessibility */
+        text-decoration: underline; 
       }
     }
     
@@ -74,10 +73,7 @@
     
 </style>
  
-  <main class="main w-100 p-0">
-    <!-- Slider Section -->
-   
-    <!-- Slider Section -->
+<main class="main w-100 p-0">
 <section style="background-color: #0F0A0D;" id="slider" class="slider section dark-background p-0 w-100">
 
   <div class="container-fluid w-100" data-aos="fade-up" data-aos-delay="100">
@@ -114,8 +110,6 @@
         </div>
         {% endfor %}
 
-
-        <!-- Slider Navigation and Pagination -->
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
         <div class="swiper-pagination"></div>
@@ -123,27 +117,27 @@
     </div>
   </div>
 </section>
-<!-- /Slider Section -->
+
 
 
 
 
 <section style="background-color: #0F0A0D;" id="lifestyle-category" class="lifestyle-category section">
 
-  <!-- Section Title -->
+  
   <div class="container section-title" data-aos="fade-up">
     <div class="section-title-container d-flex align-items-center justify-content-between">
       <h2 class="text-white">Latest Events</h2>
     </div>
-  </div><!-- End Section Title -->
+  </div>
 
   <div class="container" data-aos="fade-up" data-aos-delay="100">
-    <!-- Carousel for Featured Programs -->
+  
     <div id="featuredProgramsCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         
         {% for event in events %}
-        <!-- Carousel Item -->
+  
         <div class="carousel-item {% if forloop.first %} active {% endif %}">
           <div class="row justify-content-center">
             <div class="col-lg-3 col-md-6 trend">
@@ -165,8 +159,7 @@
         
       </div>
 
-      <!-- Carousel Controls -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#featuredProgramsCarousel" data-bs-slide="prev">
+     <button class="carousel-control-prev" type="button" data-bs-target="#featuredProgramsCarousel" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
@@ -180,14 +173,14 @@
 
 
 
-<!-- Recent Shows -->
+
 <section style="background-color: #0F0A0D;" id="trending-category" class="trending-category section">
   <div class="container" data-aos="fade-up" data-aos-delay="100">
     <div class="row" style="gap: 3rem;">
       <div class="col-12">
         <h2><a style="font-weight: 300; margin-bottom:30px; border-bottom:2px solid green; display:inline-block;" href="">Latest Event Highlight</a></h2>
 
-        <!-- Carousel for Large Screens -->
+      
         <div class="d-none d-lg-block">
           <div id="trendingCarouselLarge" class="carousel slide" data-bs-ride="carousel">
             <!-- Carousel Inner -->
