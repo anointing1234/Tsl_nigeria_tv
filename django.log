@@ -1,0 +1,26 @@
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 38552
+"GET /static/css/main.css HTTP/1.1" 304 0
+"GET /media/slider_images/HOT_STUFF_0al5dsw.webp HTTP/1.1" 304 0
+"GET /media/slider_images/slider_images/TSLONTHEGO.webp HTTP/1.1" 304 0
+"GET /media/slider_images/Rap_Battle_Ppudnmg.webp HTTP/1.1" 304 0
+"GET /media/slider_images/TSLTVGuideB_YZqfkZl.webp HTTP/1.1" 304 0
+"GET /media/Trending_now/Trending_now/Mans_Factory-9_89kl9al.webp HTTP/1.1" 304 0
+"GET /media/Trending_now/Trending_now/TSLONTHEGO_r1orQKq.webp HTTP/1.1" 304 0
+"GET /media/Trending_now/Trending_now/HOT_STUFF_T5a70TX.webp HTTP/1.1" 304 0
+"GET /media/Trending_now/Trending_now/Rap_Battle_MNZZX2C.webp HTTP/1.1" 304 0
+"GET /static/img/blog_news.webp HTTP/1.1" 304 0
+"GET /media/featured_shows/Rap_Battle_ocD9o4r.webp HTTP/1.1" 304 0
+"GET /media/featured_shows/HOT_STUFF_yzPBqM0.webp HTTP/1.1" 304 0
+"GET /media/featured_shows/Mans_Factory-9_89kl9al.webp HTTP/1.1" 304 0
+- Broken pipe from ('127.0.0.1', 52778)
+"GET /Tsl/live_tv/ HTTP/1.1" 200 21919
+"GET /Tsl/live_tv/ HTTP/1.1" 200 18940
+"GET /Tsl/home/ HTTP/1.1" 200 38552
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /Tsl/home/ HTTP/1.1" 200 28888
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /Tsl/home/ HTTP/1.1" 200 38595
+"GET /Tsl/home/ HTTP/1.1" 200 38595

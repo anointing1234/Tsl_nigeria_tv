@@ -1,0 +1,5 @@
+ERROR:root:Error scraping https://www.vanguardngr.com/: 'charmap' codec can't encode character '\u20a6' in position 127035: character maps to <undefined>
+INFO:django.server:"GET /Tsl/home/ HTTP/1.1" 200 28888
+INFO:django.utils.autoreload:C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py changed, reloading.
+INFO:django.server:"GET /Tsl/home/ HTTP/1.1" 200 38595
+INFO:django.server:"GET /Tsl/home/ HTTP/1.1" 200 38595

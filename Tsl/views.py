@@ -76,24 +76,61 @@ logger = logging.getLogger(__name__)
 #         print(f"Error scraping {url}: {e}")
 #     return []
 
+
+logging.basicConfig(level=logging.ERROR, filename='scraper_errors.log')
+
+# User-Agent pool
 USER_AGENTS = [
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36',
     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0.2 Safari/605.1.15',
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36',
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Gecko/20100101 Firefox/90.0',
-    # Add more user agents as needed
 ]
 
-def scrape_news(url, article_selector, title_selector, link_selector, image_selector):
-    headers = {
-        'User -Agent': random.choice(USER_AGENTS),
-        'Referer': 'https://www.vanguardngr.com/'
-    }
+# Header pool
+HEADERS_POOL = [
+    {
+        'User-Agent': random.choice(USER_AGENTS),
+        'Accept-Language': 'en-US,en;q=0.9',
+        'Referer': 'https://www.google.com/',
+        'Accept-Encoding': 'gzip, deflate, br',
+    },
+    {
+        'User-Agent': random.choice(USER_AGENTS),
+        'Accept-Language': 'en-NG,en;q=0.9',
+        'Referer': 'https://www.bing.com/',
+        'Accept-Encoding': 'gzip, deflate',
+    },
+]
+
+# Fetch with cache
+def fetch_with_cache(url, headers):
+    # Use a hashed filename to avoid issues with special characters in URLs
+    cache_file = f"cache/{hash(url)}.html"
+    os.makedirs('cache', exist_ok=True)  # Ensure cache directory exists
     
+    if os.path.exists(cache_file):
+        with open(cache_file, 'r', encoding='utf-8') as f:
+            return f.read()
+
+    # Make the HTTP request
+    response = requests.get(url, headers=headers, timeout=random.uniform(10, 15))
+    response.raise_for_status()  # Raise an error for HTTP status codes >= 400
+
+    # Write the response content to the cache
+    with open(cache_file, 'w', encoding='utf-8') as f:
+        f.write(response.text)
+    
+    return response.text
+
+
+# Scrape news function
+def scrape_news(url, article_selector, title_selector, link_selector, image_selector):
+    headers = random.choice(HEADERS_POOL)
+
     try:
-        response = requests.get(url, headers=headers, timeout=10)
-        response.raise_for_status()  # Raise HTTPError for bad responses
-        soup = BeautifulSoup(response.content, 'html.parser')
+        response_content = fetch_with_cache(url, headers)
+        soup = BeautifulSoup(response_content, 'html.parser')
 
         print(f"Scraping {url}...")
 
@@ -105,7 +142,7 @@ def scrape_news(url, article_selector, title_selector, link_selector, image_sele
                 link = urljoin(url, article.select_one(link_selector)['href'])
                 image_element = article.select_one(image_selector)
                 image = None
-                
+
                 if image_element:
                     if 'src' in image_element.attrs and image_element['src'].startswith('http'):
                         image = urljoin(url, image_element['src'])
@@ -128,16 +165,17 @@ def scrape_news(url, article_selector, title_selector, link_selector, image_sele
         
         print(f"Scraped {len(news)} articles from {url}")
         return news
-    
+
     except requests.exceptions.HTTPError as http_err:
+        logging.error(f"HTTP error occurred while scraping {url}: {http_err}")
         print(f"HTTP error occurred while scraping {url}: {http_err}")
     except Exception as e:
+        logging.error(f"Error scraping {url}: {e}")
         print(f"Error scraping {url}: {e}")
     
     return []
 
-
-
+# Home view
 def home(request):
     sliders = Slider.objects.filter(is_active=True).order_by('order')
     highlights = Highlight.objects.all()
@@ -168,6 +206,7 @@ def home(request):
             image_selector=source['image_selector']
         )
         blogs.extend(news)
+        time.sleep(random.uniform(3, 7))  # Random delay between 3 and 7 seconds
 
     # Separate the blogs into two distinct sections
     blog_news = blogs[:6]  # First 6 for the main Blog News section

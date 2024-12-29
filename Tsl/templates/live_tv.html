@@ -103,95 +103,75 @@
     
 
 
-<section style="background-color: #0F0A0D;" id="trending-category" class="trending-category section">
-  <div class="container d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-    <div class="row g-3">
-      <div class="col-12">
-        <div class="section-title-container d-flex align-items-center justify-content-between">
-          <h4 class="text-white">Recent Shows</h4>
-        </div>
-
-        <!-- Carousel for Large Screens -->
-        <div id="trendingCarouselLarge" class="carousel slide" data-bs-ride="carousel">
-          <!-- Carousel Inner for Large Screens -->
-          <div class="carousel-inner">
-            {% for video in recent_videos %}
-              {% if forloop.counter0|divisibleby:4 %}
-              <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
-                <div class="row justify-content-center">
-              {% endif %}
-
-              <!-- Video Card for Large Screens -->
-              <div class="col-md-6 col-lg-3 trend mb-4">
-                <div class="card shadow-lg video-card" data-video-id="{{ video.id.videoId }}">
-                  <!-- Embed YouTube video -->
-                  <div class="embed-container">
-                    <iframe width="100%" height="200"
-                            src="https://www.youtube.com/embed/{{ video.id.videoId }}?autoplay=0"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                  </div>
-                </div>
-              </div>
-
-              {% if forloop.counter|divisibleby:4 or forloop.last %}
-                </div> <!-- End of Row -->
-              </div> <!-- End of Carousel Item -->
-              {% endif %}
-            {% endfor %}
-          </div>
-
-          <!-- Carousel Controls for Large Screens -->
-          <button class="carousel-control-prev" type="button" data-bs-target="#trendingCarouselLarge" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#trendingCarouselLarge" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-
-        <!-- Carousel for Small Screens (Mobile and Tablets) -->
-        <div id="trendingCarouselSmall" class="carousel slide d-lg-none" data-bs-ride="carousel">
-          <!-- Carousel Inner for Small Screens -->
-          <div class="carousel-inner">
-            {% for video in recent_videos %}
-              <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
-                <div class="row justify-content-center">
-                  <div class="col-12 trend mb-4">
+    <section style="background-color: #0F0A0D;" id="trending-category" class="trending-category section">
+      <div class="container d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+        <div class="row g-3">
+          <div class="col-12">
+            <div class="section-title-container d-flex align-items-center justify-content-between">
+              <h4 class="text-white">Recent Shows</h4>
+            </div>
+    
+            <!-- Carousel for Large Screens -->
+            <div id="trendingCarouselLarge" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                {% for video in recent_videos %}
+                  {% if forloop.counter0|divisibleby:4 %}
+                  <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
+                    <div class="row justify-content-center">
+                  {% endif %}
+    
+                  <!-- Video Card -->
+                  <div class="col-md-6 col-lg-3 trend mb-4">
                     <div class="card shadow-lg video-card" data-video-id="{{ video.id.videoId }}">
-                      <!-- Embed YouTube video -->
                       <div class="embed-container">
-                        <iframe width="100%" height="200"
-                                src="https://www.youtube.com/embed/{{ video.id.videoId }}?autoplay=0"
+                        <iframe class="video-iframe" width="100%" height="200"
+                                src="https://www.youtube.com/embed/{{ video.id.videoId }}?autoplay=0&enablejsapi=1"
                                 frameborder="0"
                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen></iframe>
+                        <button class="btn btn-sm btn-dark mt-2 w-100" onclick="playFullScreen('{{ video.id.videoId }}')">Watch Fullscreen</button>
                       </div>
                     </div>
                   </div>
-                </div>
+    
+                  {% if forloop.counter|divisibleby:4 or forloop.last %}
+                    </div>
+                  </div>
+                  {% endif %}
+                {% endfor %}
               </div>
-            {% endfor %}
+    
+              <!-- Carousel Controls -->
+              <button class="carousel-control-prev" type="button" data-bs-target="#trendingCarouselLarge" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#trendingCarouselLarge" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
           </div>
-
-          <!-- Carousel Controls for Small Screens -->
-          <button class="carousel-control-prev" type="button" data-bs-target="#trendingCarouselSmall" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#trendingCarouselSmall" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
         </div>
-
       </div>
-    </div>
-  </div>
-</section>
+    </section>
+    
+    <script>
+      function playFullScreen(videoId) {
+        // Get the iframe element
+        const iframe = document.querySelector(`iframe[src*="${videoId}"]`);
+        if (iframe.requestFullscreen) {
+          iframe.requestFullscreen();
+        } else if (iframe.mozRequestFullScreen) { // Firefox
+          iframe.mozRequestFullScreen();
+        } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+          iframe.webkitRequestFullscreen();
+        } else if (iframe.msRequestFullscreen) { // IE/Edge
+          iframe.msRequestFullscreen();
+        }
+      }
+    </script>
+    
 
 
 
