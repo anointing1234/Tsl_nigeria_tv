@@ -9043,3 +9043,88 @@ Watching for file changes with StatReloader
 "GET /Tsl/contact/ HTTP/1.1" 200 15816
 "GET /Tsl/contact/ HTTP/1.1" 200 15816
 "GET /Tsl/contact/ HTTP/1.1" 200 15816
+Watching for file changes with StatReloader
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py", line 118, in home
+    news = scrape_news(
+           ^^^^^^^^^^^
+NameError: name 'scrape_news' is not defined
+"GET / HTTP/1.1" 500 145
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 179
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py", line 118, in home
+    news = scrape_news(
+           ^^^^^^^^^^^^
+  File "C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py", line 29, in scrape_news
+    'User-Agent': random.choice(user_agents),
+                  ^^^^^^
+NameError: name 'random' is not defined. Did you forget to import 'random'
+"GET / HTTP/1.1" 500 145
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py", line 119, in home
+    news = scrape_news(
+           ^^^^^^^^^^^^
+  File "C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py", line 93, in scrape_news
+    time.sleep(delay)
+    ^^^^
+NameError: name 'time' is not defined. Did you forget to import 'time'
+"GET / HTTP/1.1" 500 145
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 28888
+"GET /media/slider_images/slider_images/TSLONTHEGO.webp HTTP/1.1" 304 0
+"GET /media/Trending_now/Trending_now/TSLONTHEGO_r1orQKq.webp HTTP/1.1" 304 0
+"GET /media/slider_images/HOT_STUFF_0al5dsw.webp HTTP/1.1" 304 0
+"GET /media/Trending_now/Trending_now/Mans_Factory-9_89kl9al.webp HTTP/1.1" 304 0
+"GET /media/slider_images/TSLTVGuideB_YZqfkZl.webp HTTP/1.1" 304 0
+"GET /media/slider_images/Rap_Battle_Ppudnmg.webp HTTP/1.1" 304 0
+"GET /media/Trending_now/Trending_now/HOT_STUFF_T5a70TX.webp HTTP/1.1" 304 0
+"GET /media/Trending_now/Trending_now/Rap_Battle_MNZZX2C.webp HTTP/1.1" 304 0
+"GET /media/featured_shows/HOT_STUFF_yzPBqM0.webp HTTP/1.1" 304 0
+"GET /media/featured_shows/Rap_Battle_ocD9o4r.webp HTTP/1.1" 304 0
+"GET /media/featured_shows/Mans_Factory-9_89kl9al.webp HTTP/1.1" 304 0
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /Tsl/home/ HTTP/1.1" 200 38612
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /Tsl/home/ HTTP/1.1" 200 38612
+"GET /media/slider_images/slider_images/TSLONTHEGO.webp HTTP/1.1" 304 0
+"GET /media/slider_images/HOT_STUFF_0al5dsw.webp HTTP/1.1" 304 0
+"GET /media/slider_images/TSLTVGuideB_YZqfkZl.webp HTTP/1.1" 304 0
+"GET /media/Trending_now/Trending_now/Rap_Battle_MNZZX2C.webp HTTP/1.1" 304 0
+"GET /media/Trending_now/Trending_now/HOT_STUFF_T5a70TX.webp HTTP/1.1" 304 0
+"GET /media/Trending_now/Trending_now/TSLONTHEGO_r1orQKq.webp HTTP/1.1" 304 0
+"GET /media/slider_images/Rap_Battle_Ppudnmg.webp HTTP/1.1" 304 0
+"GET /media/Trending_now/Trending_now/Mans_Factory-9_89kl9al.webp HTTP/1.1" 304 0
+"GET /media/featured_shows/Rap_Battle_ocD9o4r.webp HTTP/1.1" 304 0
+"GET /media/featured_shows/HOT_STUFF_yzPBqM0.webp HTTP/1.1" 304 0
+"GET /media/featured_shows/Mans_Factory-9_89kl9al.webp HTTP/1.1" 304 0
