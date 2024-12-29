@@ -18,35 +18,38 @@ logger = logging.getLogger(__name__)
 
 def scrape_news(url, article_selector, title_selector, link_selector, image_selector):
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36'
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36',
+        'Accept-Language': 'en-US,en;q=0.9',
+        'Referer': 'https://www.vanguardngr.com/'
     }
+    
     try:
         response = requests.get(url, headers=headers, timeout=10)
+        if response.status_code == 403:
+            print(f"Access denied to {url}")
+            return []  # Return empty list if blocked
+        
         response.raise_for_status()  # Raise HTTPError for bad responses
         soup = BeautifulSoup(response.content, 'html.parser')
 
-        # Debugging: Print the HTML content
         print(f"Scraping {url}...")
 
         articles = soup.select(article_selector)
         news = []
+        
         for article in articles:
             try:
-                # Extract title and link
                 title = article.select_one(title_selector).get_text(strip=True)
                 link = urljoin(url, article.select_one(link_selector)['href'])
-                
-                # Extract and validate image
+
                 image_element = article.select_one(image_selector)
                 image = None
                 if image_element:
-                    # Check for image in src, data-src, or srcset attributes
                     if 'src' in image_element.attrs and image_element['src'].startswith('http'):
                         image = urljoin(url, image_element['src'])
                     elif 'data-src' in image_element.attrs and image_element['data-src'].startswith('http'):
                         image = urljoin(url, image_element['data-src'])
                     elif 'srcset' in image_element.attrs:
-                        # Extract the first valid URL from srcset
                         srcset_parts = image_element['srcset'].split(',')
                         for part in srcset_parts:
                             image_url = part.strip().split(' ')[0]
@@ -54,24 +57,23 @@ def scrape_news(url, article_selector, title_selector, link_selector, image_sele
                                 image = urljoin(url, image_url)
                                 break
 
-                # Add the article even if it doesn't have a valid image URL
                 if title and link:
                     if image:
-                        # Only add articles with a valid image URL
                         news.append({'title': title, 'link': link, 'image': image})
                     else:
-                        # Add the article without the image if the image is invalid
                         news.append({'title': title, 'link': link, 'image': None})
                 else:
                     print(f"Skipping article with incomplete data: title={title}, link={link}, image={image}")
             except AttributeError as e:
                 print(f"Error parsing article from {url}: {e}")
+        
         print(f"Scraped {len(news)} articles from {url}")
         return news
     except requests.exceptions.HTTPError as http_err:
         print(f"HTTP error occurred while scraping {url}: {http_err}")
     except Exception as e:
         print(f"Error scraping {url}: {e}")
+    
     return []
 
 
