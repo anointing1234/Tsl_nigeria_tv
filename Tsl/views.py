@@ -90,16 +90,10 @@ USER_AGENTS = [
 # Header pool
 HEADERS_POOL = [
     {
-        'User-Agent': random.choice(USER_AGENTS),
+        'User -Agent': random.choice(USER_AGENTS),
         'Accept-Language': 'en-US,en;q=0.9',
-        'Referer': 'https://www.google.com/',
+        'Referer': 'https://www.vanguardngr.com/',  # Set to the target site
         'Accept-Encoding': 'gzip, deflate, br',
-    },
-    {
-        'User-Agent': random.choice(USER_AGENTS),
-        'Accept-Language': 'en-NG,en;q=0.9',
-        'Referer': 'https://www.bing.com/',
-        'Accept-Encoding': 'gzip, deflate',
     },
 ]
 
