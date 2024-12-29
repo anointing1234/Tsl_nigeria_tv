@@ -9,6 +9,7 @@ from requests.exceptions import RequestException
 from django.contrib.auth import logout
 from Accounts.models import Slider,Highlight,Blog,LatestEvent,LatestEventHighlight,Media,Showcase,Trending_now,FeaturedShow
 from bs4 import BeautifulSoup
+import random
 
 # Replace with your actual Google API key securely
 api_key = 'AIzaSyCSexVrBoINLvu9y1WNeifx6wyjU8mQ7_Y'  # Example Google API key for YouTube Data API v3
@@ -74,10 +75,21 @@ logger = logging.getLogger(__name__)
 #     except Exception as e:
 #         print(f"Error scraping {url}: {e}")
 #     return []
+
+USER_AGENTS = [
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0.2 Safari/605.1.15',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Gecko/20100101 Firefox/90.0',
+    # Add more user agents as needed
+]
+
 def scrape_news(url, article_selector, title_selector, link_selector, image_selector):
     headers = {
-        'User -Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36'
+        'User -Agent': random.choice(USER_AGENTS),
+        'Referer': 'https://www.vanguardngr.com/'
     }
+    
     try:
         response = requests.get(url, headers=headers, timeout=10)
         response.raise_for_status()  # Raise HTTPError for bad responses
@@ -93,6 +105,7 @@ def scrape_news(url, article_selector, title_selector, link_selector, image_sele
                 link = urljoin(url, article.select_one(link_selector)['href'])
                 image_element = article.select_one(image_selector)
                 image = None
+                
                 if image_element:
                     if 'src' in image_element.attrs and image_element['src'].startswith('http'):
                         image = urljoin(url, image_element['src'])
@@ -112,16 +125,17 @@ def scrape_news(url, article_selector, title_selector, link_selector, image_sele
                     print(f"Skipping article with incomplete data: title={title}, link={link}, image={image}")
             except AttributeError as e:
                 print(f"Error parsing article from {url}: {e}")
+        
         print(f"Scraped {len(news)} articles from {url}")
         return news
+    
     except requests.exceptions.HTTPError as http_err:
         print(f"HTTP error occurred while scraping {url}: {http_err}")
     except Exception as e:
         print(f"Error scraping {url}: {e}")
+    
     return []
 
-# Add a delay before scraping
-time.sleep(2)  # Delay for 2 secon
 
 
 def home(request):
