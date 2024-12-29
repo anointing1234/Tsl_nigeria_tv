@@ -1,8 +1,44 @@
 {% extends 'core/base/base.html' %}
 {% load static %}
 {% block contents %}
-
 <style>
+ 
+  #slider .swiper-slide {
+    height:100%; /* Fixed height for all slides */
+    display: flex; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    align-items: center;
+    object-fit: contain;  /* Align content in the middle */
+  }
+  
+  #slider .swiper-slide img {
+    height: 100%; /* Ensure the image matches the slide height */
+    width: auto; /* Maintain the aspect ratio */
+    object-fit: contain; /* Adjust how the image fits without cropping details */
+  }
+  
+  #slider {
+    margin: 0; /* Ensure no margin pushes the section down */
+    padding: 0; /* Remove default padding */
+  }
+  
+  #blog-news .post-entry {
+    background-color:transparent; /* Dark background for the post entry */
+    transition: transform 0.2s; /* Smooth transition for hover effect */
+}
+
+#blog-news .post-entry:hover {
+    transform: scale(1.02); /* Slightly enlarge on hover */
+}
+
+#blog-news .post-list {
+    padding: 10px; /* Add padding to trending articles */
+}
+
+#blog-news img {
+    max-height: 200px; /* Limit the height of images */
+    object-fit: cover; /* Ensure images cover the area without distortion */
+}
   .trend{
     width: 250px;
   }
@@ -34,16 +70,7 @@
    
    
     @media (max-width: 768px) {
-      .swiper-slide {
-        position: relative; /* Make sure the slide is positioned relative for child positioning */
-        background-size: cover;
-        background-position: center;
-        display: flex;
-        align-items: flex-end; /* Align items at the bottom */
-        justify-content: center; /* Center items horizontally */
-        height: 200px; /* Reduce the height for smaller screens */
-      }
-      
+    
       .swiper-slide .content {
         position: absolute;
         bottom: 20px; 
@@ -63,12 +90,12 @@
       h2 a:hover {
         text-decoration: underline; 
       }
+      
     }
        
 </style>
  
 <main style="background-color: #0F0A0D;" class="main w-100 p-0 dark-background">
-
 
 <section style="background-color: #0F0A0D;" id="slider" class="slider section dark-background p-0 w-100">
   <div class="container-fluid w-100" data-aos="fade-up" data-aos-delay="100">
@@ -94,11 +121,17 @@
         }
       </script>
       <div class="swiper-wrapper w-100 p-0">
+        {%  if sliders  %}
         {% for slide in sliders %}
-        <div class="swiper-slide bg-none w-100 p-0 img-fluid" style="background-image: url('{{ slide.image.url }}'); background-size:contain;background-repeat: no-repeat; background-position: center; height: 80%;">
-         
+        <div class="swiper-slide bg-none w-100 p-0 m-0 ">
+          <img class="img-fluid" src="{{ slide.image.url }}" alt="">
         </div>
         {% endfor %}
+        {% else  %}
+        <p>
+          No sliders available
+        </p>
+        {% endif %}
       </div>
       <div class="swiper-pagination"></div>
     </div>
@@ -107,74 +140,54 @@
 </section>
 
 
-<!-- Trending Videos Section -->
+
+
+
 <section style="background-color: #0F0A0D;" id="trending-category" class="trending-category section m-5 pt-5">
   <div class="container pt-2 px-3" data-aos="fade-up" data-aos-delay="100">
     <div class="row">
       <div class="col-12">
-        <h2>
-          <a style="font-weight: 300; margin-bottom:30px; border-bottom:2px solid green; display:inline-block; color:white;" href="">
-            Trending Now
-          </a>
-        </h2>
+        <div class="container section-title" data-aos="fade-up">
+          <div class="section-title-container d-flex align-items-center justify-content-between">
+            <h3 class="text-white">Trending Shows</h3>
+          </div>
+        </div><!-- End Section Title -->
 
-        <!-- Combined Carousel -->
         <div id="trendingCarousel" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
-            <!-- Slide 1 -->
-            <div class="carousel-item active">
-              <div class="row justify-content-center">
-                <div class="col-6 col-md-4 col-lg-3 trend mb-4">
-                  <a href="video-details.html">
-                    <img src="{% static 'img/Mans_Factory.jpg' %}" alt="Video 1" class="img-fluid rounded-3 shadow-lg" style="height: 300px; object-fit: cover;">
-                  </a>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3 trend mb-4">
-                  <a href="video-details.html">
-                    <img src="{% static 'img/Hot_Stuff.jpg' %}" alt="Video 2" class="img-fluid rounded-3 shadow-lg" style="height: 300px; object-fit: cover;">
-                  </a>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3 trend mb-4">
-                  <a href="video-details.html">
-                    <img src="{% static 'img/Hot_Stuff_Copy.jpg' %}" alt="Video 3" class="img-fluid rounded-3 shadow-lg" style="height: 300px; object-fit: cover;">
-                  </a>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3 trend mb-4">
-                  <a href="video-details.html">
-                    <img src="{% static 'img/Hot_Stuff_Copy.jpg' %}" alt="Video 4" class="img-fluid rounded-3 shadow-lg" style="height: 300px; object-fit: cover;">
-                  </a>
-                </div>
-              </div>
-            </div>
 
-            <!-- Slide 2 -->
-            <div class="carousel-item">
-              <div class="row justify-content-center">
-                <div class="col-6 col-md-4 col-lg-3 trend mb-4">
-                  <a href="video-details.html">
-                    <img src="{% static 'img/Mans_Factory.jpg' %}" alt="Video 1" class="img-fluid rounded-3 shadow-lg" style="height: 300px; object-fit: cover;">
-                 
-                  </a>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3 trend mb-4">
-                  <a href="video-details.html">
-                    <img src="{% static 'img/Hot_Stuff.jpg' %}" alt="Video 2" class="img-fluid rounded-3 shadow-lg" style="height: 300px; object-fit: cover;">
-                 
-                  </a>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3 trend mb-4">
-                  <a href="video-details.html">
-                    <img src="{% static 'img/Hot_Stuff_Copy.jpg' %}" alt="Video 3" class="img-fluid rounded-3 shadow-lg" style="height: 300px; object-fit: cover;">
-                 
-                  </a>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3 trend mb-4">
-                  <a href="video-details.html">
-                    <img src="{% static 'img/Hot_Stuff_Copy.jpg' %}" alt="Video 4" class="img-fluid rounded-3 shadow-lg" style="height: 300px; object-fit: cover;">
-                  </a>
+            <!-- For larger screens (grouped images) -->
+            {% for group in Trending_Now %}
+              <div class="carousel-item {% if forloop.first %}active{% endif %} d-none d-md-block">
+                <div class="row justify-content-center">
+                  {% for image in group %}
+                    <div class="col-md-4 col-lg-3 trend mb-4 text-center">
+                      <a href="{% url 'live_tv' %}">
+                        <img src="{{ image.image.url }}" 
+                             class="img-fluid rounded-3 shadow-lg" style="height: 300px; object-fit: cover;">
+                      </a>
+                    </div>
+                  {% endfor %}
                 </div>
               </div>
-            </div>
+            {% endfor %}
+
+            <!-- For small screens (single image per slide) -->
+            {% for group in Trending_Now %}
+              <div class="carousel-item {% if forloop.first %}active{% endif %} d-block d-md-none">
+                <div class="row justify-content-center">
+                  {% for image in group %}
+                    <div class="col-12 trend mb-4 text-center">
+                      <a href="{% url 'live_tv' %}">
+                        <img src="{{ image.image.url }}" 
+                             class="img-fluid rounded-3 shadow-lg" style="height: 300px; object-fit: cover;">
+                      </a>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            {% endfor %}
+
           </div>
 
           <!-- Carousel Controls -->
@@ -187,175 +200,171 @@
             <span class="visually-hidden">Next</span>
           </button>
         </div>
+        
       </div>
     </div>
   </div>
 </section>
 
 
-      <section style="background-color: #0F0A0D; color:white;" id="culture-category" class="culture-category section">
-        <!-- Section Title -->
-        <div class="container section-title text-center py-4" data-aos="fade-up">
-          <div class="section-title-container d-flex flex-column flex-md-row align-items-center justify-content-between">
-            <h2 class="mb-3 mb-md-0">Highlights</h2>
 
-          </div>
-        </div>
-      
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="row">
-            {% for highlight in highlights %}
-              <!-- Column for each highlight, ensuring two per row -->
-              <div class="col-md-6 col-lg-6 mb-4">
-                <div class="post-entry">
-                  <a  class="thumbnail d-inline-block mb-4">
-                    <img src="{{ highlight.image.url|default_if_none:'path/to/default-image.jpg' }}" alt="{{ highlight.title }}" class="img-fluid">
-                  </a>
-                  <div>
-                    <div class="post-meta">
-                      <span class="date">{{ highlight.category }}</span>
-                      <span class="mx-1">•</span>
-                      <span>{{ highlight.date|date:"M d, Y" }}</span>
+
+<section style="background-color: #0F0A0D; color: white;" id="culture-category" class="culture-category section">
+  <!-- Section Title -->
+  <div class="container section-title text-center py-4" data-aos="fade-up">
+    <div class="section-title-container d-flex flex-column flex-md-row align-items-center justify-content-between">
+      <h3 class="mb-3  mb-md-0">Highlights</h3>
+    </div>
+  </div>
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    {% if highlights %}
+      <div id="highlightsCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          {% for highlight in highlights %}
+            {% if forloop.counter0|divisibleby:4 %}
+              <!-- Create a new slide every 4 highlights -->
+              <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                <div class="row">
+            {% endif %}
+            
+                  <!-- Column for each highlight -->
+                  <div class="col-md-6 col-lg-6 mb-4">
+                    <div class="post-entry">
+                      <a class="thumbnail d-inline-block mb-4">
+                        <img src="{{ highlight.image.url|default_if_none:'path/to/default-image.jpg' }}" alt="{{ highlight.title }}" class="img-fluid" style="max-height: 300px; object-fit: cover;">
+                      </a>
+                      <div>
+                        <div class="post-meta">
+                          <span class="date">{{ highlight.category }}</span>
+                          <span class="mx-1">•</span>
+                          <span>{{ highlight.date|date:"M d, Y" }}</span>
+                        </div>
+                        <h3><a class="text-white" href="{{ highlight.url }}">{{ highlight.title }}</a></h3>
+                        <p>{{ highlight.description|truncatewords:30 }}</p>
+                      </div>
                     </div>
-                    <h3><a class="text-white" href="{{ highlight.url }}">{{ highlight.title }}</a></h3>
-                    <p>{{ highlight.description|truncatewords:30 }}</p>
                   </div>
+                  <!-- End Column for each highlight -->
+
+            {% if forloop.counter|divisibleby:4 or forloop.last %}
                 </div>
               </div>
-              <!-- End Column for each highlight -->
-            {% endfor %}
-          </div>
+            {% endif %}
+          {% endfor %}
         </div>
-      </section>
+
+        <!-- Custom Carousel Buttons -->
+        <div class="d-flex justify-content-center mt-4">
+          <button class="btn btn-success rounded-circle me-2" type="button" data-bs-target="#highlightsCarousel" data-bs-slide="prev">
+            <i class="bi bi-arrow-left"></i>
+          </button>
+          <button class="btn btn-success rounded-circle ms-2" type="button" data-bs-target="#highlightsCarousel" data-bs-slide="next">
+            <i class="bi bi-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</section>
 
 
 
-        <!-- Business Category Section -->
-<section style="background-color: #0F0A0D; color:white;" id="business-category" class="business-category section">
-
-  <!-- Section Title -->
+<section style="background-color: #0F0A0D; color:white;" id="blog-news" class="blog-news section">
   <div class="container section-title" data-aos="fade-up">
-    <div class="section-title-container d-flex align-items-center justify-content-between">
-      <h2 class="text-white">Blog</h2>
-    </div>
-  </div><!-- End Section Title -->
+    <h3 style="font-weight: 300; margin-bottom: 30px; border-bottom: 2px solid green; display: inline-block; color: white;" class="text-white">Blog News</h3>
+  </div>
 
   <div class="container" data-aos="fade-up" data-aos-delay="100">
     <div class="row">
-      <div class="col-md-9 order-md-2">
-        <!-- Display the first blog post -->
-        {% for blog in blogs %}
-          <div class="d-lg-flex post-entry">
-            <a class="me-4 thumbnail d-inline-block mb-4 mb-lg-0">
-              <img src="{{ blog.image.url|default_if_none:'path/to/default-image.jpg' }}" alt="{{ blog.title }}" class="img-fluid">
-            </a>
-            <div>
-              <div class="post-meta text-light">
-                <span class="date">{{ blog.category }}</span>
-                <span class="mx-1">•</span>
-                <span>{{ blog.date|date:"M d, Y" }}</span>
+      <!-- Main Blog Section -->
+      <div class="col-md-12 col-lg-8 order-md-2">
+        {% if blogs %}
+          <div class="row">
+            {% for blog in blogs %}
+              <div class="col-12 col-sm-6 col-md-4 mb-4">
+                <div class="post-entry border border-1 rounded p-3">
+                  <a href="{{ blog.link }}" target="_blank" class="d-block mb-3">
+                    {% if blog.image %}
+                      <!-- If there is a valid image URL, display it -->
+                      <img src="{{ blog.image }}" 
+                           onerror="this.src='{% static 'img/blog_news.webp' %}';" 
+                           alt="{{ blog.title }}" class="img-fluid rounded" style="width: 100%; height: auto;">
+                    {% else %}
+                      <!-- If there is no image, use the default static image -->
+                      <img src="{% static 'img/blog_news.webp' %}" 
+                           alt="{{ blog.title }}" class="img-fluid rounded" style="width: 100%; height: auto;">
+                    {% endif %}
+                  </a>
+                  <div class="post-meta text-light">
+                    <span class="mx-1">•</span>
+                    <span>{{ blog.publish_date|default:"N/A"|date:"M d, Y" }}</span>
+                  </div>
+                  <h3 class="h5 mt-2"><a class="text-white" href="{{ blog.link }}" target="_blank">{{ blog.title }}</a></h3>
+                </div>
               </div>
-              <h3><a class="text-white" href="">{{ blog.title }}</a></h3>
-              <p class="text-white">{{ blog.description|truncatewords:30 }}</p>
-            </div>
+            {% endfor %}
           </div>
-        {% endfor %}
-        
-   
-
+        {% else %}
+          <p class="text-white">No news available at the moment. Please check back later.</p>
+        {% endif %}
       </div>
 
-      <div class="col-md-6 col-lg-3 trend">
-        <!-- Trending Posts (you can update this to use trending blogs if needed) -->
-        {% for blog in blogs %}
-          <div class="post-list border-bottom">
-            <div class="post-meta">
-              <span class="date text-light">{{ blog.category }}</span>
-              <span class="mx-1">•</span>
-              <span>{{ blog.date|date:"M d, Y" }}</span>
+      <!-- Trending Section -->
+      <div class="col-md-6 col-lg-4 trend">
+        <h4 class="text-white mb-4">Trending Articles</h4>
+        {% if trending_articles %}
+          {% for blog in trending_articles %}
+            <div class="post-list border-bottom mb-3">
+              <div class="post-meta">
+                <span class="mx-1">•</span>
+                <span>{{ blog.publish_date|default:"N/A"|date:"M d, Y" }}</span>
+              </div>
+              <h5 class="mb-2">
+                <a class="text-white" href="{{ blog.link }}" target="_blank">{{ blog.title }}</a>
+              </h5>
             </div>
-            <h2 class="mb-2"><a class="text-white" >{{ blog.title }}</a></h2>
-            <span class="author mb-3 d-block">{{ blog.author }}</span>
-          </div>
-        {% endfor %}
+          {% endfor %}
+        {% else %}
+          <p class="text-white">No trending articles available at the moment.</p>
+        {% endif %}
       </div>
     </div>
   </div>
-</section><!-- /Business Category Section -->
+</section>
 
+
+
+
+        
 
 
             <!-- Lifestyle Category Section -->
-            <section  style="background-color: #0F0A0D;"    id="lifestyle-category" class="lifestyle-category section">
+            <section style="background-color: #0F0A0D;" id="lifestyle-category" class="lifestyle-category section">
 
               <!-- Section Title -->
               <div class="container section-title" data-aos="fade-up">
                 <div class="section-title-container d-flex align-items-center justify-content-between">
-                  <h2 class="text-white">Featured Shows</h2>
+                  <h3 class="text-white">Featured Shows</h3>
                 </div>
               </div><!-- End Section Title -->
-    
+            
+              <!-- Section for Small Screens (Existing) -->
               <div class="container" data-aos="fade-up" data-aos-delay="100">
-                <!-- Carousel for Featured Programs -->
-                <div id="featuredProgramsCarousel" class="carousel slide" data-bs-ride="carousel">
+                <!-- Carousel for Featured Programs (Small Screens) -->
+                <div id="featuredProgramsCarousel" class="carousel slide d-block d-lg-none" data-bs-ride="carousel">
                   <div class="carousel-inner">
-                    <!-- Carousel Item 1 -->
-                    <div class="carousel-item active">
-                      <div class="row  justify-content-center">
-                        <div class="col-lg-3 col-md-6 col-lg-3 trend">
-                          <div class="post-list">
-                            <a ><img src="{% static 'img/post-landscape-8.jpg' %}" alt="" class="img-fluid"></a>
-                            <div class="post-meta"><span class="date text-white">Lifestyle</span> <span class="mx-1">•</span> <span>Jul 5th '22</span></div>
-                            <h2><a class="text-white">11 Work From Home Part-Time Jobs You Can Do Now</a></h2>
-                          </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-lg-3 trend">
-                          <div class="post-list">
-                            <a ><img src="{% static 'img/post-landscape-6.jpg' %}" alt="" class="img-fluid"></a>
-                            <div class="post-meta"><span class="date text-white">Lifestyle</span> <span class="mx-1">•</span> <span>Jul 5th '22</span></div>
-                            <h2><a class="text-white">Let’s Get Back to Work, New York</a></h2>
-                          </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-lg-3 trend">
-                          <div class="post-list">
-                            <a ><img src="{% static 'img/post-landscape-5.jpg' %}" alt="" class="img-fluid"></a>
-                            <div class="post-meta"><span class="date text-white">Lifestyle</span> <span class="mx-1">•</span> <span>Jul 17th '22</span></div>
-                            <h2><a class="text-white" >How to Avoid Distraction and Stay Focused During Video Calls?</a></h2>
+                    {% for show in featured_shows %}
+                      <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                        <div class="row justify-content-center">
+                          <div class="col-lg-3 col-md-6 trend">
+                            <img src="{{ show.image.url }}" alt="Featured Show {{ forloop.counter }}" class="img-fluid">
                           </div>
                         </div>
                       </div>
-                    </div>
-    
-                    <!-- Carousel Item 2 -->
-                    <div class="carousel-item">
-                      <div class="row  justify-content-center">
-                        <div class="col-lg-3 col-md-6 col-lg-3 trend">
-                          <div class="post-list">
-                            <a><img src="{% static 'img/post-landscape-4.jpg' %}" alt="" class="img-fluid"></a>
-                            <div class="post-meta"><span class="date">Lifestyle</span> <span class="mx-1">•</span> <span>Mar 15th '22</span></div>
-                            <h2><a class="text-white">Why Craigslist Tampa Is One of The Most Interesting Places On the Web?</a></h2>
-                          </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-lg-3 trend">
-                          <div class="post-list">
-                            <a ><img src="{% static 'img/post-landscape-2.jpg' %}" alt="" class="img-fluid"></a>
-                            <div class="post-meta"><span class="date">Lifestyle</span> <span class="mx-1">•</span> <span>Mar 1st '22</span></div>
-                            <h2><a class="text-white">10 Life-Changing Hacks Every Working Mom Should Know</a></h2>
-                          </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-lg-3 trend">
-                          <div class="post-list">
-                            <a ><img src="{% static 'img/post-landscape-1.jpg' %}" alt="" class="img-fluid"></a>
-                            <div class="post-meta"><span class="date">Lifestyle</span> <span class="mx-1">•</span> <span>Jul 5th '22</span></div>
-                            <h2><a class="text-white">5 Great Startup Tips for Female Founders</a></h2>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-    
-                    <!-- Add more carousel items as needed -->
+                    {% endfor %}
                   </div>
-    
+            
                   <!-- Carousel Controls -->
                   <button class="carousel-control-prev" type="button" data-bs-target="#featuredProgramsCarousel" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -367,7 +376,24 @@
                   </button>
                 </div>
               </div>
+            
+              <!-- Section for Large Screens -->
+              <div class="container d-none d-lg-block" data-aos="fade-up" data-aos-delay="100">
+                <!-- Display 3 cards in a row for Large Screens -->
+                <div class="row justify-content-center">
+                  {% for show in featured_shows %}
+                    <div class="col-lg-4 col-md-6 trend mb-4 text-center">
+                      <img src="{{ show.image.url }}" alt="Featured Show {{ forloop.counter }}" class="img-fluid">
+                      <!-- Buttons below each image -->
+                    
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            
             </section>
+            
+            
     
 
 
@@ -412,483 +438,3 @@
 
 
 
-
-
-
-{% comment %} {% extends 'core/base/base.html' %}
-{% load static %}
-{% block contents %}
-
-<style>
-  .card {
-    transition: all 0.1s ease-in-out; /* Smooth transition for the effect */
-  }
-  .trend{
-    width: 220px;
-  }
-  
-  .card:hover {
-    border: 2px solid rgba(255, 255, 255, 0.5); /* Light border color */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Optional shadow effect for better hover feel */
-  }
-
-  @media (max-width: 768px) {
-    .swiper-slide {
-      position: relative; /* Make sure the slide is positioned relative for child positioning */
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: flex-end; /* Align items at the bottom */
-      justify-content: center; /* Center items horizontally */
-      height: 300px; /* Fixed height for small screens */ /* Reduce the height for smaller screens */
-    }
-    
-    .swiper-slide .content {
-      position: absolute;
-      bottom: 20px; /* Adjust to control distance from bottom */
-      text-align: center;
-      color: white; /* Ensure text is readable */
-      padding: 10px 20px;
-      border-radius: 8px; /* Optional: Rounded corners for the text container */
-      max-width: 80%; /* Prevent text from stretching too wide */
-      z-index: 10; /* Ensure content stays above the background */
-    }
-  
-    h2 a {
-      color: white !important;
-      text-decoration: none; /* Optional: Remove underline for links */
-    }
-  
-    h2 a:hover {
-      text-decoration: underline; /* Optional: Add underline on hover for accessibility */
-    }
-  }
-  
-    
-</style>
-
-  <main  class="main w-100 p-0 h-100  img-fluid">
-
-    
-    <!-- Swiper Slider -->
-    <div class="swiper init-swiper w-100 p-0 mb-5" style="position: absolute; top: 0; left: 0; width: 100%; height:100%; z-index: 1;">
-      <script type="application/json" class="swiper-config">
-        {
-          "loop": true,
-          "speed": 600,
-          "autoplay": {
-            "delay": 5000
-          },
-          "slidesPerView": "auto",
-          "centeredSlides": true,
-          "pagination": {
-            "el": ".swiper-pagination",
-            "type": "bullets",
-            "clickable": true
-          },
-          "navigation": {
-            "nextEl": ".swiper-button-next",
-            "prevEl": ".swiper-button-prev"
-          }
-        }
-      </script>
-    
-      <!-- Swiper Wrapper with Images -->
-      <div class="swiper-wrapper w-100 p-0">
-        {% for slide in sliders %}
-        <div class="swiper-slide bg-none w-100 p-0 img-fluid" style="background-image: url('{{ slide.image.url }}'); background-size:cover;background-repeat: no-repeat; background-position: center; height: 100%;">
-          <div class="content">
-            <h2><a href="#">{{ slide.title }}</a></h2>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-    
-      <div class="swiper-pagination"></div>
-    </div>
-    
-    
-
-
-
-        <!-- Trending Videos Section -->
-        <section style="background-color: #0F0A0D;" id="trending-category" class="trending-category section m-5 pt-5">
-          <div class="container pt-5 m-5" data-aos="fade-up" data-aos-delay="100">
-            <div class="row" style="gap: 5rem;">
-              <div class="col-12">
-                <h2><a style="font-weight: 300; margin-bottom:30px; border-bottom:2px solid green; display:inline-block; color:white;" href="">Trending Now</a></h2>
-
-                <!-- Carousel for Large Screens -->
-                <div class="d-none d-lg-block">
-                  <div id="trendingCarouselLarge" class="carousel slide" data-bs-ride="carousel">
-                    <!-- Carousel Inner -->
-                    <div class="carousel-inner">
-                      <!-- Slide 1 -->
-                      <div class="carousel-item active">
-                        <div class="row justify-content-center">
-                          <!-- Video Card 1 -->
-                          <div  class="col-md-6 col-lg-3 trend mb-5">
-                            <div class="card shadow-lg">
-                              <a href="video-details.html">
-
-                                <img src="{% static 'img/post-landscape-1.jpg' %}" alt="Video 1" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
-                              </a>
-                            </div>
-                          </div>
-                          <!-- Video Card 2 -->
-                          <div class="col-md-6 col-lg-3 trend mb-5">
-                            <div class="card shadow-lg">
-                              <a href="video-details.html">
-                                <img src="{% static 'img/post-landscape-2.jpg' %}" alt="Video 2" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
-                              </a>
-                            </div>
-                          </div>
-                          <!-- Video Card 3 -->
-                          <div class="col-md-6 col-lg-3 trend mb-5">
-                            <div class="card shadow-lg">
-                              <a href="video-details.html">
-                                <img src="{% static 'img/post-landscape-3.jpg' %}" alt="Video 3" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
-                              </a>
-                            </div>
-                          </div>
-                          <!-- Video Card 4 -->
-                          <div class="col-md-6 col-lg-3 trend mb-5">
-                            <div class="card shadow-lg">
-                              <a href="video-details.html">
-                                <img src="{% static 'img/post-landscape-5.jpg' %}" alt="Video 4" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <!-- Slide 2 -->
-                      <div class="carousel-item">
-                        <div class="row justify-content-center">
-                          <!-- Video Card 5 -->
-                          <div class="col-md-6 col-lg-3 trend mb-5">
-                            <div class="card shadow-lg">
-                              <a href="video-details.html">
-                                <img src="{% static 'img/post-landscape-6.jpg' %}" alt="Video 5" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
-                              </a>
-                            </div>
-                          </div>
-                          <!-- Video Card 6 -->
-                          <div class="col-md-6 col-lg-3 trend mb-5">
-                            <div class="card shadow-lg">
-                              <a href="video-details.html">
-                                <img src="{% static 'img/post-landscape-7.jpg' %}" alt="Video 6" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
-                              </a>
-                            </div>
-                          </div>
-                          <!-- Video Card 7 -->
-                          <div class="col-md-6 col-lg-3 trend mb-5">
-                            <div class="card shadow-lg">
-                              <a href="video-details.html">
-                                <img src="{% static 'img/post-landscape-8.jpg' %}" alt="Video 7" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
-                              </a>
-                            </div>
-                          </div>
-                          <!-- Video Card 8 -->
-                          <div class="col-md-6 col-lg-3 trend mb-5">
-                            <div class="card shadow-lg">
-                              <a href="video-details.html">
-                                <img src="{% static 'img/post-landscape-3.jpg' %}" alt="Video 8" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Carousel Controls -->
-                    <button class="carousel-control-prev" type="button" data-bs-target="#trendingCarouselLarge" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#trendingCarouselLarge" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
-                  </div>
-                </div>
-
-                <!-- Carousel for Small Screens -->
-                <div class="d-block d-lg-none">
-                  <div id="trendingCarouselSmall" class="carousel slide" data-bs-ride="carousel">
-                    <!-- Carousel Inner -->
-                    <div class="carousel-inner">
-                      <!-- Video Cards -->
-                      <div class="carousel-item active">
-                        <div class="card shadow-lg mx-auto" style="max-width: 230px;">
-                          <a href="video-details.html">
-                            <img src="{% static 'img/post-landscape-1.jpg' %}" alt="Video 1" class="card-img-top rounded-3" style="height: 350px; object-fit: cover;">
-                          </a>
-                        </div>
-                      </div>
-                      <div class="carousel-item">
-                        <div class="card shadow-lg mx-auto" style="max-width: 230px;">
-                          <a href="video-details.html">
-                            <img src="{% static 'img/post-landscape-2.jpg' %}" alt="Video 2" class="card-img-top rounded-3" style="height: 350px; object-fit: cover;">
-                          </a>
-                        </div>
-                      </div>
-                      <div class="carousel-item">
-                        <div class="card shadow-lg mx-auto" style="max-width: 230px;">
-                          <a href="video-details.html">
-                            <img src="{% static 'img/post-landscape-3.jpg' %}" alt="Video 3" class="card-img-top rounded-3" style="height: 350px; object-fit: cover;">
-                          </a>
-                        </div>
-                      </div>
-                      <div class="carousel-item">
-                        <div class="card shadow-lg mx-auto" style="max-width: 230px;">
-                          <a href="video-details.html">
-                            <img src="{% static 'img/post-landscape-3.jpg' %}" alt="Video 3" class="card-img-top rounded-3" style="height: 350px; object-fit: cover;">
-                          </a>
-                        </div>
-                      </div>
-                      <div class="carousel-item">
-                        <div class="card shadow-lg mx-auto" style="max-width: 230px;">
-                          <a href="video-details.html">
-                            <img src="{% static 'img/post-landscape-5.jpg' %}" alt="Video 4" class="card-img-top rounded-3" style="height: 350px; object-fit: cover;">
-                          </a>
-                        </div>
-                      </div>
-
-                      <div class="carousel-item">
-                        <div class="card shadow-lg mx-auto" style="max-width: 230px;">
-                          <a href="video-details.html">
-                            <img src="{% static 'img/post-landscape-6.jpg' %}" alt="Video 5" class="card-img-top rounded-3" style="height: 350px; object-fit: cover;">
-                          </a>
-                        </div>
-                      </div>
-
-                      <div class="carousel-item">
-                        <div class="card shadow-lg mx-auto" style="max-width: 230px;">
-                          <a href="video-details.html">
-                            <img src="{% static 'img/post-landscape-7.jpg' %}" alt="Video 6" class="card-img-top rounded-3" style="height: 350px; object-fit: cover;">
-                          </a>
-                        </div>
-                      </div>
-
-                      <div class="carousel-item">
-                        <div class="card shadow-lg mx-auto" style="max-width: 230px;">
-                          <a href="video-details.html">
-                            <img src="{% static 'img/post-landscape-8.jpg' %}" alt="Video 7" class="card-img-top rounded-3" style="height: 350px; object-fit: cover;">
-                          </a>
-                        </div>
-                      </div>
-
-                      <div class="carousel-item">
-                        <div class="card shadow-lg mx-auto" style="max-width: 230px;">
-                          <a href="video-details.html">
-                            <img src="{% static 'img/post-landscape-3.jpg' %}" alt="Video 8" class="card-img-top rounded-3" style="height: 350px; object-fit: cover;">
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Carousel Controls -->
-                    <button class="carousel-control-prev" type="button" data-bs-target="#trendingCarouselSmall" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#trendingCarouselSmall" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
-                  </div>
-                </div>
-
-
-
-              </div>
-            </div>
-          </div>
-        </section>
-
-
-
-
-        <section style="background-color: #0F0A0D; color:white;" id="culture-category" class="culture-category section">
-          <!-- Section Title -->
-          <div class="container section-title text-center py-4" data-aos="fade-up">
-            <div class="section-title-container d-flex flex-column flex-md-row align-items-center justify-content-between">
-              <h2 class="mb-3 mb-md-0">Highlights</h2>
-
-            </div>
-          </div>
-        
-          <div class="container" data-aos="fade-up" data-aos-delay="100">
-            <div class="row">
-              {% for highlight in highlights %}
-                <!-- Column for each highlight, ensuring two per row -->
-                <div class="col-md-6 col-lg-6 mb-4">
-                  <div class="post-entry">
-                    <a  class="thumbnail d-inline-block mb-4">
-                      <img src="{{ highlight.image.url|default_if_none:'path/to/default-image.jpg' }}" alt="{{ highlight.title }}" class="img-fluid">
-                    </a>
-                    <div>
-                      <div class="post-meta">
-                        <span class="date">{{ highlight.category }}</span>
-                        <span class="mx-1">•</span>
-                        <span>{{ highlight.date|date:"M d, Y" }}</span>
-                      </div>
-                      <h3><a class="text-white" href="{{ highlight.url }}">{{ highlight.title }}</a></h3>
-                      <p>{{ highlight.description|truncatewords:30 }}</p>
-                    </div>
-                  </div>
-                </div>
-                <!-- End Column for each highlight -->
-              {% endfor %}
-            </div>
-          </div>
-          
-          
-        
-          <!-- Business Category Section -->
-<section style="background-color: #0F0A0D; color:white;" id="business-category" class="business-category section">
-
-  <!-- Section Title -->
-  <div class="container section-title" data-aos="fade-up">
-    <div class="section-title-container d-flex align-items-center justify-content-between">
-      <h2 class="text-white">Blog</h2>
-    </div>
-  </div><!-- End Section Title -->
-
-  <div class="container" data-aos="fade-up" data-aos-delay="100">
-    <div class="row">
-      <div class="col-md-9 order-md-2">
-        <!-- Display the first blog post -->
-        {% for blog in blogs %}
-          <div class="d-lg-flex post-entry">
-            <a class="me-4 thumbnail d-inline-block mb-4 mb-lg-0">
-              <img src="{{ blog.image.url|default_if_none:'path/to/default-image.jpg' }}" alt="{{ blog.title }}" class="img-fluid">
-            </a>
-            <div>
-              <div class="post-meta text-light">
-                <span class="date">{{ blog.category }}</span>
-                <span class="mx-1">•</span>
-                <span>{{ blog.date|date:"M d, Y" }}</span>
-              </div>
-              <h3><a class="text-white" href="">{{ blog.title }}</a></h3>
-              <p class="text-white">{{ blog.description|truncatewords:30 }}</p>
-            </div>
-          </div>
-        {% endfor %}
-        
-   
-
-      </div>
-
-      <div class="col-md-6 col-lg-3 trend">
-        <!-- Trending Posts (you can update this to use trending blogs if needed) -->
-        {% for blog in blogs %}
-          <div class="post-list border-bottom">
-            <div class="post-meta">
-              <span class="date text-light">{{ blog.category }}</span>
-              <span class="mx-1">•</span>
-              <span>{{ blog.date|date:"M d, Y" }}</span>
-            </div>
-            <h2 class="mb-2"><a class="text-white" >{{ blog.title }}</a></h2>
-            <span class="author mb-3 d-block">{{ blog.author }}</span>
-          </div>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-</section><!-- /Business Category Section -->
-
-
-        
-
-
-            <!-- Lifestyle Category Section -->
-        <section  style="background-color: #0F0A0D;"    id="lifestyle-category" class="lifestyle-category section">
-
-          <!-- Section Title -->
-          <div class="container section-title" data-aos="fade-up">
-            <div class="section-title-container d-flex align-items-center justify-content-between">
-              <h2 class="text-white">Featured Shows</h2>
-              <p><a class="text-white" href="categories.html">See All Featured Shows</a></p>
-            </div>
-          </div><!-- End Section Title -->
-
-          <div class="container" data-aos="fade-up" data-aos-delay="100">
-            <!-- Carousel for Featured Programs -->
-            <div id="featuredProgramsCarousel" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                <!-- Carousel Item 1 -->
-                <div class="carousel-item active">
-                  <div class="row  justify-content-center">
-                    <div class="col-lg-3 col-md-6 col-lg-3 trend">
-                      <div class="post-list">
-                        <a ><img src="{% static 'img/post-landscape-8.jpg' %}" alt="" class="img-fluid"></a>
-                        <div class="post-meta"><span class="date text-white">Lifestyle</span> <span class="mx-1">•</span> <span>Jul 5th '22</span></div>
-                        <h2><a class="text-white">11 Work From Home Part-Time Jobs You Can Do Now</a></h2>
-                      </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-lg-3 trend">
-                      <div class="post-list">
-                        <a ><img src="{% static 'img/post-landscape-6.jpg' %}" alt="" class="img-fluid"></a>
-                        <div class="post-meta"><span class="date text-white">Lifestyle</span> <span class="mx-1">•</span> <span>Jul 5th '22</span></div>
-                        <h2><a class="text-white">Let’s Get Back to Work, New York</a></h2>
-                      </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-lg-3 trend">
-                      <div class="post-list">
-                        <a ><img src="{% static 'img/post-landscape-5.jpg' %}" alt="" class="img-fluid"></a>
-                        <div class="post-meta"><span class="date text-white">Lifestyle</span> <span class="mx-1">•</span> <span>Jul 17th '22</span></div>
-                        <h2><a class="text-white" >How to Avoid Distraction and Stay Focused During Video Calls?</a></h2>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Carousel Item 2 -->
-                <div class="carousel-item">
-                  <div class="row  justify-content-center">
-                    <div class="col-lg-3 col-md-6 col-lg-3 trend">
-                      <div class="post-list">
-                        <a><img src="{% static 'img/post-landscape-4.jpg' %}" alt="" class="img-fluid"></a>
-                        <div class="post-meta"><span class="date">Lifestyle</span> <span class="mx-1">•</span> <span>Mar 15th '22</span></div>
-                        <h2><a class="text-white">Why Craigslist Tampa Is One of The Most Interesting Places On the Web?</a></h2>
-                      </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-lg-3 trend">
-                      <div class="post-list">
-                        <a ><img src="{% static 'img/post-landscape-2.jpg' %}" alt="" class="img-fluid"></a>
-                        <div class="post-meta"><span class="date">Lifestyle</span> <span class="mx-1">•</span> <span>Mar 1st '22</span></div>
-                        <h2><a class="text-white">10 Life-Changing Hacks Every Working Mom Should Know</a></h2>
-                      </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-lg-3 trend">
-                      <div class="post-list">
-                        <a ><img src="{% static 'img/post-landscape-1.jpg' %}" alt="" class="img-fluid"></a>
-                        <div class="post-meta"><span class="date">Lifestyle</span> <span class="mx-1">•</span> <span>Jul 5th '22</span></div>
-                        <h2><a class="text-white">5 Great Startup Tips for Female Founders</a></h2>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Add more carousel items as needed -->
-              </div>
-
-              <!-- Carousel Controls -->
-              <button class="carousel-control-prev" type="button" data-bs-target="#featuredProgramsCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#featuredProgramsCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
-          </div>
-        </section>
-
-</main>
-
-    
- {% endblock %}  {% endcomment %}

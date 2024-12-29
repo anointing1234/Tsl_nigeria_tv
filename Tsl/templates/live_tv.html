@@ -2,12 +2,12 @@
 {% load static %}
 {% block contents %}
 
-<style>
 
+
+<style>
   .trend{
     width: 250px;
   }
- 
     h2{
         color: white !important ;
     }
@@ -40,11 +40,7 @@
           border-radius: 20px;
       }
    
-  }
-
-
-
-    
+  }    
 </style>
  
   <main class="main w-100 p-0">
@@ -64,99 +60,116 @@
       </div>
     </section>
     
-<section style="background-color: #0F0A0D;" id="upcoming-videos" class="upcoming-videos section">
-  <div class="container section-title" data-aos="fade-up">
-      <div class="section-title-container d-flex align-items-center justify-content-between">
-        <h4 class="text-white">Upcoming Shows</h4>
-      </div>
-  </div><!-- End Section Title -->
 
-  <div class="container" data-aos="fade-up" data-aos-delay="100">
-      <div class="row justify-content-center">
-          {% if upcoming_videos %}
-              {% for video in upcoming_videos %}
-                  <div class="col-md-6 col-lg-3 trend">
-                      <div class="post-list">
-                          <a href="https://www.youtube.com/watch?v={{ video.id.videoId }}" target="_blank">
-                              <div class="card" style="height: 300px; overflow: hidden; border-radius: 10px;">
-                                  <div class="card-body p-0">
-                                      <img src="{{ video.snippet.thumbnails.high.url }}" 
-                                           class="img-fluid w-100 h-100" 
-                                           style="object-fit: cover;">
+    <section style="background-color: #0F0A0D;" id="upcoming-videos" class="upcoming-videos section">
+      <div class="container section-title" data-aos="fade-up">
+          <div class="section-title-container d-flex align-items-center justify-content-between">
+            <h4 class="text-white">Upcoming Shows</h4>
+          </div>
+      </div><!-- End Section Title -->
+    
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row justify-content-center">
+              {% if upcoming_videos %}
+                  {% for video in upcoming_videos %}
+                      <div class="col-md-6 col-lg-3 trend">
+                          <div class="post-list">
+                              <a href="https://www.youtube.com/watch?v={{ video.id.videoId }}" target="_blank">
+                                  <div class="card" style="height: 300px; overflow: hidden; border-radius: 10px;">
+                                      <div class="card-body p-0">
+                                          <img src="{{ video.snippet.thumbnails.high.url }}" 
+                                               class="img-fluid w-100 h-100" 
+                                               style="object-fit: cover;">
+                                      </div>
                                   </div>
-                              </div>
-                          </a>
-                      </div>
-                  </div>
-              {% endfor %}
-          {% else %}
-              <!-- Show 3 placeholder cards if no upcoming videos -->
-              {% for i in empty_cards %}
-                  <div class="col-md-6 col-lg-3 trend">
-                      <div class="post-list">
-                          <div class="card" style="height: 300px; overflow: hidden; border-radius: 10px;">
-                              <div class="card-body p-0 d-flex justify-content-center align-items-center">
-                                  <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" 
-                                       class="img-fluid" 
-                                       style="width: 100px; height: 100px;">
-                              </div>
+                              </a>
                           </div>
                       </div>
+                  {% endfor %}
+              {% else %}
+                  <!-- Display a message if there are no upcoming videos -->
+                  <div class="col-12">
+                      <div class="alert alert-info text-center" style="border-radius: 10px; background-color: #212529; color: #fff; padding: 30px;">
+                          <h5 class="alert-heading">No Upcoming Shows</h5>
+                          <p>Currently, there are no upcoming shows available. Stay tuned, more exciting content is coming soon!</p>
+                          <hr class="my-4">
+                          <p class="mb-0">Thank you for your patience!</p>
+                      </div>
                   </div>
-              {% endfor %}
-          {% endif %}
+              {% endif %}
+          </div>
       </div>
-  </div>
-</section>
+    </section>
+    
 
 
-
-
-<!-- Recent Shows -->
 <section style="background-color: #0F0A0D;" id="trending-category" class="trending-category section">
   <div class="container d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-    <div class="row g-3"> <!-- Use Bootstrap gap utility for spacing -->
+    <div class="row g-3">
       <div class="col-12">
-        <h4>
-          <a style="font-weight: 300; margin-bottom: 30px; border-bottom: 2px solid green; display: inline-block;" href="">
-            Recent Shows
-          </a>
-        </h4>
+        <div class="section-title-container d-flex align-items-center justify-content-between">
+          <h4 class="text-white">Recent Shows</h4>
+        </div>
 
         <!-- Carousel for Large Screens -->
-        <div class="carousel slide" id="trendingCarouselLarge" data-bs-ride="carousel">
-          <!-- Carousel Inner -->
+        <div id="trendingCarouselLarge" class="carousel slide" data-bs-ride="carousel">
+          <!-- Carousel Inner for Large Screens -->
           <div class="carousel-inner">
-            <!-- Loop through the videos -->
             {% for video in recent_videos %}
-            <div class="carousel-item {% if forloop.first %}active{% endif %}">
-              <div class="row justify-content-center">
-                <!-- Video Card -->
-                <div class="col-md-6 col-lg-3 trend trend mb-5">
-                  <div class="card shadow-lg video-card" data-video-id="{{ video.id.videoId }}">
-                    <!-- Embed YouTube video with iframe -->
-                    <div class="embed-container">
-                      <iframe width="100%" height="315" 
-                      src="https://www.youtube.com/embed/{{ video.id.videoId }}?autoplay=0" 
-                      frameborder="0" 
-                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-                      allowfullscreen></iframe>
-                    </div>
+              {% if forloop.counter0|divisibleby:4 %}
+              <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
+                <div class="row justify-content-center">
+              {% endif %}
+
+              <!-- Video Card for Large Screens -->
+              <div class="col-md-6 col-lg-3 trend mb-4">
+                <div class="card shadow-lg video-card" data-video-id="{{ video.id.videoId }}">
+                  <!-- Embed YouTube video -->
+                  <div class="embed-container">
+                    <iframe width="100%" height="200"
+                            src="https://www.youtube.com/embed/{{ video.id.videoId }}?autoplay=0"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
                   </div>
                 </div>
               </div>
-            </div>
-          {% endfor %}
 
-            <!-- Add placeholders for missing videos (if there are less than 4 videos) -->
-            {% for _ in empty_cards %}
-              <div class="carousel-item">
+              {% if forloop.counter|divisibleby:4 or forloop.last %}
+                </div> <!-- End of Row -->
+              </div> <!-- End of Carousel Item -->
+              {% endif %}
+            {% endfor %}
+          </div>
+
+          <!-- Carousel Controls for Large Screens -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#trendingCarouselLarge" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#trendingCarouselLarge" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+        <!-- Carousel for Small Screens (Mobile and Tablets) -->
+        <div id="trendingCarouselSmall" class="carousel slide d-lg-none" data-bs-ride="carousel">
+          <!-- Carousel Inner for Small Screens -->
+          <div class="carousel-inner">
+            {% for video in recent_videos %}
+              <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
                 <div class="row justify-content-center">
-                  <div class="col-md-6 col-lg-3 trend trend mb-5">
-                    <div class="card shadow-lg">
-                      <a href="#">
-                        <img src="{% static 'img/post-landscape-placeholder.jpg' %}" alt="No Video" class="card-img-top rounded-3" style="height: 300px; object-fit: cover;">
-                      </a>
+                  <div class="col-12 trend mb-4">
+                    <div class="card shadow-lg video-card" data-video-id="{{ video.id.videoId }}">
+                      <!-- Embed YouTube video -->
+                      <div class="embed-container">
+                        <iframe width="100%" height="200"
+                                src="https://www.youtube.com/embed/{{ video.id.videoId }}?autoplay=0"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -164,9 +177,17 @@
             {% endfor %}
           </div>
 
-          <!-- Carousel Controls -->
-         
+          <!-- Carousel Controls for Small Screens -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#trendingCarouselSmall" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#trendingCarouselSmall" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
+
       </div>
     </div>
   </div>
@@ -182,9 +203,6 @@
 
 
 </main>
-
-
-
 <script>
   // Load the IFrame Player API code asynchronously
   var tag = document.createElement('script');
@@ -235,14 +253,6 @@
           }
       }, 2000); // 2-second delay
   }
-
-
-
-
-
-
-
-
 </script>
          
  

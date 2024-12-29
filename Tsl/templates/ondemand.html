@@ -1,7 +1,6 @@
 {% extends 'core/base/base.html' %}
 {% load static %}
 {% block contents %}
-
 <style>
   .trend{
     width: 250px;
@@ -64,21 +63,13 @@
         text-decoration: underline; 
       }
     }
-    
-
-
- 
-    
-
-    
 </style>
  
 <main class="main w-100 p-0">
+  
 <section style="background-color: #0F0A0D;" id="slider" class="slider section dark-background p-0 w-100">
-
   <div class="container-fluid w-100" data-aos="fade-up" data-aos-delay="100">
     <div class="container-fluid swiper init-swiper w-100 p-0">
-    
       <script type="application/json" class="swiper-config">
         {
           "loop": true,
@@ -99,40 +90,25 @@
           }
         }
       </script>
-
-      <div class="container-fluid swiper-wrapper w-100 p-0">
+      <div class="swiper-wrapper w-100 p-0">
         {% for slide in sliders %}
-        <!-- Slide 1 -->
-        <div class="swiper-slide w-100 p-0 img-fluid" style="background-image: url('{{ slide.image.url }}')">
-          <div class="content">
-            <h2><a>{{ slide.title }}</a></h2>
-          </div>
+        <div class="swiper-slide bg-none w-100 p-0 img-fluid" style="background-image: url('{{ slide.image.url }}'); background-size:contain;background-repeat: no-repeat; background-position: center; height: 80%;">
         </div>
         {% endfor %}
-
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-pagination"></div>
       </div>
+      <div class="swiper-pagination"></div>
+    </div>
     </div>
   </div>
 </section>
 
-
-
-
-
-<section style="background-color: #0F0A0D;" id="lifestyle-category" class="lifestyle-category section">
-
-  
+<section style="background-color: #0F0A0D;" id="lifestyle-category" class="lifestyle-category section">  
   <div class="container section-title" data-aos="fade-up">
     <div class="section-title-container d-flex align-items-center justify-content-between">
       <h2 class="text-white">Latest Events</h2>
     </div>
   </div>
-
   <div class="container" data-aos="fade-up" data-aos-delay="100">
-  
     <div id="featuredProgramsCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         

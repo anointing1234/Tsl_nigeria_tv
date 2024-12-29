@@ -693,22 +693,9 @@ section,
   height: auto;
 }
 
-.slider .swiper-slide {
-  min-height: 500px;
-  position: relative;
-  display: flex;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 
-.slider .swiper-slide::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
+
+
 
 
 .slider .swiper-button-prev:after,

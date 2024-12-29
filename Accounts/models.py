@@ -168,8 +168,6 @@ class LatestEvent(models.Model):
                 output_io.close()
                 super().save(*args, **kwargs)     
     
-    
-    
 
 class LatestEventHighlight(models.Model):
     title = models.CharField(max_length=200, help_text="Title of the event highlight video")
@@ -205,9 +203,6 @@ class LatestEventHighlight(models.Model):
         return self.title    
     
     
-    
-    
-
 class Showcase(models.Model):
     title = models.CharField(max_length=100, help_text="Title for the showcase item.")
     image = models.ImageField(upload_to='showcase_images/', help_text="Upload the showcase image.")
@@ -249,8 +244,6 @@ class Showcase(models.Model):
     def __str__(self):
         return self.title    
     
-    
-    
 
 class Media(models.Model):
     title = models.CharField(max_length=100, help_text="Title for the media item.")
@@ -288,3 +281,57 @@ class Media(models.Model):
     def __str__(self):
         return self.title   
     
+
+class Trending_now(models.Model):
+    image = models.ImageField(upload_to='Trending_now/', help_text="Upload a trending now image.")
+    Trend_order = models.PositiveIntegerField(default=0, help_text="Order of appearance in the section.")
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['Trend_order']
+        verbose_name = "Trending_now"
+        verbose_name_plural = "Trending_now"
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        if self.image:
+            # Open the uploaded image
+            image = Image.open(self.image)
+
+            # Convert image to 'RGB' (necessary for saving in webp format)
+            if image.mode in ("RGBA", "P"):
+                image = image.convert("RGB")
+
+            # Set the new file name and path with .webp extension
+            image_filename = os.path.splitext(self.image.name)[0] + '.webp'
+
+            # Save image to BytesIO in webp format
+            webp_image_io = BytesIO()
+            image.save(webp_image_io, format='WEBP', quality=90)  # Set quality as needed
+
+            # Replace the original image with the webp version
+            self.image.save(image_filename, ContentFile(webp_image_io.getvalue()), save=False)
+
+            # Call the parent save to store the updated image
+            super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f"Trending Item {self.id}"
+   
+   
+class FeaturedShow(models.Model):
+    image = models.ImageField(upload_to="featured_shows/")
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        # Convert the image to WebP format
+        img_path = self.image.path
+        img = Image.open(img_path)
+        webp_path = os.path.splitext(img_path)[0] + ".webp"
+        img.save(webp_path, "WEBP", quality=95)  # Adjust quality as needed
+        self.image.name = os.path.join("featured_shows", os.path.basename(webp_path))
+        super().save(update_fields=["image"], *args, **kwargs)
+
+    def __str__(self):
+        return f"Featured Show {self.id}"    

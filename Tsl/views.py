@@ -1,8 +1,13 @@
 from django.shortcuts import render
 import requests
 import logging
+import json
+import os
+from urllib.parse import urljoin
+from requests.exceptions import RequestException
 from django.contrib.auth import logout
-from Accounts.models import Slider,Highlight,Blog,LatestEvent,LatestEventHighlight,Media,Showcase
+from Accounts.models import Slider,Highlight,Blog,LatestEvent,LatestEventHighlight,Media,Showcase,Trending_now,FeaturedShow
+from bs4 import BeautifulSoup
 
 # Replace with your actual Google API key securely
 api_key = 'AIzaSyCSexVrBoINLvu9y1WNeifx6wyjU8mQ7_Y'  # Example Google API key for YouTube Data API v3
@@ -10,21 +15,114 @@ api_key = 'AIzaSyCSexVrBoINLvu9y1WNeifx6wyjU8mQ7_Y'  # Example Google API key fo
 # Set up logger
 logger = logging.getLogger(__name__)
 
+
+def scrape_news(url, article_selector, title_selector, link_selector, image_selector):
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36'
+    }
+    try:
+        response = requests.get(url, headers=headers, timeout=10)
+        response.raise_for_status()  # Raise HTTPError for bad responses
+        soup = BeautifulSoup(response.content, 'html.parser')
+
+        # Debugging: Print the HTML content
+        print(f"Scraping {url}...")
+
+        articles = soup.select(article_selector)
+        news = []
+        for article in articles:
+            try:
+                # Extract title and link
+                title = article.select_one(title_selector).get_text(strip=True)
+                link = urljoin(url, article.select_one(link_selector)['href'])
+                
+                # Extract and validate image
+                image_element = article.select_one(image_selector)
+                image = None
+                if image_element:
+                    # Check for image in src, data-src, or srcset attributes
+                    if 'src' in image_element.attrs and image_element['src'].startswith('http'):
+                        image = urljoin(url, image_element['src'])
+                    elif 'data-src' in image_element.attrs and image_element['data-src'].startswith('http'):
+                        image = urljoin(url, image_element['data-src'])
+                    elif 'srcset' in image_element.attrs:
+                        # Extract the first valid URL from srcset
+                        srcset_parts = image_element['srcset'].split(',')
+                        for part in srcset_parts:
+                            image_url = part.strip().split(' ')[0]
+                            if image_url.startswith('http'):
+                                image = urljoin(url, image_url)
+                                break
+
+                # Add the article even if it doesn't have a valid image URL
+                if title and link:
+                    if image:
+                        # Only add articles with a valid image URL
+                        news.append({'title': title, 'link': link, 'image': image})
+                    else:
+                        # Add the article without the image if the image is invalid
+                        news.append({'title': title, 'link': link, 'image': None})
+                else:
+                    print(f"Skipping article with incomplete data: title={title}, link={link}, image={image}")
+            except AttributeError as e:
+                print(f"Error parsing article from {url}: {e}")
+        print(f"Scraped {len(news)} articles from {url}")
+        return news
+    except requests.exceptions.HTTPError as http_err:
+        print(f"HTTP error occurred while scraping {url}: {http_err}")
+    except Exception as e:
+        print(f"Error scraping {url}: {e}")
+    return []
+
+
 def home(request):
     sliders = Slider.objects.filter(is_active=True).order_by('order')
-    highlights =  Highlight.objects.all()
-    blogs = Blog.objects.all()
-    return render(request, 'index.html',{
-        'sliders': sliders,
-        'highlights':highlights,
-        'blogs': blogs,
-        }) 
+    highlights = Highlight.objects.all()
+    grouped_images = Trending_now.objects.order_by('Trend_order')
+    Trending_Now = [grouped_images[i:i + 4] for i in range(0, len(grouped_images), 4)]  # Group into chunks of 4
+    featured_shows = FeaturedShow.objects.all()
+    
+    # Define the websites and their CSS selectors for scraping
+    news_sources = [
+        {
+            'url': 'https://www.vanguardngr.com/',
+            'article_selector': 'article.entry',
+            'title_selector': 'h3.entry-title a',
+            'link_selector': 'h3.entry-title a',
+            'image_selector': 'img.entry-thumbnail'
+        },
+    ]
 
+    blogs = []
+
+    # Scrape news from each source
+    for source in news_sources:
+        news = scrape_news(
+            url=source['url'],
+            article_selector=source['article_selector'],
+            title_selector=source['title_selector'],
+            link_selector=source['link_selector'],
+            image_selector=source['image_selector']
+        )
+        blogs.extend(news)
+
+    # Separate the blogs into two distinct sections
+    blog_news = blogs[:6]  # First 6 for the main Blog News section
+    trending_articles = blogs[6:11]  # Next 5 for the Trending Articles section
+
+    return render(request, 'index.html', {
+        'sliders': sliders,
+        'highlights': highlights,
+        'blogs': blog_news,  # Pass main blog news separately
+        'trending_articles': trending_articles,  # Pass trending articles separately
+        'Trending_Now': Trending_Now,  # Pass grouped Trending Now images
+        'featured_shows': featured_shows,
+    })
 
 
 def get_videos_from_channel(channel_id, api_key):
     # YouTube API URL to get channel data
-    url = f'https://www.googleapis.com/youtube/v3/search?part=snippet&channelId={channel_id}&maxResults=5&key={api_key}'
+    url = f'https://www.googleapis.com/youtube/v3/search?part=snippet&channelId={channel_id}&order=date&maxResults=10&key={api_key}'
 
     try:
         # Send GET request to YouTube API to fetch channel video data
