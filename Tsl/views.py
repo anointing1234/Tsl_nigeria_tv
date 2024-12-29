@@ -79,7 +79,7 @@ logger = logging.getLogger(__name__)
 
 logging.basicConfig(level=logging.ERROR, filename='scraper_errors.log')
 
-# User-Agent pool
+
 USER_AGENTS = [
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36',
     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0.2 Safari/605.1.15',
@@ -114,8 +114,13 @@ def fetch_with_cache(url, headers):
             return f.read()
 
     # Make the HTTP request
-    response = requests.get(url, headers=headers, timeout=random.uniform(10, 15))
-    response.raise_for_status()  # Raise an error for HTTP status codes >= 400
+    try:
+        response = requests.get(url, headers=headers, timeout=random.uniform(10, 15))
+        response.raise_for_status()  # Raise an error for HTTP status codes >= 400
+    except requests.exceptions.RequestException as e:
+        logging.error(f"Request failed: {e}")
+        print(f"Request failed: {e}")
+        return None
 
     # Write the response content to the cache
     with open(cache_file, 'w', encoding='utf-8') as f:
@@ -130,6 +135,9 @@ def scrape_news(url, article_selector, title_selector, link_selector, image_sele
 
     try:
         response_content = fetch_with_cache(url, headers)
+        if not response_content:
+            return []
+
         soup = BeautifulSoup(response_content, 'html.parser')
 
         print(f"Scraping {url}...")
@@ -174,6 +182,7 @@ def scrape_news(url, article_selector, title_selector, link_selector, image_sele
         print(f"Error scraping {url}: {e}")
     
     return []
+
 
 # Home view
 def home(request):
@@ -220,6 +229,7 @@ def home(request):
         'Trending_Now': Trending_Now,  # Pass grouped Trending Now images
         'featured_shows': featured_shows,
     })
+
 
 
 def get_videos_from_channel(channel_id, api_key):
