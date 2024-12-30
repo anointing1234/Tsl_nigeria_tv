@@ -347,3 +347,6 @@ Watching for file changes with StatReloader
 "GET /Tsl/home/ HTTP/1.1" 200 38566
 "GET /Tsl/home/ HTTP/1.1" 200 38555
 C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl_nigeria\settings.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /Tsl/live_tv/ HTTP/1.1" 200 18940
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl_nigeria\settings.py changed, reloading.
