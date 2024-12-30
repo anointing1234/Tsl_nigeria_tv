@@ -32,23 +32,21 @@
         </li>
         {% endif %}
       </ul>
-      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      <i class="mobile-nav-toggle d-xl-none text-light bi bi-list"></i>
     </nav>
 
     <div class="header-social-links py-2">
       {% if user.is_authenticated %}
-      <div 
-      class="rounded-circle text-center d-flex align-items-center justify-content-center"
-      style="width: 40px; height: 40px; background-color: #f1f1f1; color: #333; font-weight: bold;">
-      {{ user.username|default:"U"|slice:":1"|upper }}{{ user.username|default:"N"|slice:"-1:"|upper }}
-    </div>
-    
-  
-{% else %}
-  <a href="{% url 'login' %}">
-    <button class="btn btn-light w-100 d-block">Login</button>
-  </a>
-{% endif %}
+          <div 
+            class="rounded-circle text-center d-flex align-items-center justify-content-center"
+            style="width: 40px; height: 40px; background-image: url('{% static 'img/profile_bg.webp' %}'); background-size: cover; background-position: center; color: #fff; font-weight: bold;">
+            {{ user.username|default:"U"|slice:":1"|upper }}
+          </div>
+          {% else %}
+          <a href="{% url 'login' %}">
+            <button class="btn btn-light w-100 d-block">Login</button>
+          </a>
+        {% endif %}
 
     </div>
 

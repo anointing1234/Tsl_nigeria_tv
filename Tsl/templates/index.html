@@ -154,6 +154,24 @@
 }
 }
 
+/* Initially transparent and position-absolute */
+#header {
+  background-color: transparent;
+  width: 100%;
+  transition: background-color 0.3s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+/* When scrolling starts, add dark background */
+#header.scrolled {
+  background-color: rgba(0, 0, 0, 0.8); /* Dark background */
+  position: fixed; /* Make the header fixed at the top */
+}
+
  </style>
  
 
@@ -248,24 +266,28 @@
       }
       
     }
+
+    /* Initially transparent and position-absolute */
+
+
+
+    
        
 </style>
 
 </head>
 
 <body style="background-color: #0F0A0D;"class="index-page dark-background">
-
-  <header style="background-color: transparent; width: 100%; margin-bottom: 200px;" id="header" class="header d-flex align-items-center sticky-top position-absolute w-100">
-    <div style="margin-bottom: 200px;" class="container-fluid position-relative d-flex align-items-center justify-content-between w-100">
-    
+  <header style="width: 100%;" id="header" class="header d-flex align-items-center sticky-top w-100">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between w-100">
       <a href="{% url 'home' %}" class="logo d-flex align-items-center me-auto me-xl-0">
         <h1 class="sitename">
           <img src="{% static 'img/tv.png' %}" alt="Site Logo" class="navbar-logo">
         </h1>
       </a>
-    
-      <nav style="" id="navmenu" class="navmenu">
-        <ul class="">
+  
+      <nav id="navmenu" class="navmenu">
+        <ul>
           <li>
             <a href="{% url 'home' %}" class="text-light">Home</a>
           </li>
@@ -287,26 +309,23 @@
           </li>
           {% endif %}
         </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        <i class="mobile-nav-toggle d-xl-none bg-dark  text-light bi bi-list"></i>
       </nav>
-    
+  
       <div class="header-social-links py-2">
         {% if user.is_authenticated %}
-        <div 
-          class="rounded-circle text-center d-flex align-items-center justify-content-center"
-          style="width: 40px; height: 40px; background-color: #f1f1f1; color: #333; font-weight: bold;">
-          {{ user.username|default:"U"|slice:":1"|upper }}{{ user.username|default:"N"|slice:"-1:"|upper }}
-        </div>
+          <div class="rounded-circle text-center d-flex align-items-center justify-content-center"
+               style="width: 40px; height: 40px; background-image: url('{% static 'img/profile_bg.webp' %}'); background-size: cover; background-position: center; color: #fff; font-weight: bold;">
+            {{ user.username|default:"U"|slice:":1"|upper }}
+          </div>
         {% else %}
-        <a href="{% url 'login' %}">
-          <button class="btn btn-light w-100 d-block">Login</button>
-        </a>
+          <a href="{% url 'login' %}">
+            <button class="btn btn-light w-100 d-block">Login</button>
+          </a>
         {% endif %}
       </div>
-    
     </div>
   </header>
-  
 
 
  
@@ -693,6 +712,18 @@
 <!-- Main JS File -->
 <script src="{% static 'js/main.js' %}"></script>
 
+<script>
+  window.addEventListener('scroll', function() {
+    const header = document.getElementById('header');
+    
+    // Check if the user has started scrolling
+    if (window.scrollY > 0) {
+      header.classList.add('scrolled'); // Add dark background and make it fixed
+    } else {
+      header.classList.remove('scrolled'); // Remove dark background and revert position
+    }
+  });
+</script>
 
 </body>
 </html>     
