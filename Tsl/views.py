@@ -17,219 +17,53 @@ api_key = 'AIzaSyCSexVrBoINLvu9y1WNeifx6wyjU8mQ7_Y'  # Example Google API key fo
 # Set up logger
 logger = logging.getLogger(__name__)
 
-
-# def scrape_news(url, article_selector, title_selector, link_selector, image_selector):
-#     headers = {
-#         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36'
-#     }
-#     try:
-#         response = requests.get(url, headers=headers, timeout=10)
-#         response.raise_for_status()  # Raise HTTPError for bad responses
-#         soup = BeautifulSoup(response.content, 'html.parser')
-
-#         # Debugging: Print the HTML content
-#         print(f"Scraping {url}...")
-
-#         articles = soup.select(article_selector)
-#         news = []
-#         for article in articles:
-#             try:
-#                 # Extract title and link
-#                 title = article.select_one(title_selector).get_text(strip=True)
-#                 link = urljoin(url, article.select_one(link_selector)['href'])
-                
-#                 # Extract and validate image
-#                 image_element = article.select_one(image_selector)
-#                 image = None
-#                 if image_element:
-#                     # Check for image in src, data-src, or srcset attributes
-#                     if 'src' in image_element.attrs and image_element['src'].startswith('http'):
-#                         image = urljoin(url, image_element['src'])
-#                     elif 'data-src' in image_element.attrs and image_element['data-src'].startswith('http'):
-#                         image = urljoin(url, image_element['data-src'])
-#                     elif 'srcset' in image_element.attrs:
-#                         # Extract the first valid URL from srcset
-#                         srcset_parts = image_element['srcset'].split(',')
-#                         for part in srcset_parts:
-#                             image_url = part.strip().split(' ')[0]
-#                             if image_url.startswith('http'):
-#                                 image = urljoin(url, image_url)
-#                                 break
-
-#                 # Add the article even if it doesn't have a valid image URL
-#                 if title and link:
-#                     if image:
-#                         # Only add articles with a valid image URL
-#                         news.append({'title': title, 'link': link, 'image': image})
-#                     else:
-#                         # Add the article without the image if the image is invalid
-#                         news.append({'title': title, 'link': link, 'image': None})
-#                 else:
-#                     print(f"Skipping article with incomplete data: title={title}, link={link}, image={image}")
-#             except AttributeError as e:
-#                 print(f"Error parsing article from {url}: {e}")
-#         print(f"Scraped {len(news)} articles from {url}")
-#         return news
-#     except requests.exceptions.HTTPError as http_err:
-#         print(f"HTTP error occurred while scraping {url}: {http_err}")
-#     except Exception as e:
-#         print(f"Error scraping {url}: {e}")
-#     return []
-
-
-logging.basicConfig(level=logging.ERROR, filename='scraper_errors.log')
-
-
-USER_AGENTS = [
-    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36',
-    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0.2 Safari/605.1.15',
-    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36',
-    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Gecko/20100101 Firefox/90.0',
-]
-
-# Fetch with cache
-def fetch_with_cache(url):
-    cache_file = f"cache/{hash(url)}.html"
-    os.makedirs('cache', exist_ok=True)  # Ensure cache directory exists
-    
-    if os.path.exists(cache_file):
-        with open(cache_file, 'r', encoding='utf-8') as f:
-            return f.read()
-
-    # Make the HTTP request
-    headers = {
-        'User -Agent': random.choice(USER_AGENTS),
-        'Accept-Language': 'en-US,en;q=0.9',
-        'Referer': url,  # Set the Referer to the current URL
-        'Accept-Encoding': 'gzip, deflate, br',
+def fetch_news_from_api(api_key, language='en', country='NG', limit=10):
+    url = "https://newsdata.io/api/1/news"
+    params = {
+        'apikey': api_key,
+        'language': language,
+        'country': country  # Set country to Nigeria (NG)
     }
 
     try:
-        response = requests.get(url, headers=headers, timeout=random.uniform(10, 15))
-        response.raise_for_status()  # Raise an error for HTTP status codes >= 400
+        response = requests.get(url, params=params, timeout=10)
+        response.raise_for_status()  # Raise HTTPError for bad responses
+        data = response.json()
+
+        # Debugging: Print API response
+        print(f"Fetched news data: {data}")
+
+        if data.get('status') == 'success':
+            news_list = data.get('results', [])
+            # Extract required fields: title, link, image, and publish_date
+            news = [
+                {
+                    'title': article.get('title'),
+                    'link': article.get('link'),
+                    'image': article.get('image_url') or None,
+                    'publish_date': article.get('published_date') or None  # Get the publish_date if available
+                }
+                for article in news_list[:limit]  # Limit the number of articles
+            ]
+            return news
+        else:
+            print(f"API returned an error: {data.get('message', 'Unknown error')}")
     except requests.exceptions.RequestException as e:
-        logging.error(f"Request failed: {e}")
-        print(f"Request failed: {e}")
-        return None
-
-    # Write the response content to the cache
-    with open(cache_file, 'w', encoding='utf-8') as f:
-        f.write(response.text)
-    
-    return response.text
-
-# Scrape news function
-def scrape_news(url, article_selector, title_selector, link_selector, image_selector):
-    try:
-        response_content = fetch_with_cache(url)
-        if not response_content:
-            return []
-
-        soup = BeautifulSoup(response_content, 'html.parser')
-
-        print(f"Scraping {url}...")
-
-        articles = soup.select(article_selector)
-        news = []
-        for article in articles:
-            try:
-                title = article.select_one(title_selector).get_text(strip=True)
-                link = urljoin(url, article.select_one(link_selector)['href'])
-                image_element = article.select_one(image_selector)
-                image = None
-
-                if image_element:
-                    if 'src' in image_element.attrs and image_element['src'].startswith('http'):
-                        image = urljoin(url, image_element['src'])
-                    elif 'data-src' in image_element.attrs and image_element['data-src'].startswith('http'):
-                        image = urljoin(url, image_element['data-src'])
-                    elif 'srcset' in image_element.attrs:
-                        srcset_parts = image_element['srcset'].split(',')
-                        for part in srcset_parts:
-                            image_url = part.strip().split(' ')[0]
-                            if image_url.startswith('http'):
-                                image = urljoin(url, image_url)
-                                break
-
-                if title and link:
-                    news.append({'title': title, 'link': link, 'image': image})
-                else:
-                    print(f"Skipping article with incomplete data: title={title}, link={link}, image={image}")
-            except AttributeError as e:
-                print(f"Error parsing article from {url}: {e}")
-        
-        print(f"Scraped {len(news)} articles from {url}")
-        return news
-
-    except requests.exceptions.HTTPError as http_err:
-        logging.error(f"HTTP error occurred while scraping {url}: {http_err}")
-        print(f"HTTP error occurred while scraping {url}: {http_err}")
-    except Exception as e:
-        logging.error(f"Error scraping {url}: {e}")
-        print(f"Error scraping {url}: {e}")
+        print(f"Error fetching news from API: {e}")
     
     return []
 
-
+# Django home view
 def home(request):
     sliders = Slider.objects.filter(is_active=True).order_by('order')
     highlights = Highlight.objects.all()
-    grouped_images = Trending_now.objects.order_by('Trend_order')  # Corrected line
+    grouped_images = Trending_now.objects.order_by('Trend_order')
     Trending_Now = [grouped_images[i:i + 4] for i in range(0, len(grouped_images), 4)]  # Group into chunks of 4
     featured_shows = FeaturedShow.objects.all()
-    
-    # Define the websites and their CSS selectors for scraping
-    news_sources = [
-        {
-            'url': 'https://tribuneonlineng.com/',
-            'article_selector': 'article',  # Main article container
-            'title_selector': 'h2.entry-title a',  # Title of the article
-            'link_selector': 'h2.entry-title a',  # Link to the article
-            'image_selector': 'img'  # Image associated with the article
-        },
-        {
-            'url': 'https://punchng.com/',
-            'article_selector': 'article',  # Main article container
-            'title_selector': 'h2.entry-title a',  # Title of the article
-            'link_selector': 'h2.entry-title a',  # Link to the article
-            'image_selector': 'img'  # Image associated with the article
-        },
-        {
-            'url': 'https://www.vanguardngr.com/',
-            'article_selector': 'article',  # Main article container
-            'title_selector': 'h3.entry-title a',  # Title of the article
-            'link_selector': 'h3.entry-title a',  # Link to the article
-            'image_selector': 'img.entry-thumbnail'  # Image associated with the article
-        },
-        {
-            'url': 'https://www.channelstv.com/',
-            'article_selector': 'article',  # Main article container
-            'title_selector': 'h2.entry-title a',  # Title of the article
-            'link_selector': 'h2.entry-title a',  # Link to the article
-            'image_selector': 'img'  # Image associated with the article
-        },
-        {
-            'url': 'https://www.dailytrust.com/',
-            'article_selector': 'article',  # Main article container
-            'title_selector': 'h2.entry-title a',  # Title of the article
-            'link_selector': 'h2.entry-title a',  # Link to the article
-            'image_selector': 'img'  # Image associated with the article
-        },
-    ]
 
-    blogs = []
-
-    # Scrape news from each source
-    for source in news_sources:
-        news = scrape_news(
-            url=source['url'],
-            article_selector=source['article_selector'],
-            title_selector=source['title_selector'],
-            link_selector=source['link_selector'],
-            image_selector=source['image_selector']
-        )
-        blogs.extend(news)
-        time.sleep(random.uniform(3, 7))  # Random delay between 3 and 7 seconds
+    # Fetch news data using the API
+    api_key = 'pub_6378106b17a9beec0c07a03c915df45a20986'  # Your Newsdata.io API key
+    blogs = fetch_news_from_api(api_key, limit=11)  # Fetch general news (11 articles)
 
     # Separate the blogs into two distinct sections
     blog_news = blogs[:6]  # First 6 for the main Blog News section
@@ -243,8 +77,6 @@ def home(request):
         'Trending_Now': Trending_Now,  # Pass grouped Trending Now images
         'featured_shows': featured_shows,
     })
-
-
 
 def get_videos_from_channel(channel_id, api_key):
     # YouTube API URL to get channel data

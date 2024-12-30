@@ -286,19 +286,23 @@
                 <div class="post-entry border border-1 rounded p-3">
                   <a href="{{ blog.link }}" target="_blank" class="d-block mb-3">
                     {% if blog.image %}
-                      <!-- If there is a valid image URL, display it -->
                       <img src="{{ blog.image }}" 
                            onerror="this.src='{% static 'img/blog_news.webp' %}';" 
                            alt="{{ blog.title }}" class="img-fluid rounded" style="width: 100%; height: auto;">
                     {% else %}
-                      <!-- If there is no image, use the default static image -->
                       <img src="{% static 'img/blog_news.webp' %}" 
                            alt="{{ blog.title }}" class="img-fluid rounded" style="width: 100%; height: auto;">
                     {% endif %}
                   </a>
                   <div class="post-meta text-light">
                     <span class="mx-1">•</span>
-                    <span>{{ blog.publish_date|default:"N/A"|date:"M d, Y" }}</span>
+                    <span>
+                      {% if blog.publish_date %}
+                        {{ blog.publish_date|date:"M d, Y" }}
+                      {% else %}
+                        N/A
+                      {% endif %}
+                    </span>
                   </div>
                   <h3 class="h5 mt-2"><a class="text-white" href="{{ blog.link }}" target="_blank">{{ blog.title }}</a></h3>
                 </div>
@@ -318,7 +322,13 @@
             <div class="post-list border-bottom mb-3">
               <div class="post-meta">
                 <span class="mx-1">•</span>
-                <span>{{ blog.publish_date|default:"N/A"|date:"M d, Y" }}</span>
+                <span>
+                  {% if blog.publish_date %}
+                    {{ blog.publish_date|date:"M d, Y" }}
+                  {% else %}
+                    N/A
+                  {% endif %}
+                </span>
               </div>
               <h5 class="mb-2">
                 <a class="text-white" href="{{ blog.link }}" target="_blank">{{ blog.title }}</a>
@@ -332,6 +342,7 @@
     </div>
   </div>
 </section>
+
 
 
 
