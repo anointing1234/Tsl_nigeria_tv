@@ -3,3 +3,173 @@ INFO:django.server:"GET /Tsl/home/ HTTP/1.1" 200 28888
 INFO:django.utils.autoreload:C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py changed, reloading.
 INFO:django.server:"GET /Tsl/home/ HTTP/1.1" 200 38595
 INFO:django.server:"GET /Tsl/home/ HTTP/1.1" 200 38595
+INFO:django.server:"GET /Tsl/home/ HTTP/1.1" 200 28723
+INFO:django.server:"GET /static/vendor/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO:django.server:"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 304 0
+INFO:django.server:"GET /static/css/main.css HTTP/1.1" 304 0
+INFO:django.server:"GET /static/vendor/swiper/swiper-bundle.min.css HTTP/1.1" 304 0
+INFO:django.server:"GET /static/img/tv.png HTTP/1.1" 304 0
+INFO:django.server:"GET /static/vendor/aos/aos.css HTTP/1.1" 304 0
+INFO:django.server:"GET /media/slider_images/slider_images/TSLONTHEGO.webp HTTP/1.1" 304 0
+INFO:django.server:"GET /static/vendor/aos/aos.js HTTP/1.1" 304 0
+INFO:django.server:"GET /media/slider_images/TSLTVGuideB_YZqfkZl.webp HTTP/1.1" 304 0
+INFO:django.server:"GET /static/vendor/bootstrap-icons/bootstrap-icons.css HTTP/1.1" 304 0
+INFO:django.server:"GET /static/vendor/swiper/swiper-bundle.min.js HTTP/1.1" 304 0
+INFO:django.server:"GET /media/slider_images/Rap_Battle_Ppudnmg.webp HTTP/1.1" 304 0
+INFO:django.server:"GET /media/Trending_now/Trending_now/Rap_Battle_MNZZX2C.webp HTTP/1.1" 304 0
+INFO:django.server:"GET /media/slider_images/HOT_STUFF_0al5dsw.webp HTTP/1.1" 304 0
+INFO:django.server:"GET /static/js/main.js HTTP/1.1" 304 0
+INFO:django.server:"GET /media/Trending_now/Trending_now/HOT_STUFF_T5a70TX.webp HTTP/1.1" 304 0
+INFO:django.server:"GET /media/Trending_now/Trending_now/Mans_Factory-9_89kl9al.webp HTTP/1.1" 304 0
+INFO:django.server:"GET /media/Trending_now/Trending_now/TSLONTHEGO_r1orQKq.webp HTTP/1.1" 304 0
+WARNING:django.request:Not Found: /media/highlights/TSLTV_devices_mockup_DWFn7fE.webp
+WARNING:django.request:Not Found: /media/highlights/tsltv_banner1_g7yewDC.webp
+WARNING:django.server:"GET /media/highlights/tsltv_banner1_g7yewDC.webp HTTP/1.1" 404 179
+INFO:django.server:"GET /media/featured_shows/Rap_Battle_ocD9o4r.webp HTTP/1.1" 304 0
+INFO:django.server:"GET /media/featured_shows/HOT_STUFF_yzPBqM0.webp HTTP/1.1" 304 0
+WARNING:django.request:Not Found: /media/highlights/post-landscape-6_r1pA1YM_qDPs08N.webp
+WARNING:django.server:"GET /media/highlights/post-landscape-6_r1pA1YM_qDPs08N.webp HTTP/1.1" 404 179
+INFO:django.server:"GET /media/featured_shows/Mans_Factory-9_89kl9al.webp HTTP/1.1" 304 0
+WARNING:django.server:"GET /media/highlights/TSLTV_devices_mockup_DWFn7fE.webp HTTP/1.1" 404 179
+WARNING:django.request:Not Found: /media/highlights/post-landscape-5_orJozNM.webp
+WARNING:django.server:"GET /media/highlights/post-landscape-5_orJozNM.webp HTTP/1.1" 404 179
+INFO:django.utils.autoreload:C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py changed, reloading.
+INFO:django.server:"GET /Tsl/home/ HTTP/1.1" 200 28723
+WARNING:django.request:Not Found: /media/highlights/tsltv_banner1_g7yewDC.webp
+WARNING:django.server:"GET /media/highlights/tsltv_banner1_g7yewDC.webp HTTP/1.1" 404 179
+WARNING:django.request:Not Found: /media/highlights/TSLTV_devices_mockup_DWFn7fE.webp
+WARNING:django.server:"GET /media/highlights/TSLTV_devices_mockup_DWFn7fE.webp HTTP/1.1" 404 179
+WARNING:django.request:Not Found: /media/highlights/post-landscape-6_r1pA1YM_qDPs08N.webp
+WARNING:django.server:"GET /media/highlights/post-landscape-6_r1pA1YM_qDPs08N.webp HTTP/1.1" 404 179
+WARNING:django.request:Not Found: /media/highlights/post-landscape-5_orJozNM.webp
+WARNING:django.server:"GET /media/highlights/post-landscape-5_orJozNM.webp HTTP/1.1" 404 179
+INFO:django.server:"GET /static/vendor/bootstrap-icons/fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6 HTTP/1.1" 304 0
+INFO:django.server:"GET /static/img/favicon.ico HTTP/1.1" 304 0
+INFO:django.utils.autoreload:C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py changed, reloading.
+INFO:django.server:"GET /Tsl/home/ HTTP/1.1" 200 28723
+WARNING:django.request:Not Found: /media/highlights/tsltv_banner1_g7yewDC.webp
+WARNING:django.server:"GET /media/highlights/tsltv_banner1_g7yewDC.webp HTTP/1.1" 404 179
+WARNING:django.request:Not Found: /media/highlights/TSLTV_devices_mockup_DWFn7fE.webp
+WARNING:django.server:"GET /media/highlights/TSLTV_devices_mockup_DWFn7fE.webp HTTP/1.1" 404 179
+WARNING:django.request:Not Found: /media/highlights/post-landscape-6_r1pA1YM_qDPs08N.webp
+WARNING:django.request:Not Found: /media/highlights/post-landscape-5_orJozNM.webp
+WARNING:django.server:"GET /media/highlights/post-landscape-5_orJozNM.webp HTTP/1.1" 404 179
+WARNING:django.server:"GET /media/highlights/post-landscape-6_r1pA1YM_qDPs08N.webp HTTP/1.1" 404 179
+INFO:django.utils.autoreload:C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py changed, reloading.
+INFO:django.server:"GET /Tsl/home/ HTTP/1.1" 200 28723
+WARNING:django.request:Not Found: /media/highlights/tsltv_banner1_g7yewDC.webp
+WARNING:django.server:"GET /media/highlights/tsltv_banner1_g7yewDC.webp HTTP/1.1" 404 179
+WARNING:django.request:Not Found: /media/highlights/TSLTV_devices_mockup_DWFn7fE.webp
+WARNING:django.server:"GET /media/highlights/TSLTV_devices_mockup_DWFn7fE.webp HTTP/1.1" 404 179
+WARNING:django.request:Not Found: /media/highlights/post-landscape-6_r1pA1YM_qDPs08N.webp
+WARNING:django.server:"GET /media/highlights/post-landscape-6_r1pA1YM_qDPs08N.webp HTTP/1.1" 404 179
+WARNING:django.request:Not Found: /media/highlights/post-landscape-5_orJozNM.webp
+WARNING:django.server:"GET /media/highlights/post-landscape-5_orJozNM.webp HTTP/1.1" 404 179
+INFO:django.utils.autoreload:C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py changed, reloading.
+INFO:django.server:"GET /Tsl/home/ HTTP/1.1" 200 28723
+WARNING:django.request:Not Found: /media/highlights/tsltv_banner1_g7yewDC.webp
+WARNING:django.server:"GET /media/highlights/tsltv_banner1_g7yewDC.webp HTTP/1.1" 404 179
+WARNING:django.request:Not Found: /media/highlights/post-landscape-5_orJozNM.webp
+WARNING:django.server:"GET /media/highlights/post-landscape-5_orJozNM.webp HTTP/1.1" 404 179
+WARNING:django.request:Not Found: /media/highlights/post-landscape-6_r1pA1YM_qDPs08N.webp
+WARNING:django.server:"GET /media/highlights/post-landscape-6_r1pA1YM_qDPs08N.webp HTTP/1.1" 404 179
+WARNING:django.request:Not Found: /media/highlights/TSLTV_devices_mockup_DWFn7fE.webp
+WARNING:django.server:"GET /media/highlights/TSLTV_devices_mockup_DWFn7fE.webp HTTP/1.1" 404 179
+INFO:django.utils.autoreload:C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py changed, reloading.
+ERROR:root:Request failed: 403 Client Error: Forbidden for url: https://www.channelstv.com/
+INFO:django.server:"GET /Tsl/home/ HTTP/1.1" 200 28723
+WARNING:django.request:Not Found: /media/highlights/tsltv_banner1_g7yewDC.webp
+WARNING:django.server:"GET /media/highlights/tsltv_banner1_g7yewDC.webp HTTP/1.1" 404 179
+WARNING:django.request:Not Found: /media/highlights/TSLTV_devices_mockup_DWFn7fE.webp
+WARNING:django.server:"GET /media/highlights/TSLTV_devices_mockup_DWFn7fE.webp HTTP/1.1" 404 179
+WARNING:django.request:Not Found: /media/highlights/post-landscape-6_r1pA1YM_qDPs08N.webp
+WARNING:django.server:"GET /media/highlights/post-landscape-6_r1pA1YM_qDPs08N.webp HTTP/1.1" 404 179
+WARNING:django.request:Not Found: /media/highlights/post-landscape-5_orJozNM.webp
+WARNING:django.server:"GET /media/highlights/post-landscape-5_orJozNM.webp HTTP/1.1" 404 179
+INFO:django.utils.autoreload:C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl\views.py changed, reloading.
+ERROR:root:Request failed: 403 Client Error: Forbidden for url: https://www.channelstv.com/
+ERROR:root:Request failed: HTTPSConnectionPool(host='www.dailytrust.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate is not yet valid (_ssl.c:1000)')))
+INFO:django.server:"GET /Tsl/home/ HTTP/1.1" 200 28723
+WARNING:django.request:Not Found: /media/highlights/tsltv_banner1_g7yewDC.webp
+WARNING:django.server:"GET /media/highlights/tsltv_banner1_g7yewDC.webp HTTP/1.1" 404 179
+WARNING:django.request:Not Found: /media/highlights/TSLTV_devices_mockup_DWFn7fE.webp
+WARNING:django.server:"GET /media/highlights/TSLTV_devices_mockup_DWFn7fE.webp HTTP/1.1" 404 179
+WARNING:django.request:Not Found: /media/highlights/post-landscape-6_r1pA1YM_qDPs08N.webp
+WARNING:django.server:"GET /media/highlights/post-landscape-6_r1pA1YM_qDPs08N.webp HTTP/1.1" 404 179
+WARNING:django.request:Not Found: /media/highlights/post-landscape-5_orJozNM.webp
+WARNING:django.server:"GET /media/highlights/post-landscape-5_orJozNM.webp HTTP/1.1" 404 179
+WARNING:django.request:Not Found: /Tsl/home/admin
+WARNING:django.server:"GET /Tsl/home/admin HTTP/1.1" 404 179
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.server:"GET /favicon.ico HTTP/1.1" 404 179
+ERROR:root:Request failed: 403 Client Error: Forbidden for url: https://www.channelstv.com/
+ERROR:root:Request failed: HTTPSConnectionPool(host='www.dailytrust.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate is not yet valid (_ssl.c:1000)')))
+WARNING:django.request:Not Found: /Tsl/admin
+WARNING:django.server:"GET /Tsl/admin HTTP/1.1" 404 179
+INFO:django.server:"GET /Tsl/home/ HTTP/1.1" 200 28723
+WARNING:django.request:Not Found: /media/highlights/tsltv_banner1_g7yewDC.webp
+WARNING:django.server:"GET /media/highlights/tsltv_banner1_g7yewDC.webp HTTP/1.1" 404 179
+WARNING:django.request:Not Found: /media/highlights/TSLTV_devices_mockup_DWFn7fE.webp
+WARNING:django.server:"GET /media/highlights/TSLTV_devices_mockup_DWFn7fE.webp HTTP/1.1" 404 179
+WARNING:django.request:Not Found: /media/highlights/post-landscape-6_r1pA1YM_qDPs08N.webp
+WARNING:django.server:"GET /media/highlights/post-landscape-6_r1pA1YM_qDPs08N.webp HTTP/1.1" 404 179
+WARNING:django.request:Not Found: /media/highlights/post-landscape-5_orJozNM.webp
+WARNING:django.server:"GET /media/highlights/post-landscape-5_orJozNM.webp HTTP/1.1" 404 179
+WARNING:django.request:Not Found: /Tsl/admin
+WARNING:django.server:"GET /Tsl/admin HTTP/1.1" 404 179
+INFO:django.server:"GET /admin/ HTTP/1.1" 200 35518
+INFO:django.server:"GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 304 0
+INFO:django.server:"GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 304 0
+INFO:django.server:"GET /static/jazzmin/css/main.css HTTP/1.1" 304 0
+INFO:django.server:"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO:django.server:"GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 304 0
+INFO:django.server:"GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 304 0
+INFO:django.server:"GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO:django.server:"GET /static/jazzmin/js/main.js HTTP/1.1" 304 0
+INFO:django.server:"GET /static/vendor/fontawesome-free/webfonts/fa-regular-400.woff2 HTTP/1.1" 304 0
+INFO:django.server:"GET /static/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 304 0
+INFO:django.server:"GET /admin/Accounts/highlight/ HTTP/1.1" 200 20123
+INFO:django.server:"GET /static/vendor/select2/css/select2.min.css HTTP/1.1" 304 0
+INFO:django.server:"GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO:django.server:"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO:django.server:"GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO:django.server:"GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 304 0
+INFO:django.server:"GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 304 0
+INFO:django.server:"GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO:django.server:"GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO:django.server:"GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO:django.server:"GET /static/vendor/select2/js/select2.min.js HTTP/1.1" 304 0
+INFO:django.server:"GET /static/jazzmin/js/change_list.js HTTP/1.1" 304 0
+INFO:django.server:"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO:django.server:"GET /admin/Accounts/highlight/5/change/ HTTP/1.1" 200 21984
+INFO:django.server:"GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO:django.server:"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO:django.server:"GET /static/jazzmin/js/change_form.js HTTP/1.1" 304 0
+INFO:django.server:"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO:django.server:"POST /admin/Accounts/highlight/5/change/ HTTP/1.1" 302 0
+INFO:django.server:"GET /admin/Accounts/highlight/ HTTP/1.1" 200 20752
+INFO:django.server:"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO:django.server:"GET /admin/Accounts/highlight/4/change/ HTTP/1.1" 200 22001
+INFO:django.server:"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO:django.server:"POST /admin/Accounts/highlight/4/change/ HTTP/1.1" 302 0
+INFO:django.server:"GET /admin/Accounts/highlight/ HTTP/1.1" 200 20753
+INFO:django.server:"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO:django.server:"GET /admin/Accounts/highlight/3/change/ HTTP/1.1" 200 22006
+INFO:django.server:"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO:django.server:"POST /admin/Accounts/highlight/3/change/ HTTP/1.1" 302 0
+INFO:django.server:"GET /admin/Accounts/highlight/ HTTP/1.1" 200 20752
+INFO:django.server:"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO:django.server:"GET /admin/Accounts/highlight/2/change/ HTTP/1.1" 200 21981
+INFO:django.server:"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO:django.server:"POST /admin/Accounts/highlight/2/change/ HTTP/1.1" 302 0
+INFO:django.server:"GET /admin/Accounts/highlight/ HTTP/1.1" 200 20749
+INFO:django.server:"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+ERROR:root:Request failed: 403 Client Error: Forbidden for url: https://www.channelstv.com/
+ERROR:root:Request failed: HTTPSConnectionPool(host='www.dailytrust.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate is not yet valid (_ssl.c:1000)')))
+INFO:django.server:"GET /Tsl/home/ HTTP/1.1" 200 28713
+INFO:django.server:"GET /media/highlights/TSLTVGuideB_APd8JNs.webp HTTP/1.1" 200 206536
+INFO:django.server:"GET /media/highlights/tsltv_banner1_hqNfAZd.webp HTTP/1.1" 200 95908
+INFO:django.server:"GET /media/highlights/TSLTVGuideB_APd8JNs_QeV0CqX.webp HTTP/1.1" 200 202360
+INFO:django.server:"GET /media/highlights/TSLTV_devices_mockup_De2KTYp.webp HTTP/1.1" 200 798006
+INFO:django.utils.autoreload:C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl_nigeria\settings.py changed, reloading.

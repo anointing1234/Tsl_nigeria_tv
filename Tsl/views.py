@@ -87,19 +87,8 @@ USER_AGENTS = [
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Gecko/20100101 Firefox/90.0',
 ]
 
-# Header pool
-HEADERS_POOL = [
-    {
-        'User -Agent': random.choice(USER_AGENTS),
-        'Accept-Language': 'en-US,en;q=0.9',
-        'Referer': 'https://www.vanguardngr.com/',  # Set to the target site
-        'Accept-Encoding': 'gzip, deflate, br',
-    },
-]
-
 # Fetch with cache
-def fetch_with_cache(url, headers):
-    # Use a hashed filename to avoid issues with special characters in URLs
+def fetch_with_cache(url):
     cache_file = f"cache/{hash(url)}.html"
     os.makedirs('cache', exist_ok=True)  # Ensure cache directory exists
     
@@ -108,6 +97,13 @@ def fetch_with_cache(url, headers):
             return f.read()
 
     # Make the HTTP request
+    headers = {
+        'User -Agent': random.choice(USER_AGENTS),
+        'Accept-Language': 'en-US,en;q=0.9',
+        'Referer': url,  # Set the Referer to the current URL
+        'Accept-Encoding': 'gzip, deflate, br',
+    }
+
     try:
         response = requests.get(url, headers=headers, timeout=random.uniform(10, 15))
         response.raise_for_status()  # Raise an error for HTTP status codes >= 400
@@ -122,13 +118,10 @@ def fetch_with_cache(url, headers):
     
     return response.text
 
-
 # Scrape news function
 def scrape_news(url, article_selector, title_selector, link_selector, image_selector):
-    headers = random.choice(HEADERS_POOL)
-
     try:
-        response_content = fetch_with_cache(url, headers)
+        response_content = fetch_with_cache(url)
         if not response_content:
             return []
 
@@ -178,22 +171,49 @@ def scrape_news(url, article_selector, title_selector, link_selector, image_sele
     return []
 
 
-# Home view
 def home(request):
     sliders = Slider.objects.filter(is_active=True).order_by('order')
     highlights = Highlight.objects.all()
-    grouped_images = Trending_now.objects.order_by('Trend_order')
+    grouped_images = Trending_now.objects.order_by('Trend_order')  # Corrected line
     Trending_Now = [grouped_images[i:i + 4] for i in range(0, len(grouped_images), 4)]  # Group into chunks of 4
     featured_shows = FeaturedShow.objects.all()
     
     # Define the websites and their CSS selectors for scraping
     news_sources = [
         {
+            'url': 'https://tribuneonlineng.com/',
+            'article_selector': 'article',  # Main article container
+            'title_selector': 'h2.entry-title a',  # Title of the article
+            'link_selector': 'h2.entry-title a',  # Link to the article
+            'image_selector': 'img'  # Image associated with the article
+        },
+        {
+            'url': 'https://punchng.com/',
+            'article_selector': 'article',  # Main article container
+            'title_selector': 'h2.entry-title a',  # Title of the article
+            'link_selector': 'h2.entry-title a',  # Link to the article
+            'image_selector': 'img'  # Image associated with the article
+        },
+        {
             'url': 'https://www.vanguardngr.com/',
-            'article_selector': 'article.entry',
-            'title_selector': 'h3.entry-title a',
-            'link_selector': 'h3.entry-title a',
-            'image_selector': 'img.entry-thumbnail'
+            'article_selector': 'article',  # Main article container
+            'title_selector': 'h3.entry-title a',  # Title of the article
+            'link_selector': 'h3.entry-title a',  # Link to the article
+            'image_selector': 'img.entry-thumbnail'  # Image associated with the article
+        },
+        {
+            'url': 'https://www.channelstv.com/',
+            'article_selector': 'article',  # Main article container
+            'title_selector': 'h2.entry-title a',  # Title of the article
+            'link_selector': 'h2.entry-title a',  # Link to the article
+            'image_selector': 'img'  # Image associated with the article
+        },
+        {
+            'url': 'https://www.dailytrust.com/',
+            'article_selector': 'article',  # Main article container
+            'title_selector': 'h2.entry-title a',  # Title of the article
+            'link_selector': 'h2.entry-title a',  # Link to the article
+            'image_selector': 'img'  # Image associated with the article
         },
     ]
 
