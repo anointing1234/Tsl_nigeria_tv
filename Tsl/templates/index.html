@@ -1,6 +1,162 @@
-{% extends 'core/base/base.html' %}
 {% load static %}
-{% block contents %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Tsl Nigeria tv</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <link href="{% static 'img/favicon.ico' %}" rel="icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css'%}" rel="stylesheet">
+  <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{% static 'css/main.css' %}" rel="stylesheet">
+
+ <style>
+
+
+  h2{
+    color:white;
+  }
+  
+ 
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust background color */
+    width: 30px; /* Adjust width */
+    height: 30px; /* Adjust height */
+    border-radius: 50%; /* Make circular */
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: auto; /* Adjust clickable area size */
+  }
+
+  @media (max-width: 768px) {
+    #featuredProgramsCarousel .carousel-inner .carousel-item {
+      flex-direction: column;
+    }
+    .carousel-item img {
+      max-width: 100%;
+    }
+  }
+  
+
+
+/* Hover effect for the video cards */
+
+
+@media (max-width: 768px) {
+  /* Ensure all links in the navmenu are black by default */
+  #navmenu ul li a,
+  #navmenu ul li ul li a {
+    color: black !important;
+  }
+    
+  .content {
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Optional shadow for a polished look */
+  }
+
+  /* Specifically target dropdown section for white text */
+  #navmenu .dropdown > a,
+  #navmenu .dropdown > a span,
+  #navmenu .dropdown ul li a {
+    color: #fff !important; /* Force white text for dropdown links */
+  }
+
+  /* Ensure dropdown menu background is dark */
+  #navmenu .dropdown ul {
+    background-color: #333 !important; /* Ensure dark background */
+  }
+  #navmenu .dropdown a span {
+    color: black !important; /* Ensure dark background */
+  }
+
+  /* Optional: Add hover effects for better UX */
+  #navmenu .dropdown ul li a:hover {
+    color: #ddd !important; /* Slightly lighter color on hover */
+  }
+}
+
+
+@media (min-width: 768px) {
+  .swiper-wrapper {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 30px;
+  }
+    
+.content {
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+    border-radius: 20px; /* Rounded corners for content box */
+    padding: 20px 30px; /* Spacing inside the content box */
+    position: absolute;
+    bottom: 30px; /* Distance from the bottom of the slide */
+    max-width: 80%; /* Prevents content from stretching too wide */
+    text-align: center; /* Centers text within the content box */
+    z-index: 10; /* Ensures content appears above the slide background */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Optional shadow for a polished look */
+  }
+  
+  .content h2 a {
+    color: #fff; /* Keeps text visible */
+    font-size: 1.8rem; /* Slightly larger font for headlines */
+    text-decoration: none; /* Removes underline from links */
+    font-weight: bold; /* Highlights the heading */
+  }
+  
+  .content h2 a:hover {
+    color: #ffd700; /* Gold color for hover effect */
+    text-decoration: underline; /* Adds underline on hover */
+  }
+  
+  .content p {
+    font-size: 1.1rem; /* Slightly larger text for paragraphs */
+    line-height: 1.6; /* Improves readability */
+    margin-top: 10px;
+    color: #f0f0f0; /* Softer white for secondary text */
+  }
+}
+
+
+
+/* For Mobile Screens (below 768px) */
+@media (max-width: 767px) {
+  
+
+/* Optional: Hide large screen swiper on mobile */
+.d-md-block {
+  display: block;
+}
+
+/* Optional: Hide mobile swiper on large screens */
+.d-md-none {
+  display: none;
+}
+}
+
+ </style>
+ 
+
 <style>
  
   #slider .swiper-slide {
@@ -94,16 +250,74 @@
     }
        
 </style>
+
+</head>
+
+<body style="background-color: #0F0A0D;"class="index-page dark-background">
+
+  <header style="background-color: transparent; width: 100%; margin-bottom: 200px;" id="header" class="header d-flex align-items-center sticky-top position-absolute w-100">
+    <div style="margin-bottom: 200px;" class="container-fluid position-relative d-flex align-items-center justify-content-between w-100">
+    
+      <a href="{% url 'home' %}" class="logo d-flex align-items-center me-auto me-xl-0">
+        <h1 class="sitename">
+          <img src="{% static 'img/tv.png' %}" alt="Site Logo" class="navbar-logo">
+        </h1>
+      </a>
+    
+      <nav style="" id="navmenu" class="navmenu">
+        <ul class="">
+          <li>
+            <a href="{% url 'home' %}" class="text-light">Home</a>
+          </li>
+          <li>
+            <a href="{% url 'live_tv' %}" class="text-light" style="display: flex; align-items: center;">
+              Live Tv
+              <span style="margin-left: 8px; width: 10px; height: 10px; background-color: red; border-radius: 50%;"></span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'contact' %}" class="text-light">Contact</a>
+          </li>
+          <li>
+            <a href="{% url 'About' %}" class="text-light">About us</a>
+          </li>
+          {% if user.is_authenticated %}
+          <li>
+            <a href="{% url 'Logout' %}" class="text-light">Logout</a>
+          </li>
+          {% endif %}
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    
+      <div class="header-social-links py-2">
+        {% if user.is_authenticated %}
+        <div 
+          class="rounded-circle text-center d-flex align-items-center justify-content-center"
+          style="width: 40px; height: 40px; background-color: #f1f1f1; color: #333; font-weight: bold;">
+          {{ user.username|default:"U"|slice:":1"|upper }}{{ user.username|default:"N"|slice:"-1:"|upper }}
+        </div>
+        {% else %}
+        <a href="{% url 'login' %}">
+          <button class="btn btn-light w-100 d-block">Login</button>
+        </a>
+        {% endif %}
+      </div>
+    
+    </div>
+  </header>
+  
+
+
  
 <main style="background-color: #0F0A0D;" class="main w-100 p-0 dark-background">
 
-<section style="background-color: #0F0A0D;" id="slider" class="slider section dark-background p-0 w-100">
-  <div class="container-fluid w-100" data-aos="fade-up" data-aos-delay="100">
+<section style="background-color: #0F0A0D;" id="slider" class="slider  section dark-background p-0 w-100">
     <div class="container-fluid swiper init-swiper w-100 p-0">
       <script type="application/json" class="swiper-config">
         {
           "loop": true,
-          "speed": 600,
+          "speed":1000,
           "autoplay": {
             "delay": 5000
           },
@@ -136,7 +350,7 @@
       <div class="swiper-pagination"></div>
     </div>
     </div>
-  </div>
+ 
 </section>
 
 
@@ -283,7 +497,7 @@
           <div class="row">
             {% for blog in blogs %}
               <div class="col-12 col-sm-6 col-md-4 mb-4">
-                <div class="post-entry border border-1 rounded p-3">
+                <div class="post-entry p-3">
                   <a href="{{ blog.link }}" target="_blank" class="d-block mb-3">
                     {% if blog.image %}
                       <img src="{{ blog.image }}" 
@@ -300,7 +514,7 @@
                       {% if blog.publish_date %}
                         {{ blog.publish_date|date:"M d, Y" }}
                       {% else %}
-                        N/A
+                     
                       {% endif %}
                     </span>
                   </div>
@@ -326,7 +540,7 @@
                   {% if blog.publish_date %}
                     {{ blog.publish_date|date:"M d, Y" }}
                   {% else %}
-                    N/A
+                 
                   {% endif %}
                 </span>
               </div>
@@ -404,48 +618,81 @@
             
             </section>
             
-            
-    
-
-
-
-
-
-
-
-
-
-        
-   
-
+          
 </main>
 
 
+<footer id="footer" class="footer dark-background">
 
-         
- 
- 
- {% endblock %}
+  <div class="container footer-top">
+    <div class="row gy-4">
+      <div class="col-lg-4 col-md-6 footer-about">
+        <a href="{% url 'home' %}" class="logo d-flex align-items-center">
+          <span class="sitename">      <img src="{% static 'img/tv.png' %}" alt="Site Logo" class="navbar-logo">
+          </span>
+        </a>
+        <div class="footer-contact pt-3">
+          <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+          <p><strong>Email:</strong> <span>info@Tsl_nigera.com</span></p>
+        </div>
+        <div class="social-links d-flex mt-4">
+          <a href=""><i class="bi bi-twitter-x"></i></a>
+          <a href=""><i class="bi bi-facebook"></i></a>
+          <a href=""><i class="bi bi-instagram"></i></a>
+          <a href=""><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-3 footer-links">
+        <h4>Useful Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Featured Shows</a></li>
+          <li><a href="#">Live tv</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-md-3 footer-links">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="#">Trending Shows</a></li>
+          <li><a href="#">On-demand</a></li>
+          <li><a href="#">Showcase</a></li>
+          <li><a href="#">Media</a></li>
+        </ul>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 footer-links">
+        <h4>Location</h4>
+        <p>
+          <h5>TSLNIGERIA-TV</h5>
+          Comfort Shopping Plaza 1, Etete Road, GRA, Benin City, Edo State Nigeria.</p>
+      </div>
+    
+
+  
+
+</div>
+</div>
+
+<div class="container copyright text-center mt-4">
+<p>© <span>Copyright2024</span><strong class="px-1 sitename">Tslnigeria-tv</strong><span>All Rights Reserved</span></p>
+</div>
+
+</footer>
+<!-- Scroll Top -->
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+{% comment %} <!-- Preloader -->
+<div id="preloader"></div> {% endcomment %}
+<!-- Vendor JS Files -->
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'vendor/aos/aos.js' %}"></script>
+<script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+<!-- Main JS File -->
+<script src="{% static 'js/main.js' %}"></script>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</body>
+</html>     

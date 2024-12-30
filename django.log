@@ -287,3 +287,63 @@ Watching for file changes with StatReloader
 "GET /Tsl/home/ HTTP/1.1" 200 38495
 - Broken pipe from ('127.0.0.1', 59161)
 C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl_nigeria\settings.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /Tsl/home/ HTTP/1.1" 200 38495
+- Broken pipe from ('127.0.0.1', 59303)
+- Broken pipe from ('127.0.0.1', 59302)
+"GET /Tsl/live_tv/ HTTP/1.1" 200 18940
+"GET /Tsl/home/ HTTP/1.1" 200 38367
+"GET /Tsl/home/ HTTP/1.1" 200 38107
+"GET /Tsl/home/ HTTP/1.1" 200 36181
+"GET /Tsl/home/ HTTP/1.1" 200 37712
+"GET /Tsl/home/ HTTP/1.1" 200 36016
+"GET /Tsl/home/ HTTP/1.1" 200 36016
+"GET /Tsl/home/ HTTP/1.1" 200 37538
+"GET /Tsl/home/ HTTP/1.1" 200 37246
+"GET /media/highlights/tsltv_banner1_hqNfAZd.webp HTTP/1.1" 304 0
+"GET /media/highlights/TSLTV_devices_mockup_De2KTYp.webp HTTP/1.1" 304 0
+"GET /media/highlights/TSLTVGuideB_APd8JNs.webp HTTP/1.1" 304 0
+"GET /media/highlights/TSLTVGuideB_APd8JNs_QeV0CqX.webp HTTP/1.1" 304 0
+"GET /Tsl/home/ HTTP/1.1" 200 37264
+"GET /Tsl/home/ HTTP/1.1" 200 37247
+"GET /Tsl/home/ HTTP/1.1" 200 37265
+"GET /Tsl/home/ HTTP/1.1" 200 38321
+"GET /static/vendor/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 304 0
+"GET /Tsl/home/ HTTP/1.1" 200 38646
+"GET /Tsl/home/ HTTP/1.1" 200 38762
+"GET /Tsl/home/ HTTP/1.1" 200 38625
+"GET /Tsl/home/ HTTP/1.1" 200 38625
+"GET /Tsl/home/ HTTP/1.1" 200 38655
+"GET /Tsl/home/ HTTP/1.1" 200 38664
+"GET /Tsl/home/ HTTP/1.1" 200 38417
+"GET /Tsl/home/ HTTP/1.1" 200 37954
+"GET /Tsl/home/ HTTP/1.1" 200 38400
+"GET /Tsl/home/ HTTP/1.1" 200 37809
+- Broken pipe from ('127.0.0.1', 59984)
+"GET /Tsl/home/ HTTP/1.1" 200 38068
+"GET /Tsl/home/ HTTP/1.1" 200 38068
+"GET /Tsl/home/ HTTP/1.1" 200 39463
+"GET /media/slider_images/slider_images/TSLONTHEGO.webp HTTP/1.1" 304 0
+"GET /media/slider_images/HOT_STUFF_0al5dsw.webp HTTP/1.1" 304 0
+"GET /media/slider_images/TSLTVGuideB_YZqfkZl.webp HTTP/1.1" 304 0
+"GET /media/Trending_now/Trending_now/TSLONTHEGO_r1orQKq.webp HTTP/1.1" 304 0
+"GET /media/Trending_now/Trending_now/Mans_Factory-9_89kl9al.webp HTTP/1.1" 304 0
+"GET /media/slider_images/Rap_Battle_Ppudnmg.webp HTTP/1.1" 304 0
+"GET /media/Trending_now/Trending_now/HOT_STUFF_T5a70TX.webp HTTP/1.1" 304 0
+"GET /media/Trending_now/Trending_now/Rap_Battle_MNZZX2C.webp HTTP/1.1" 304 0
+"GET /media/featured_shows/Mans_Factory-9_89kl9al.webp HTTP/1.1" 304 0
+"GET /media/featured_shows/HOT_STUFF_yzPBqM0.webp HTTP/1.1" 304 0
+"GET /media/featured_shows/Rap_Battle_ocD9o4r.webp HTTP/1.1" 304 0
+"GET /Tsl/home/ HTTP/1.1" 200 39463
+"GET /Tsl/home/ HTTP/1.1" 200 39487
+"GET /Tsl/home/ HTTP/1.1" 200 39362
+"GET /Tsl/home/ HTTP/1.1" 200 39362
+"GET /Tsl/home/ HTTP/1.1" 200 38143
+"GET /Tsl/home/ HTTP/1.1" 200 38187
+"GET /Tsl/home/ HTTP/1.1" 200 38187
+"GET /Tsl/home/ HTTP/1.1" 200 38566
+"GET /Tsl/home/ HTTP/1.1" 200 38566
+"GET /Tsl/home/ HTTP/1.1" 200 38566
+"GET /Tsl/home/ HTTP/1.1" 200 38566
+"GET /Tsl/home/ HTTP/1.1" 200 38555
+C:\Users\Israel\Documents\Projects\Tsl_nigeria\Tsl_nigeria\settings.py changed, reloading.
